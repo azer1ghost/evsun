@@ -1,0 +1,29 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+
+class VoyagerDummyDatabaseSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->call([
+            CategoriesTableSeeder::class,
+            UsersTableSeeder::class,
+            PostsTableSeeder::class,
+            PagesTableSeeder::class,
+            TranslationsTableSeeder::class,
+            SocialBreadMaker::class,
+            SlideBreadMaker::class,
+            ServiceBreadMaker::class,
+            TrainingBreadMaker::class,
+            PermissionRoleTableSeeder::class,
+        ]);
+    }
+}
