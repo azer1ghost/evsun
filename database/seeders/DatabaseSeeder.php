@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
          \App\Models\Service::factory(6)->create();
-         \App\Models\Training::factory(6)->create();
+         \App\Models\Solution::factory(4)->create();
          \App\Models\Slide::factory(3)->create();
     }
 }

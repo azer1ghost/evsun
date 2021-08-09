@@ -150,20 +150,26 @@ class ServiceBreadMaker extends Seeder
         $dataRow = $this->dataRow($pageDataType, 'icon');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'text',
+                'type'         => 'image',
                 'display_name' => 'Icon',
                 'required'     => 0,
-                'browse'       => 0,
+                'browse'       => 1,
                 'read'         => 1,
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 5,
                 'details'      => [
                     'display' => [
                         'width' => '2',
                     ],
+                    'resize' => [
+                        'width'  => '100',
+                        'height' => 'null',
+                    ],
+                    'quality'    => '90%',
+                    'upsize'     => true,
                 ],
+                'order' => 5,
             ])->save();
         }
 

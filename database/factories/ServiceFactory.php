@@ -29,8 +29,8 @@ class ServiceFactory extends Factory
         Storage::makeDirectory($folder);
 
         return [
-            'icon' => "fab fa-facebook",
-            'image' => "$folder/".$this->faker->image(public_path("storage/$folder"),400,300, null, false),
+            'icon' => "$folder/".$this->faker->image(public_path("storage/$folder"),300,300, null, false),
+            'image' => "$folder/".$this->faker->image(public_path("storage/$folder"),'972px','300px', null, false),
             'title' => $this->faker->realText( 20),
             'detail' => $this->faker->text(),
             'meta_title' => $this->faker->realText( 50),

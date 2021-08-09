@@ -1,9 +1,12 @@
 <?php
 
 use App\Http\Controllers\WebsiteController;
+use App\Http\Middleware\Localization;
 use App\Models\Page;
 use Illuminate\Support\Facades\Route;
 use TCG\Voyager\Facades\Voyager;
+
+Route::get('locale/{locale}', [Localization::class, 'locale'])->whereAlpha('locale')->where('locale','[A-Za-z0-9]{2}')->name('locale');
 
 if (Schema::hasTable('pages')){
 
@@ -18,10 +21,10 @@ if (Schema::hasTable('pages')){
     Route::get( $page('services'), [WebsiteController::class, 'services'])->name('services');
     Route::get($page('services').'/{service:slug}', [WebsiteController::class, 'serviceDetail'])->name('service');
 
-    Route::get( $page('trainings'), [WebsiteController::class, 'trainings'])->name('trainings');
-    Route::get($page('trainings').'/{training:slug}', [WebsiteController::class, 'trainingDetail'])->name('training');
+    Route::get( $page('solutions'), [WebsiteController::class, 'solutions'])->name('solutions');
+    Route::get($page('solutions').'/{solution:slug}', [WebsiteController::class, 'solutionDetail'])->name('solution');
 
-    Route::get($page('blog').'/{category?}', [WebsiteController::class, 'blog'])->name('blog');
+    Route::get($page('blog').'/{category:slug?}', [WebsiteController::class, 'blog'])->name('blog');
     Route::get($page('blog').'/post/{post:slug}', [WebsiteController::class, 'post'])->name('post');
 
     Route::get( $page('contact'), [WebsiteController::class, 'contact'])->name('contact');

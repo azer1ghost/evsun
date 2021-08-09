@@ -39,10 +39,16 @@
         @yield('styles')
     </head>
     <body>
+
         @include('website.components.loader')
+
         @include('website.components.header')
+
         @yield('content')
-        @include('website.components.footer')
+
+        @include('website.components.contact')
+
+        <x-footer/>
 
         <!-- jQuery -->
         <script src="{{ asset('assets/js/jquery.min.js') }}"></script>

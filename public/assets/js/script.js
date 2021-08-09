@@ -594,11 +594,8 @@ $(document).ready(function () {
   });
 });
 
-
-function languageSelect() {
-  // document.getElementById("languageSelector").classList.toggle("show");
-
-  $('#languageSelector').toggleClass('show')
+function myFunction() {
+  document.getElementById("languageSelector").classList.toggle("show");
 }
 
 window.onclick = function (event) {

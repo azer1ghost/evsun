@@ -412,12 +412,12 @@ class PagesTableSeeder extends Seeder
 
 
         $page = Page::firstOrNew([
-            'slug' => 'trainings',
+            'slug' => 'solutions',
         ]);
         if (!$page->exists) {
             $page->fill([
                 'author_id' => 0,
-                'title'     => 'Trainings',
+                'title'     => 'Solutions',
                 'excerpt'   => 'nope',
                 'body'      => 'nope',
                 'btnText'   => 'nope',
@@ -427,7 +427,7 @@ class PagesTableSeeder extends Seeder
                 'meta_description' => null,
                 'meta_keywords'    => null,
                 'status'           => 'ACTIVE',
-                'key'              => 'trainings',
+                'key'              => 'solutions',
             ])->save();
         }
 

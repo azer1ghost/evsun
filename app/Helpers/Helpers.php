@@ -1,5 +1,4 @@
 <?php
-
 if (! function_exists('meta')) {
     function meta($key, array $select = []): object
     {
@@ -11,7 +10,9 @@ if (! function_exists('meta')) {
             public function __construct($key, array $select = [])
             {
                 $this->key  = $key;
-                $this->page = \App\Models\Page::select(array_merge(['title', 'meta_description', 'meta_keywords', 'image'], $select))->key($this->key)->first();
+                $this->page = Cache::remember("page_$key", config('cache.timeout'), function () use ($select){
+                    return \App\Models\Page::select(array_merge(['title', 'meta_description', 'meta_keywords', 'image'], $select))->key($this->key)->first();
+                });
             }
 
             public function get($column)
@@ -23,7 +24,6 @@ if (! function_exists('meta')) {
             {
                 return optional($this->page)->image;
             }
-
         };
     }
 }

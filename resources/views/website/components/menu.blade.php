@@ -37,27 +37,24 @@
             }
         @endphp
         @if($item->status)
-            <li class="{{ $isActive }} @if(!$originalItem->children->isEmpty()) drop-left @endif">
+            <li class="{{ $isActive }} @if(!$originalItem->children->isEmpty() || $item->route == "services" || $item->route == "solutions") drop-left @endif">
                 <a href="{{ url($item->link()) }}" target="{{ $item->target }}" style="{{ $styles }}">
                     {!! $icon !!}
                     {{ $item->title }}
-{{--                    @if(!$originalItem->children->isEmpty() || $item->route == "services" || $item->route == "trainings")--}}
-{{--                    <span class="menu-span"><i class="fa fa-angle-down"></i></span>--}}
-{{--                    @endif--}}
                 </a>
 
-{{--                @if($item->route == "services" || $item->route == "trainings")--}}
-{{--                    <ul>--}}
-{{--                       @foreach(('App\Models\\'.ucfirst(substr($item->route, 0, -1)))::select('title', 'slug')->where('in_menu', true)->get() as $data)--}}
-{{--                            <li class="{{ $isActive }}">--}}
-{{--                                <a href="{{ route(substr($item->route, 0, -1), $data->slug) }}">{{$data->title}}</a>--}}
-{{--                            </li>--}}
-{{--                       @endforeach--}}
-{{--                    </ul>--}}
-{{--                @endif--}}
+                @if($item->route == "services" || $item->route == "solutions")
+                    <ul>
+                       @foreach(('App\Models\\'.ucfirst(substr($item->route, 0, -1)))::select('title', 'slug')->where('in_menu', true)->get() as $data)
+                            <li class="{{ $isActive }}">
+                                <a href="{{ route(substr($item->route, 0, -1), $data->slug) }}">{{$data->title}}</a>
+                            </li>
+                       @endforeach
+                    </ul>
+                @endif
 
                 @if(!$originalItem->children->isEmpty())
-                    @include('website.components.menu', ['items' => $originalItem->children, 'options' => $options])
+                    @include('website.components.menu', ['items' => $originalItem->children, 'options' => $options, ''])
                 @endif
             </li>
         @endif

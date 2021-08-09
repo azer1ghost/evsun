@@ -18,7 +18,7 @@
                                 <div class="row">
                                     <div class="col-3">
                                         <div class="ss_four_one">
-                                            <img class="img-fluid" src="{{asset($service->icon)}}" alt="{{str_limit($service->getTranslatedAttribute('title'), 20)}}" />
+                                            <img class="img-fluid" src="{{asset(Voyager::image($service->icon))}}" alt="{{str_limit($service->getTranslatedAttribute('title'), 20)}}" />
                                         </div>
                                     </div>
                                     <div class="col-9">

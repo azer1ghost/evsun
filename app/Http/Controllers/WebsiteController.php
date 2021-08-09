@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Page;
 use App\Models\Service;
-use App\Models\Training;
+use App\Models\Solution;
 use App\Models\User;
 use App\Notifications\ContactForm;
 use Illuminate\Http\Request;
@@ -17,14 +17,9 @@ class WebsiteController extends Controller
         return view('website.pages.home');
     }
 
-    public function services(){
-        return view('website.pages.services')
-            ->with([
-                'services' => Service::active()
-                    ->select(['id','slug', 'icon', 'title','meta_description'])
-                    ->orderBy('ordering')
-                    ->simplePaginate(9)
-            ]);
+    public function services(): \Illuminate\Http\RedirectResponse
+    {
+        return redirect()->route('service', Service::active()->select(['id','slug'])->first());
     }
 
     public function serviceDetail(Service $service){
@@ -32,28 +27,23 @@ class WebsiteController extends Controller
             ->with([
                 'service' => $service,
                 'services' => Service::active()
-                    ->select(['id','slug','title'])
+                    ->select(['id', 'slug', 'title', 'icon'])
                     ->orderBy('ordering')
                     ->get()
             ]);
     }
 
-    public function trainings(){
-        return view('website.pages.trainings')
-            ->with([
-                'trainings' => Training::active()
-                    ->select(['id', 'slug', 'title', 'meta_description', 'icon'])
-                    ->orderBy('ordering')
-                    ->paginate(9)
-            ]);
+    public function solutions(): \Illuminate\Http\RedirectResponse
+    {
+        return redirect()->route('solution', Solution::active()->select(['id','slug'])->first());
     }
 
-    public function trainingDetail(Training $training){
-        return view('website.pages.training-detail')
+    public function solutionDetail(Solution $solution){
+        return view('website.pages.solution-detail')
             ->with([
-                'training' => $training,
-                'trainings' => Training::active()
-                    ->select(['id','slug','title'])
+                'solution' => $solution,
+                'solutions' => Solution::active()
+                    ->select(['id', 'slug', 'title', 'icon'])
                     ->orderBy('ordering')
                     ->get()
             ]);

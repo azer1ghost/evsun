@@ -15,7 +15,7 @@ class Service extends Model
 
     use Translatable;
 
-    protected $translatable = ['title', 'detail', 'meta_description', 'meta_keywords'];
+    protected $translatable = ['title', 'detail', 'meta_title', 'meta_description', 'meta_keywords'];
 
     public function scopeActive($query)
     {

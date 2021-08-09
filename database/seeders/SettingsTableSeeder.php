@@ -52,7 +52,7 @@ class SettingsTableSeeder extends Seeder
         if (!$setting->exists) {
             $setting->fill([
                 'display_name' => "Footer Logo",
-                'value'        => 'settings/logo2.png',
+                'value'        => 'settings/logo.png',
                 'details'      => '',
                 'type'         => 'image',
                 'order'        => 3,
@@ -64,7 +64,7 @@ class SettingsTableSeeder extends Seeder
         if (!$setting->exists) {
             $setting->fill([
                 'display_name' => "Favicon",
-                'value'        => 'settings/loader.png',
+                'value'        => 'settings/logo.png',
                 'details'      => '',
                 'type'         => 'image',
                 'order'        => 4,
@@ -124,7 +124,7 @@ class SettingsTableSeeder extends Seeder
         if (!$setting->exists) {
             $setting->fill([
                 'display_name' => 'E-mail',
-                'value'        => 'info@fintaxconsulting.az',
+                'value'        => 'info@evsun.az',
                 'details'      => '',
                 'type'         => 'text',
                 'order'        => 9,

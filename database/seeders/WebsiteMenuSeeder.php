@@ -36,6 +36,38 @@ class WebsiteMenuSeeder extends Seeder
 
         $menuItem = MenuItem::firstOrNew([
             'menu_id' => $menu->id,
+            'title'   => 'Haqqımızda',
+            'url'     => '/about',
+            'route'   => null
+        ]);
+        if (!$menuItem->exists) {
+            $menuItem->fill([
+                'target'     => '_self',
+                'icon_class' => null,
+                'color'      => null,
+                'parent_id'  => null,
+                'order'      => 2,
+            ])->save();
+        }
+
+        $menuItem = MenuItem::firstOrNew([
+            'menu_id' => $menu->id,
+            'title'   => 'Həllər',
+            'url'     => '',
+            'route'   => 'solutions',
+        ]);
+        if (!$menuItem->exists) {
+            $menuItem->fill([
+                'target'     => '_self',
+                'icon_class' => null,
+                'color'      => null,
+                'parent_id'  => null,
+                'order'      => 3,
+            ])->save();
+        }
+
+        $menuItem = MenuItem::firstOrNew([
+            'menu_id' => $menu->id,
             'title'   => 'Xidmətlər',
             'url'     => '',
             'route'   => 'services',
@@ -46,7 +78,23 @@ class WebsiteMenuSeeder extends Seeder
                 'icon_class' => null,
                 'color'      => null,
                 'parent_id'  => null,
-                'order'      => 1,
+                'order'      => 4,
+            ])->save();
+        }
+
+        $menuItem = MenuItem::firstOrNew([
+            'menu_id' => $menu->id,
+            'title'   => 'Tətbiq sahələri',
+            'url'     => '/scope-of-application',
+            'route'   => null
+        ]);
+        if (!$menuItem->exists) {
+            $menuItem->fill([
+                'target'     => '_self',
+                'icon_class' => null,
+                'color'      => null,
+                'parent_id'  => null,
+                'order'      => 5,
             ])->save();
         }
 
@@ -62,43 +110,9 @@ class WebsiteMenuSeeder extends Seeder
                 'icon_class' => null,
                 'color'      => null,
                 'parent_id'  => null,
-                'order'      => 1,
+                'order'      => 6,
             ])->save();
         }
-
-        $menuItem = MenuItem::firstOrNew([
-            'menu_id' => $menu->id,
-            'title'   => 'Təlimlər',
-            'url'     => '',
-            'route'   => 'trainings',
-        ]);
-        if (!$menuItem->exists) {
-            $menuItem->fill([
-                'target'     => '_self',
-                'icon_class' => null,
-                'color'      => null,
-                'parent_id'  => null,
-                'order'      => 1,
-            ])->save();
-        }
-
-
-        $menuItem = MenuItem::firstOrNew([
-            'menu_id' => $menu->id,
-            'title'   => 'Haqqımızda',
-            'url'     => '/about',
-            'route'   => null
-        ]);
-        if (!$menuItem->exists) {
-            $menuItem->fill([
-                'target'     => '_self',
-                'icon_class' => null,
-                'color'      => null,
-                'parent_id'  => null,
-                'order'      => 1,
-            ])->save();
-        }
-
 
         $menuItem = MenuItem::firstOrNew([
             'menu_id' => $menu->id,
@@ -112,7 +126,7 @@ class WebsiteMenuSeeder extends Seeder
                 'icon_class' => null,
                 'color'      => null,
                 'parent_id'  => null,
-                'order'      => 1,
+                'order'      => 7,
             ])->save();
         }
 

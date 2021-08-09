@@ -9,14 +9,13 @@ use TCG\Voyager\Traits\Translatable;
 /**
  * @method static active()
  */
-class Training extends Model
+class Solution extends Model
 {
     use HasFactory;
 
     use Translatable;
 
-    protected $translatable = ['title', 'detail', 'meta_description', 'meta_keywords'];
-
+    protected $translatable = ['title', 'detail', 'meta_title', 'meta_description', 'meta_keywords'];
 
     public function scopeActive($query)
     {

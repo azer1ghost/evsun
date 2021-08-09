@@ -1,58 +1,18 @@
 @extends('website.layouts.main')
 
-{{--@php--}}
-{{--    $meta = meta('homepage', ['body', 'btnText', 'btnLink']);--}}
-{{--@endphp--}}
+@php
+    $meta = meta('homepage', ['body', 'btnText', 'btnLink']);
+@endphp
 
-{{--@section('title', $meta->get('title'))--}}
-{{--@section('description', $meta->get('meta_description'))--}}
-{{--@section('keywords', $meta->get('meta_keywords'))--}}
+@section('title', $meta->get('title'))
+@section('description', $meta->get('meta_description'))
+@section('keywords', $meta->get('meta_keywords'))
 
 @section('content')
 
     <x-slider/>
 
-    <section class="ss_section_two spacer_top">
-        <!--===== Section Two Start =====-->
-        <h3 class="ss_h3_center text-center">Həllər</h3>
-        <h1 class="text-center mb-5">Ən keyfiyyətli həlləri təqdim edirik</h1>
-        <div class="container-fluid">
-            <div class="ss_two">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="ss_two_sec wow fadeIn" data-aos="fade-up">
-                            <i class="fas fa-drafting-compass fa-3x text-dark"></i>
-                            <h2>Dizayn-layihə</h2>
-                            <p></p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="ss_two_sec wow fadeIn" data-aos-delay="150" data-aos="fade-up">
-                            <i class="fas fa-tools fa-3x text-dark"></i>
-                            <h2>Quraşdırma</h2>
-                            <p></p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="ss_two_sec wow fadeIn" data-aos-delay="250" data-aos="fade-up">
-                            <i class="fas fa-user-headset fa-3x text-dark"></i>
-                            <h2>Texniki dəstək</h2>
-                            <p></p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="ss_two_sec wow fadeIn" data-aos-delay="350" data-aos="fade-up">
-
-                            <i class="fas fa-shield-check fa-3x text-dark"></i>
-                            <h2>Zəmanət</h2>
-                            <p></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--===== Section Two End =====-->
+    <x-solutions/>
 
     <section class="ss_section_three spacer_bottom">
         <!--===== Section Three Start =====-->

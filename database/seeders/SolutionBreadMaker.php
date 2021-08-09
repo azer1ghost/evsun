@@ -9,7 +9,7 @@ use TCG\Voyager\Models\Menu;
 use TCG\Voyager\Models\MenuItem;
 use TCG\Voyager\Models\Permission;
 
-class TrainingBreadMaker extends Seeder
+class SolutionBreadMaker extends Seeder
 {
     /**
      * Run the database seeds.
@@ -19,14 +19,14 @@ class TrainingBreadMaker extends Seeder
     public function run()
     {
         //Data Type
-        $dataType = $this->dataType('slug', 'trainings');
+        $dataType = $this->dataType('slug', 'solutions');
         if (!$dataType->exists) {
             $dataType->fill([
-                'name'                  => 'trainings',
-                'display_name_singular' => 'Training',
-                'display_name_plural'   => 'Trainings',
-                'icon'                  => 'fal fa-user-graduate',
-                'model_name'            => 'App\\Models\\Training',
+                'name'                  => 'solutions',
+                'display_name_singular' => 'Solution',
+                'display_name_plural'   => 'Solutions',
+                'icon'                  => 'fal fa-atom',
+                'model_name'            => 'App\\Models\\Solution',
                 'controller'            => '',
                 'generate_permissions'  => 1,
                 'description'           => '',
@@ -45,14 +45,14 @@ class TrainingBreadMaker extends Seeder
         $menu = Menu::where('name', 'admin')->firstOrFail();
         $menuItem = MenuItem::firstOrNew([
             'menu_id' => $menu->id,
-            'title'   => 'Training',
+            'title'   => 'Solution',
             'url'     => '',
-            'route'   => 'voyager.trainings.index',
+            'route'   => 'voyager.solutions.index',
         ]);
         if (!$menuItem->exists) {
             $menuItem->fill([
                 'target'     => '_self',
-                'icon_class' => 'fal fa-user-graduate',
+                'icon_class' => 'fal fa-atom',
                 'color'      => null,
                 'parent_id'  => null,
                 'order'      => 10,
@@ -60,12 +60,12 @@ class TrainingBreadMaker extends Seeder
         }
 
         //Permissions
-        Permission::generateFor('trainings');
+        Permission::generateFor('solutions');
 
 
 
         //Data Rows
-        $pageDataType = DataType::where('slug', 'trainings')->firstOrFail();
+        $pageDataType = DataType::where('slug', 'solutions')->firstOrFail();
         $dataRow = $this->dataRow($pageDataType, 'id');
         if (!$dataRow->exists) {
             $dataRow->fill([
@@ -149,22 +149,24 @@ class TrainingBreadMaker extends Seeder
 
         $dataRow = $this->dataRow($pageDataType, 'icon');
         if (!$dataRow->exists) {
-            $dataRow->fill([
-                'type'         => 'text',
-                'display_name' => 'Icon',
-                'required'     => 0,
-                'browse'       => 0,
-                'read'         => 1,
-                'edit'         => 1,
-                'add'          => 1,
-                'delete'       => 1,
-                'order'        => 5,
-                'details'      => [
-                    'display' => [
-                        'width' => '2',
+            if (!$dataRow->exists) {
+                $dataRow->fill([
+                    'type' => 'text',
+                    'display_name' => "Icon",
+                    'required' => 1,
+                    'browse' => 1,
+                    'read' => 1,
+                    'edit' => 1,
+                    'add' => 1,
+                    'delete' => 1,
+                    'order' => 5,
+                    'details' => [
+                        'display' => [
+                            'width' => '3',
+                        ],
                     ],
-                ],
-            ])->save();
+                ])->save();
+            }
         }
 
         $dataRow = $this->dataRow($pageDataType, 'meta_title');
@@ -296,6 +298,27 @@ class TrainingBreadMaker extends Seeder
             ])->save();
         }
 
+        $dataRow = $this->dataRow($pageDataType, 'featured');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'checkbox',
+                'display_name' => 'Featured',
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 8,
+                'details'      => [
+                    'checked' => true,
+                    'display' => [
+                        'width' => '1',
+                    ],
+                ],
+                'order' => 12,
+            ])->save();
+        }
+
         $dataRow = $this->dataRow($pageDataType, 'ordering');
         if (!$dataRow->exists) {
             $dataRow->fill([
@@ -307,7 +330,7 @@ class TrainingBreadMaker extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 12,
+                'order'        => 5,
                 'details'      => [
                     'display' => [
                         'width' => '2',

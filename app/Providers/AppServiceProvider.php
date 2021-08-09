@@ -25,8 +25,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if (Schema::hasTable('socials')) {
-            view()->share('socials', Social::active()->orderBy('ordering')->get() ?? collect());
-        }
+
     }
 }
