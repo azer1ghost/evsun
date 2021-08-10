@@ -4,7 +4,7 @@
 
     <li class="dd-item" data-id="{{ $item->id }}">
         <div class="pull-right item_actions">
-            @if($item->id > 24 ||  auth()->user()->role_id === 1)
+            @if(!$item->hard || auth()->user()->role_id === 1)
             <div class="btn btn-sm btn-danger pull-right delete" data-id="{{ $item->id }}">
                 <i class="voyager-trash"></i> {{ __('voyager::generic.delete') }}
             </div>

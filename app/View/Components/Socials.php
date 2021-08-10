@@ -12,7 +12,7 @@ class Socials extends Component
 
     public function __construct()
     {
-        $this->socials = Cache::remember('users', config('cache.timeout'), function () {
+        $this->socials = Cache::remember('footer_socials', config('cache.timeout'), function () {
             return Social::active()->orderBy('ordering')->get();
         });
     }

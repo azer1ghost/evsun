@@ -3,8 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use TCG\Voyager\Traits\Translatable;
-use function PHPUnit\Framework\arrayHasKey;
+
 
 /**
  * @method static slug(string $string)
@@ -14,13 +15,13 @@ use function PHPUnit\Framework\arrayHasKey;
  */
 class Page extends Model
 {
-    use Translatable;
+    use Translatable, SoftDeletes;
 
-    protected $translatable = ['title', 'body', 'meta_description', 'meta_keywords', 'excerpt'];
+    protected array $translatable = ['title', 'body', 'meta_description', 'meta_keywords', 'excerpt'];
 
     public const STATUS_ACTIVE = 'ACTIVE';
     public const STATUS_INACTIVE = 'INACTIVE';
-    public static $statuses = [self::STATUS_ACTIVE, self::STATUS_INACTIVE];
+    public static array $statuses = [self::STATUS_ACTIVE, self::STATUS_INACTIVE];
 
     public function scopeActive($query)
     {
@@ -29,7 +30,7 @@ class Page extends Model
 
     public const TYPE_DYNAMIC = 'dynamic';
     public const TYPE_STATIC = 'static';
-    public static $types = [self::TYPE_DYNAMIC, self::TYPE_STATIC];
+    public static array $types = [self::TYPE_DYNAMIC, self::TYPE_STATIC];
 
     public function scopeStatic($query)
     {

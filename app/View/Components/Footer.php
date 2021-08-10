@@ -12,7 +12,7 @@ class Footer extends Component
 
     public function __construct()
     {
-        $this->services = Cache::remember('services', 60*10, function () {
+        $this->services = Cache::remember('footer_services', config('cache.timeout'), function () {
             return Service::select(['title', 'slug'])->active()->orderBy('ordering')->get();
         });
     }

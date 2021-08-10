@@ -31,6 +31,7 @@ class WebsiteMenuSeeder extends Seeder
                 'color'      => null,
                 'parent_id'  => null,
                 'order'      => 1,
+                'hard'    => true,
             ])->save();
         }
 
@@ -38,7 +39,7 @@ class WebsiteMenuSeeder extends Seeder
             'menu_id' => $menu->id,
             'title'   => 'Haqqımızda',
             'url'     => '/about',
-            'route'   => null
+            'route'   => null,
         ]);
         if (!$menuItem->exists) {
             $menuItem->fill([
@@ -47,6 +48,7 @@ class WebsiteMenuSeeder extends Seeder
                 'color'      => null,
                 'parent_id'  => null,
                 'order'      => 2,
+                'hard'    => true,
             ])->save();
         }
 
@@ -63,6 +65,7 @@ class WebsiteMenuSeeder extends Seeder
                 'color'      => null,
                 'parent_id'  => null,
                 'order'      => 3,
+                'hard'    => true,
             ])->save();
         }
 
@@ -79,6 +82,7 @@ class WebsiteMenuSeeder extends Seeder
                 'color'      => null,
                 'parent_id'  => null,
                 'order'      => 4,
+                'hard'    => true,
             ])->save();
         }
 
@@ -95,6 +99,7 @@ class WebsiteMenuSeeder extends Seeder
                 'color'      => null,
                 'parent_id'  => null,
                 'order'      => 5,
+                'hard'       => true,
             ])->save();
         }
 
@@ -111,6 +116,7 @@ class WebsiteMenuSeeder extends Seeder
                 'color'      => null,
                 'parent_id'  => null,
                 'order'      => 6,
+                'hard'    => true,
             ])->save();
         }
 
@@ -127,6 +133,7 @@ class WebsiteMenuSeeder extends Seeder
                 'color'      => null,
                 'parent_id'  => null,
                 'order'      => 7,
+                'hard'    => true,
             ])->save();
         }
 

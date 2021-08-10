@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * @method static select(string[] $array)
@@ -10,6 +11,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Social extends Model
 {
+    use SoftDeletes;
+
     public function scopeActive($query)
     {
         return $query->where('status', true);

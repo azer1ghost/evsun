@@ -23,6 +23,7 @@ class VoyagerDummyDatabaseSeeder extends Seeder
             SlideBreadMaker::class,
             ServiceBreadMaker::class,
             SolutionBreadMaker::class,
+            BrandBreadMaker::class,
             PermissionRoleTableSeeder::class,
         ]);
     }

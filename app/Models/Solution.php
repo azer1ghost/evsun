@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use TCG\Voyager\Traits\Translatable;
 
 /**
@@ -11,11 +12,9 @@ use TCG\Voyager\Traits\Translatable;
  */
 class Solution extends Model
 {
-    use HasFactory;
+    use Translatable, HasFactory, SoftDeletes;
 
-    use Translatable;
-
-    protected $translatable = ['title', 'detail', 'meta_title', 'meta_description', 'meta_keywords'];
+    protected array $translatable = ['title', 'detail', 'meta_title', 'meta_description', 'meta_keywords'];
 
     public function scopeActive($query)
     {

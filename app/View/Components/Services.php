@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use Cache;
 use Illuminate\View\Component;
 
 class Services extends Component
@@ -10,7 +11,10 @@ class Services extends Component
 
     public function __construct()
     {
-        $this->services = \App\Models\Service::active()->orderBy('ordering')->get();
+        $this->services = Cache::remember("homepage_services", config('cache.timeout'), function (){
+            return \App\Models\Service::select(['id', 'title', 'slug', 'icon', 'meta_description'])->active()->orderBy('ordering')->get();
+        });
+
     }
 
     public function render()

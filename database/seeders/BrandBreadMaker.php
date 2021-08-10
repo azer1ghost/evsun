@@ -9,7 +9,7 @@ use TCG\Voyager\Models\Menu;
 use TCG\Voyager\Models\MenuItem;
 use TCG\Voyager\Models\Permission;
 
-class SlideBreadMaker extends Seeder
+class BrandBreadMaker extends Seeder
 {
     /**
      * Run the database seeds.
@@ -19,14 +19,14 @@ class SlideBreadMaker extends Seeder
     public function run()
     {
         //Data Type
-        $dataType = $this->dataType('slug', 'slides');
+        $dataType = $this->dataType('slug', 'brands');
         if (!$dataType->exists) {
             $dataType->fill([
-                'name'                  => 'slides',
-                'display_name_singular' => 'Slide',
-                'display_name_plural'   => 'Slides',
-                'icon'                  => 'fal fa-presentation',
-                'model_name'            => 'App\\Models\\Slide',
+                'name'                  => 'brands',
+                'display_name_singular' => 'Brand',
+                'display_name_plural'   => 'Brands',
+                'icon'                  => 'fal fa-landmark',
+                'model_name'            => 'App\\Models\\Brand',
                 'controller'            => '',
                 'generate_permissions'  => 1,
                 'description'           => '',
@@ -45,14 +45,14 @@ class SlideBreadMaker extends Seeder
         $menu = Menu::where('name', 'admin')->firstOrFail();
         $menuItem = MenuItem::firstOrNew([
             'menu_id' => $menu->id,
-            'title'   => 'Slides',
+            'title'   => 'Brands',
             'url'     => '',
-            'route'   => 'voyager.slides.index',
+            'route'   => 'voyager.brands.index',
         ]);
         if (!$menuItem->exists) {
             $menuItem->fill([
                 'target'     => '_self',
-                'icon_class' => 'fal fa-presentation',
+                'icon_class' => 'fal fa-landmark',
                 'color'      => null,
                 'parent_id'  => null,
                 'order'      => 10,
@@ -60,17 +60,17 @@ class SlideBreadMaker extends Seeder
         }
 
         //Permissions
-        Permission::generateFor('slides');
+        Permission::generateFor('brands');
 
         //Content
 
         //Data Rows
-        $pageDataType = DataType::where('slug', 'slides')->firstOrFail();
+        $pageDataType = DataType::where('slug', 'brands')->firstOrFail();
         $dataRow = $this->dataRow($pageDataType, 'id');
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'number',
-                'display_name' => "Image",
+                'display_name' => __('voyager::seeders.data_rows.id'),
                 'required'     => 1,
                 'browse'       => 0,
                 'read'         => 0,
@@ -85,7 +85,7 @@ class SlideBreadMaker extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'image',
-                'display_name' => __('voyager::seeders.data_rows.post_image'),
+                'display_name' => "Image",
                 'required'     => 0,
                 'browse'       => 1,
                 'read'         => 1,
@@ -97,7 +97,7 @@ class SlideBreadMaker extends Seeder
                         'width' => '3',
                     ],
                     'resize' => [
-                        'width'  => '1000',
+                        'width'  => '300',
                         'height' => 'null',
                     ],
                     'quality'    => '90%',
@@ -118,26 +118,6 @@ class SlideBreadMaker extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 3,
-                'details'      => [
-                    'display' => [
-                        'width' => '3',
-                    ],
-                ],
-            ])->save();
-        }
-
-        $dataRow = $this->dataRow($pageDataType, 'text');
-        if (!$dataRow->exists) {
-            $dataRow->fill([
-                'type'         => 'text_area',
-                'display_name' => 'Text',
-                'required'     => 1,
-                'browse'       => 0,
-                'read'         => 1,
-                'edit'         => 1,
-                'add'          => 1,
-                'delete'       => 1,
                 'order'        => 2,
                 'details'      => [
                     'display' => [
@@ -147,31 +127,11 @@ class SlideBreadMaker extends Seeder
             ])->save();
         }
 
-        $dataRow = $this->dataRow($pageDataType, 'btnText');
+        $dataRow = $this->dataRow($pageDataType, 'url');
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
-                'display_name' => 'Button text',
-                'required'     => 1,
-                'browse'       => 0,
-                'read'         => 1,
-                'edit'         => 1,
-                'add'          => 1,
-                'delete'       => 1,
-                'order'        => 3,
-                'details'      => [
-                    'display' => [
-                        'width' => '3',
-                    ],
-                ],
-            ])->save();
-        }
-
-        $dataRow = $this->dataRow($pageDataType, 'btnUrl');
-        if (!$dataRow->exists) {
-            $dataRow->fill([
-                'type'         => 'text',
-                'display_name' => 'Button link',
+                'display_name' => 'Url',
                 'required'     => 1,
                 'browse'       => 0,
                 'read'         => 1,

@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use Cache;
 use Illuminate\View\Component;
 
 class Solutions extends Component
@@ -10,7 +11,9 @@ class Solutions extends Component
 
     public function __construct()
     {
-        $this->solutions = \App\Models\Solution::active()->orderBy('ordering')->get();
+        $this->solutions = Cache::remember('footer_socials', config('cache.timeout'), function () {
+            return \App\Models\Solution::active()->orderBy('ordering')->get();
+        });
     }
 
     public function render()

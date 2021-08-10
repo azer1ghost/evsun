@@ -15,6 +15,7 @@ class AddStatusColumnToMenuItemsTable extends Migration
     {
         Schema::table('menu_items', function (Blueprint $table) {
              $table->boolean('status')->default(true);
+             $table->boolean('hard')->nullable()->default(false);
         });
     }
 
@@ -27,6 +28,7 @@ class AddStatusColumnToMenuItemsTable extends Migration
     {
         Schema::table('menu_items', function (Blueprint $table) {
             $table->dropColumn('status');
+            $table->dropColumn('hard');
         });
     }
 }

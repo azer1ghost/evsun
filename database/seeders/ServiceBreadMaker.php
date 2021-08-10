@@ -25,7 +25,7 @@ class ServiceBreadMaker extends Seeder
                 'name'                  => 'services',
                 'display_name_singular' => 'Service',
                 'display_name_plural'   => 'Services',
-                'icon'                  => 'fal fa-atom',
+                'icon'                  => 'fal fa-suitcase',
                 'model_name'            => 'App\\Models\\Service',
                 'controller'            => '',
                 'generate_permissions'  => 1,
@@ -52,7 +52,7 @@ class ServiceBreadMaker extends Seeder
         if (!$menuItem->exists) {
             $menuItem->fill([
                 'target'     => '_self',
-                'icon_class' => 'fal fa-atom',
+                'icon_class' => 'fal fa-suitcase',
                 'color'      => null,
                 'parent_id'  => null,
                 'order'      => 10,
@@ -105,7 +105,7 @@ class ServiceBreadMaker extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'image',
-                'display_name' => __('voyager::seeders.data_rows.post_image'),
+                'display_name' => "Image",
                 'required'     => 0,
                 'browse'       => 1,
                 'read'         => 1,

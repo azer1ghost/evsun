@@ -22,6 +22,7 @@ class CreateSlidesTable extends Migration
             $table->string('btnUrl')->nullable();
             $table->boolean('status')->default(true);
             $table->integer('ordering')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

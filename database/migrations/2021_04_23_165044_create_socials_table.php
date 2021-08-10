@@ -20,6 +20,7 @@ class CreateSocialsTable extends Migration {
             $table->string('link')->default('#')->nullable();
             $table->integer('ordering')->default(0);
             $table->tinyInteger('status')->default(true);
+            $table->softDeletes();
             $table->timestamps();
 		});
 	}

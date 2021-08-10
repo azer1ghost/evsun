@@ -43,47 +43,7 @@
 
     <x-services/>
 
-    <section style="background: rgb(18 66 165 / 5%);" class="ss_section_eight section_brands ss_section_sec_bg spacer_top spacer_bottom">
-        <!--===== Section Eight Start =====-->
-        <div class="container-fluid">
-            <h3 class="ss_h3_center text-center">Brendlər</h3>
-            <!-- <h1 class="text-center mb-5">Latest news</h1> -->
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="ss_eight ss_box_wbg wow fadeIn" data-wow-delay="0.1s" data-wow-duration="1s">
-                            <img class="img-fluid" src="https://evsun.az/media/partners/bosch.png.300x80_q85_upscale-true.png" alt="image" title="image" />
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="ss_eight ss_box_wbg wow fadeIn" data-wow-delay="0.1s" data-wow-duration="1s">
-                            <img class="img-fluid" src="https://evsun.az/media/partners/bosch.png.300x80_q85_upscale-true.png" alt="image" title="image" />
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="ss_eight ss_box_wbg wow fadeIn" data-wow-delay="0.1s" data-wow-duration="1s">
-                            <img class="img-fluid" src="https://evsun.az/media/partners/1rid_logo.png.300x80_q85_upscale-true.png" alt="image" title="image" />
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="ss_eight ss_box_wbg wow fadeIn" data-wow-delay="0.1s" data-wow-duration="1s">
-                            <img class="img-fluid" src="https://evsun.az/media/partners/bluesun_logo.png.300x80_q85_upscale-true.png" alt="image" title="image" />
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="ss_eight ss_box_wbg wow fadeIn" data-wow-delay="0.1s" data-wow-duration="1s">
-                            <img class="img-fluid" src="https://evsun.az/media/partners/lorentz_logo.png.300x80_q85_upscale-true.png" alt="image" title="image" />
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="ss_eight ss_box_wbg wow fadeIn" data-wow-delay="0.1s" data-wow-duration="1s">
-                            <img class="img-fluid" src="https://evsun.az/media/partners/1schneider-electric-logo.png.300x80_q85_upscale-true.png" alt="image" title="image" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <x-brands/>
 
     <x-blog/>
 

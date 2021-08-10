@@ -27,6 +27,7 @@ class CreateSolutionsTable extends Migration
             $table->boolean('in_menu')->default(true);
             $table->boolean('featured')->default(true);
             $table->integer('ordering')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

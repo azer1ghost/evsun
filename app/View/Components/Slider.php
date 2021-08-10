@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use Cache;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
@@ -11,7 +12,10 @@ class Slider extends Component
 
     public function __construct()
     {
-        $this->slides = \App\Models\Slide::active()->orderBy('ordering')->get();
+        $this->slides = Cache::remember("homepage_slides", 600, function (){
+            return \App\Models\Slide::active()->orderBy('ordering')->get();
+        });
+
     }
 
     public function render(): View

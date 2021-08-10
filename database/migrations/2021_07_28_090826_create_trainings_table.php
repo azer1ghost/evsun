@@ -26,6 +26,7 @@ class CreateTrainingsTable extends Migration
             $table->boolean('status')->default(true);
             $table->boolean('in_menu')->default(true);
             $table->integer('ordering')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

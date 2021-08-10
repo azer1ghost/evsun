@@ -105,7 +105,7 @@ class SolutionBreadMaker extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'image',
-                'display_name' => __('voyager::seeders.data_rows.post_image'),
+                'display_name' => "Image",
                 'required'     => 0,
                 'browse'       => 1,
                 'read'         => 1,

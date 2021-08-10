@@ -13,5 +13,5 @@ class StaticText extends Model
 {
     use Translatable;
 
-    protected $translatable = ['text'];
+    protected array $translatable = ['text'];
 }
