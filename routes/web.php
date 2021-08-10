@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\InstagramController;
 use App\Http\Controllers\WebsiteController;
 use App\Http\Middleware\Localization;
 use App\Models\Page;
@@ -27,12 +28,15 @@ if (Schema::hasTable('pages')){
     Route::get($page('blog').'/{category:slug?}', [WebsiteController::class, 'blog'])->name('blog');
     Route::get($page('blog').'/post/{post:slug}', [WebsiteController::class, 'post'])->name('post');
 
+    Route::get( $page('about'), [WebsiteController::class, 'about'])->name('about');
     Route::get( $page('contact'), [WebsiteController::class, 'contact'])->name('contact');
 
     Route::post('contact-form', [WebsiteController::class, 'contactForm'])->name('contact.form');
 
     Route::group(['prefix' => 'admin'], function () {
         Voyager::routes();
+        Route::post('/instagram-update', [InstagramController::class, 'update'])->middleware('admin.user')->name('instagram.update');
+        Route::get('/instagram-auth-response', [InstagramController::class, 'complete'])->middleware('admin.user');
     });
 
     Route::get('sitemap.xml', [WebsiteController::class, 'sitemap']);

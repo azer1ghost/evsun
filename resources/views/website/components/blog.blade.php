@@ -2,8 +2,11 @@
 <section class="ss_section_blog ss_section_sec_bg spacer_top spacer_bottom">
     <!--===== Section Eight Start =====-->
     <div class="container-fluid">
-        <h3 class="ss_h3_center text-center">Bloq</h3>
-        <h1 class="text-center mb-5">Son xəbərlər</h1>
+        @php
+            $meta = meta('blog', ['heading']);
+        @endphp
+        <h3 class="ss_h3_center text-center">{{$meta->get('title')}}</h3>
+        <h1 class="text-center mb-5">{{$meta->get('heading')}}</h1>
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 @foreach($posts as $post)
@@ -21,7 +24,7 @@
                         <div class="post-content">
                             <h3 class="post-title"><a href="{{route('post', $post)}}">{{$post->getTranslatedAttribute('title')}}</a></h3>
                             <p class="post-description">
-                                {{$post->getTranslatedAttribute('excerpt')}}
+                                {{str_limit($post->getTranslatedAttribute('excerpt'), 200)}}
                             </p>
                             <a href="{{route('post', $post)}}" class="read-more">Ətraflı</a>
                         </div>

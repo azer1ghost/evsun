@@ -1,7 +1,7 @@
 @extends('website.layouts.main')
 
 @php
-    $meta = meta('homepage', ['body', 'btnText', 'btnLink']);
+    $meta = meta('homepage', ['excerpt', 'image', 'btnText', 'btnLink']);
 @endphp
 
 @section('title', $meta->get('title'))
@@ -20,16 +20,15 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div  data-aos="fade-up" class="ss_three_left">
-                        <img class="img-fluid" src="assets/images/servis.png" alt="image" />
+                        <img class="img-fluid" src="{!!asset(Voyager::image($meta->get('image')))!!}" alt="{{config('app.name')}}"/>
                     </div>
                 </div>
                 <div class="col-lg-6 align-self-center">
                     <div class="ss_three_right">
                         <!-- <h3>best service</h3> -->
-                        <h1>EvSun-a xoş gəldiniz</h1>
-                        <p>2020-ci ildə təsis edilmiş EvSun şirkəti, Smartek Technologies və SmartAgro Solutions şirkətlər qrupuna daxil olan yeni bölmədir. EvSun şirkəti günəş elektrik stansiyaları, elektrik verilişi üçün yükləmə (şarj) stansiyaları, avtomatlaşdırma
-                            və idarəetmə sistemlərinin layihələndirilməsi, tətbiqi və texniki xidmətində ixtisaslaşıb. Bizim komandamızda öz işinin peşəkarları, Energetika, Avtomatika və İnformasiya texnologiyaları sahəsində ixtisaslı mühəndislər çalışır.</p>
-                        <a href="service.html" class="ss_btn mt-4">Ətraflı</a>
+                        <h1>{{$meta->get('title')}}</h1>
+                        <p>{!! $meta->get('excerpt') !!}</p>
+                        <a href="{{$meta->get('btnLink')}}" class="ss_btn mt-4">{{$meta->get('btnText')}}</a>
                     </div>
                 </div>
             </div>

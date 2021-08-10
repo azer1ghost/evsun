@@ -17,7 +17,7 @@ class Page extends Model
 {
     use Translatable, SoftDeletes;
 
-    protected array $translatable = ['title', 'body', 'meta_description', 'meta_keywords', 'excerpt'];
+    protected array $translatable = ['title', 'body', 'btnText', 'meta_description', 'meta_keywords', 'excerpt'];
 
     public const STATUS_ACTIVE = 'ACTIVE';
     public const STATUS_INACTIVE = 'INACTIVE';

@@ -38,6 +38,7 @@
                     <h2 class="ss_foot_head text-center">Contact Us</h2>
                     <ul class="text-center">
                         <li>Address : {{setting('site.address')}}</li>
+                        <li>{{setting('site.address_additional')}}</li>
                         <li>Email : {{setting('site.mail')}}</li>
                         <li>Phone : {{setting('site.phone')}}</li>
                         <li>Mobile : {{setting('site.mobile')}}</li>

@@ -101,6 +101,26 @@ class PagesTableSeeder extends Seeder
             ])->save();
         }
 
+        $dataRow = $this->dataRow($pageDataType, 'heading');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text',
+                'display_name' => "Heading",
+                'required'     => 1,
+                'browse'       => 0,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 3,
+                'details'      => [
+                    'display' => [
+                        'width' => '3',
+                    ],
+                ],
+            ])->save();
+        }
+
         $dataRow = $this->dataRow($pageDataType, 'excerpt');
         if (!$dataRow->exists) {
             $dataRow->fill([
@@ -313,7 +333,7 @@ class PagesTableSeeder extends Seeder
                 'type'         => 'image',
                 'display_name' => __('voyager::seeders.data_rows.page_image'),
                 'required'     => 0,
-                'browse'       => 1,
+                'browse'       => 0,
                 'read'         => 1,
                 'edit'         => 1,
                 'add'          => 1,
@@ -358,7 +378,7 @@ class PagesTableSeeder extends Seeder
                 'title'     => 'Title of website',
                 'excerpt'   => 'Hang the jib olly',
                 'btnText'   => 'Haqqimizda',
-                'btnColor'  => 'nope',
+                'btnColor'  => '/display_none',
                 'btnLink'   => '#',
                 'body'      => '<p>Vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.accusamus et iusto odio .</p>',
                 'image'            => 'pages/page1.jpg',
@@ -379,7 +399,7 @@ class PagesTableSeeder extends Seeder
                 'btnText'   => 'nope',
                 'btnColor'  => 'nope',
                 'btnLink'   => 'nope',
-                'excerpt'   => 'Hang the jib grog grog blossom grapple dance the hempen jig gangway pressgang bilge rat to go on account lugger. Nelsons folly gabion line draught scallywag fire ship gaff fluke fathom case shot. Sea Legs bilge rat sloop matey gabion long clothes run a shot across the bow Gold Road cog league.',
+                'excerpt'   => 'Hang the jib grog grog lly gabi',
                 'body'      => '<p>Hello World. Scallywag grog swab Cat o\'nine tails scuttle rigging hardtack cable nipper</p>',
                 'image'            => 'pages/page1.jpg',
                 'meta_description' => null,
@@ -398,10 +418,10 @@ class PagesTableSeeder extends Seeder
                 'author_id' => 0,
                 'title'     => 'Blog',
                 'excerpt'   => 'nope',
-                'body'      => 'nope',
-                'btnText'   => 'nope',
-                'btnColor'  => 'nope',
-                'btnLink'   => 'nope',
+                'body'      => '/display_none',
+                'btnText'   => '/display_none',
+                'btnColor'  => '/display_none',
+                'btnLink'   => '/display_none',
                 'image'            => 'pages/page1.jpg',
                 'meta_description' => null,
                 'meta_keywords'    => null,
@@ -439,7 +459,7 @@ class PagesTableSeeder extends Seeder
             $page->fill([
                 'author_id' => 0,
                 'title'     => 'About',
-                'excerpt'   => 'Lorem ipsumercitationem harum hic inventore molestiae nulla officia tempora tempore? Est iure necessitatibus perferendis vel?',
+                'excerpt'   => 'Lorem ipsumercitationem',
                 'body'   => '<p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consequatur eveniet quisquam vero. Animi dignissimos est exercitationem harum hic inventore molestiae nulla officia tempora tempore? Est iure necessitatibus perferendis vel?</span> </p>',
                 'image'            => 'pages/page1.jpg',
                 'meta_description' => null,
@@ -459,13 +479,33 @@ class PagesTableSeeder extends Seeder
             $page->fill([
                 'author_id' => 0,
                 'title'     => 'Contact',
-                'excerpt'   => 'Lorem ipsumercitationem harum hic inventore molestiae nulla officia tempora tempore? Est iure necessitatibus perferendis vel?',
+                'excerpt'   => 'Lorem ipsumercitationem',
                 'body'   => '<p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consequatur eveniet quisquam vero. Animi dignissimos est exercitationem harum hic inventore molestiae nulla officia tempora tempore? Est iure necessitatibus perferendis vel?</span> </p>',
                 'image'            => 'pages/page1.jpg',
                 'meta_description' => null,
                 'meta_keywords'    => null,
                 'status'           => 'ACTIVE',
                 'key'              => 'contact',
+                'btnText'   => 'nope',
+                'btnColor'  => 'nope',
+                'btnLink'   => 'nope',
+            ])->save();
+        }
+
+        $page = Page::firstOrNew([
+            'slug' => 'scope-of-application',
+        ]);
+        if (!$page->exists) {
+            $page->fill([
+                'author_id' => 0,
+                'title'     => 'Scope of application',
+                'excerpt'   => 'Lorem ipsumercitationem',
+                'body'   => '<p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consequatur eveniet quisquam vero. Animi dignissimos est exercitationem harum hic inventore molestiae nulla officia tempora tempore? Est iure necessitatibus perferendis vel?</span> </p>',
+                'image'            => 'pages/page1.jpg',
+                'meta_description' => null,
+                'meta_keywords'    => null,
+                'status'           => 'ACTIVE',
+                'key'              => 'applications',
                 'btnText'   => 'nope',
                 'btnColor'  => 'nope',
                 'btnLink'   => 'nope',

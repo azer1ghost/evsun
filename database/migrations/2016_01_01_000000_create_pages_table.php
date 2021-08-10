@@ -25,6 +25,7 @@ class CreatePagesTable extends Migration
             $table->text('video')->nullable();
             $table->text('body')->nullable();
             $table->string('image')->nullable();
+            $table->string('heading')->nullable();
             $table->string('slug')->unique();
             $table->text('meta_description')->nullable();
             $table->text('meta_keywords')->nullable();

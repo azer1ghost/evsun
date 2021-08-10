@@ -11,8 +11,8 @@ class Solutions extends Component
 
     public function __construct()
     {
-        $this->solutions = Cache::remember('footer_socials', config('cache.timeout'), function () {
-            return \App\Models\Solution::active()->orderBy('ordering')->get();
+        $this->solutions = Cache::remember('home_solutions', config('cache.timeout'), function () {
+            return \App\Models\Solution::select(['id', 'icon', 'title', 'slug', 'meta_description'])->active()->orderBy('ordering')->get();
         });
     }
 

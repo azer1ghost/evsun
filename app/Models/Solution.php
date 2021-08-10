@@ -14,7 +14,7 @@ class Solution extends Model
 {
     use Translatable, HasFactory, SoftDeletes;
 
-    protected array $translatable = ['title', 'detail', 'meta_title', 'meta_description', 'meta_keywords'];
+    protected array $translatable = ['title', 'detail', 'excerpt', 'meta_title', 'meta_description', 'meta_keywords'];
 
     public function scopeActive($query)
     {

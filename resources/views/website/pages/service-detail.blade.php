@@ -5,7 +5,7 @@
 @section('keywords', $service->getTranslatedAttribute('meta_keywords'))
 
 @section('content')
-    @include('website.components.breadcrumb', ['links' =>  [route('services') => "Xidmətlər", $service->getTranslatedAttribute('title') ]])
+    @include('website.components.breadcrumb', ['links' =>  [route('services') => meta('services')->get('title'), $service->getTranslatedAttribute('title') ]])
 
     <div class="container-fluid py-5">
         <div class="row">

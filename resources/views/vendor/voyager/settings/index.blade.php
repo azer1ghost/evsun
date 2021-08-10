@@ -224,15 +224,9 @@
         </div>
         @endif
     </div>
-
-
-
     <div class="page-content settings container-fluid">
-
             <div class="panel">
-
                 <div class="page-content settings container-fluid">
-
                     @if(auth()->user()->role_id === 1)
                     <ul class="nav nav-tabs">
                         @foreach($settings as $group => $setting)
@@ -243,12 +237,31 @@
                     </ul>
                     @endif
 
+                    <form id="instagram_user" method="POST" action="{{route('instagram.update')}}">
+                        @csrf
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                Instagram
+                            </h3>
+                            <div class="panel-actions" style="right: 15px !important;" >
+                                <button type="submit" form="instagram_user" id="instagramSave" class="btn btn-success">Save</button>
+                                @if(\App\Http\Controllers\InstagramController::hasInstagramNotAccess())
+                                    <a href="{{\App\Http\Controllers\InstagramController::getLink()}}" class="btn btn-primary">Verify</a>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="panel-body ">
+                            <div class="col-md-12 no-padding-left-right">
+                                @php($profile = \App\Http\Controllers\InstagramController::getProfile())
+                                <input type="text" class="form-control" name="instagram_username" id="instagram_username" data-value="{{$profile}}" value="{{$profile}}">
+                            </div>
+                        </div>
+                    </form>
 
                     <form class="tab-content" action="{{ route('voyager.settings.update') }}" id="settings" method="POST" enctype="multipart/form-data">
                             {{ method_field("PUT") }}
                             {{ csrf_field() }}
                             <input type="hidden" name="setting_tab" class="setting_tab" value="{{ $active }}" />
-
                             @foreach($settings as $group => $group_settings)
                             <div id="{{ \Illuminate\Support\Str::slug($group) }}" class="tab-pane fade in @if($group == $active) active @endif">
                                 @foreach($group_settings as $setting)

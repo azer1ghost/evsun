@@ -5,7 +5,7 @@
 @section('keywords', $solution->getTranslatedAttribute('meta_keywords'))
 
 @section('content')
-    @include('website.components.breadcrumb', ['links' =>  [route('solutions') => "Həllər", $solution->getTranslatedAttribute('title') ]]))
+    @include('website.components.breadcrumb', ['links' =>  [route('solutions') => meta('solutions')->get('title'), $solution->getTranslatedAttribute('title') ]]))
 
     <div class="container-fluid py-5">
         <div class="row">

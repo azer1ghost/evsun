@@ -2,11 +2,13 @@
 <section class="ss_section_five ss_section_sec_bg spacer_top spacer_bottom">
     <!--===== Section Five Start =====-->
     <div class="container-fluid">
-        <h3 class="ss_h3_center text-center">Xidmətlər</h3>
-        <h1 class="text-center mb-5">Ən keyfiyyətli həlləri təqdim edirik</h1>
+        @php
+            $meta = meta('services', ['heading']);
+        @endphp
+        <h3 class="ss_h3_center text-center">{{$meta->get('title')}}</h3>
+        <h1 class="text-center mb-5">{{$meta->get('heading')}}</h1>
         <div class="row">
             <!-- Service Area End -->
-
             @foreach([0, 1] as $serviceLoop)
                 <div class="col-xl-4 col-lg-6 @if(!$loop->first) order-xl-last mt-lg-0 mt-md-4 @endif">
                     <div class="ss_four_left">
@@ -38,7 +40,7 @@
             @endforeach
             <div class="col-xl-4 offset-xl-0 col-lg-6 offset-lg-3 d-flex align-items-center">
                 <div class="ss_easy_use" data-aos="fade-up">
-                    <img class="img-fluid" src="assets/images/energycar.png" alt="image" />
+                    <img class="img-fluid" src="{{asset(Voyager::image($meta->image()))}}" alt="{{$meta->get('title')}}" />
                 </div>
             </div>
         </div>

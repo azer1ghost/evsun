@@ -72,6 +72,13 @@ class WebsiteController extends Controller
         return view('website.pages.contact');
     }
 
+    public function about()
+    {
+        return view('website.pages.about')->with([
+            'page' => Page::key('about')->firstOrFail()
+        ]);
+    }
+
     public function page(Page $page){
         return view('website.pages.page', compact('page'));
     }

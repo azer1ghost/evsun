@@ -17,7 +17,7 @@ if (! function_exists('meta')) {
 
             public function get($column)
             {
-                return $this->page->{$column} ?? $this->key." ".__FUNCTION__;
+                return $this->page->getTranslatedAttribute($column) ?? "$this->key $column";
             }
 
             public function image()

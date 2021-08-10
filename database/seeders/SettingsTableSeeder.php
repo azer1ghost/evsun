@@ -83,7 +83,17 @@ class SettingsTableSeeder extends Seeder
                 'group'        => 'Site',
             ])->save();
         }
-
+        $setting = $this->findSetting('site.address_additional');
+        if (!$setting->exists) {
+            $setting->fill([
+                'display_name' => 'Address',
+                'value'        => 'Narimanov',
+                'details'      => '',
+                'type'         => 'text',
+                'order'        => 5,
+                'group'        => 'Site',
+            ])->save();
+        }
         $setting = $this->findSetting('site.phone');
         if (!$setting->exists) {
             $setting->fill([
