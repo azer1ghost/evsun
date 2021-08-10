@@ -9,7 +9,7 @@
 @section('keywords', $meta->get('meta_keywords'))
 
 @section('content')
-    @include('website.components.breadcrumb', ['links' =>  [$meta->get('title') ]])
+    @include('website.components.breadcrumb', ['image' => $meta->image(), 'links' =>  [$meta->get('title') ]])
 
 {{--    {!!$page->getTranslatedAttribute('body') !!}--}}
 {{--    {{$page->getTranslatedAttribute('title')}}--}}

@@ -13,10 +13,7 @@
 @endsection
 
 @section('content')
-
-    @include('website.components.breadcrumb', ['links' =>  [route('blog') => "Blog", $post->getTranslatedAttribute('title')]])
-
-
+    @include('website.components.breadcrumb', ['image' => meta('blog')->image(), 'links' =>  [route('blog') => "Blog", $post->getTranslatedAttribute('title')]])
     <div class="solar_blog_section pt-5">
         <div class="container">
             <div class="row">

@@ -18,7 +18,7 @@
 
 @section('content')
 
-    @include('website.components.breadcrumb', ['links' =>  [route('blog') => meta('blog')->get('title')]])
+    @include('website.components.breadcrumb', ['image' => $meta->image(), 'links' =>  [route('blog') => meta('blog')->get('title')]])
 
     <!-- Blog Page Area Start -->
     <div class="solar_blog_section pt-5">

@@ -6,7 +6,7 @@
 
 
 @section('content')
-    @include('website.components.breadcrumb', ['links' =>  [$page->getTranslatedAttribute('title') ]])
+    @include('website.components.breadcrumb', ['image' => $page->image, 'links' =>  [$page->getTranslatedAttribute('title') ]])
 
     <div class="solar_aboutus_page">
         <div class="container">

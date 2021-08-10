@@ -5,7 +5,7 @@
 @section('keywords', $solution->getTranslatedAttribute('meta_keywords'))
 
 @section('content')
-    @include('website.components.breadcrumb', ['links' =>  [route('solutions') => meta('solutions')->get('title'), $solution->getTranslatedAttribute('title') ]]))
+    @include('website.components.breadcrumb', ['image' => $solution->image, 'links' =>  [route('solutions') => meta('solutions')->get('title'), $solution->getTranslatedAttribute('title') ]]))
 
     <div class="container-fluid py-5">
         <div class="row">
@@ -23,12 +23,12 @@
                 </div>
             </div>
             <div class="col-lg-8">
-                <div class="text-left">
+                <div class="text-left mb-5">
                     <h1>{{$solution->getTranslatedAttribute('title')}}</h1>
                 </div>
-                <div class="service-image">
-                    <img src="{{asset(Voyager::image($solution->image))}}"/>
-                </div>
+{{--                <div class="service-image">--}}
+{{--                    <img src="{{asset(Voyager::image($solution->image))}}"/>--}}
+{{--                </div>--}}
                 <p>
                     {!!$solution->getTranslatedAttribute('detail')!!}
                 </p>
