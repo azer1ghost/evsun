@@ -40,8 +40,6 @@
     </head>
     <body>
 
-        @include('website.components.loader')
-
         @include('website.components.header')
 
         @yield('content')
@@ -76,6 +74,15 @@
                 });
             });
         </script>
+
+        <script>
+            $(window).on('load', function () {
+                // setTimeout(function () {
+                    $('.main-loader').hide();
+                // }, 1000)
+            })
+        </script>
+
         <script>
             AOS.init();
         </script>
