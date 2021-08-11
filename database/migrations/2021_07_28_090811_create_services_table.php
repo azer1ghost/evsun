@@ -41,6 +41,5 @@ class CreateServicesTable extends Migration
     {
         Schema::dropIfExists('services');
         Storage::deleteDirectory('services');
-
     }
 }

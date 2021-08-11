@@ -17,6 +17,7 @@ return [
 
     'default' => env('CACHE_DRIVER', 'file'),
     'timeout' => env('CACHE_TIMEOUT', 0),
+    'instagram_feed_time' => env('INSTAGRAM_CACHE_TIME', 0),
     /*
     |--------------------------------------------------------------------------
     | Cache Stores

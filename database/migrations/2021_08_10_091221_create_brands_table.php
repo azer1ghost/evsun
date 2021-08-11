@@ -33,5 +33,6 @@ class CreateBrandsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('brands');
+        Storage::deleteDirectory('brands');
     }
 }
