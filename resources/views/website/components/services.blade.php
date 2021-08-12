@@ -39,7 +39,7 @@
                 </div>
             @endforeach
             <div class="col-xl-4 offset-xl-0 col-lg-6 offset-lg-3 d-flex align-items-center">
-                <div class="ss_easy_use" data-aos="fade-up">
+                <div class="ss_easy_use" data-aos="zoom-in">
                     <img class="img-fluid" src="{{asset(Voyager::image($meta->image()))}}" alt="{{$meta->get('title')}}" />
                 </div>
             </div>

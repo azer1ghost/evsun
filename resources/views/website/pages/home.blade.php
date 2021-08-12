@@ -21,7 +21,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6">
-                    <div  data-aos="fade-up" class="ss_three_left">
+                    <div  data-aos="zoom-in" class="ss_three_left">
                         <img class="img-fluid" src="{!!asset(Voyager::image($meta->get('image')))!!}" alt="{{config('app.name')}}"/>
                     </div>
                 </div>
