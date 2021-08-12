@@ -10,8 +10,6 @@
 
 @section('content')
 
-    @include('website.components.loader')
-
     <x-slider/>
 
     <x-solutions/>
