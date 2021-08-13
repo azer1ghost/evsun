@@ -6090,3 +6090,7 @@ i {
         width: 200px;
     }
 }
+
+.ss_index_one {
+    transition: 0.4s linear !important;
+}
