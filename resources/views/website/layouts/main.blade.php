@@ -40,6 +40,8 @@
     </head>
     <body>
 
+        @include('website.components.loader')
+
         @include('website.components.header')
 
         @yield('content')
@@ -77,9 +79,9 @@
 
         <script>
             $(window).on('load', function () {
-                // setTimeout(function () {
+                setTimeout(function () {
                     $('.main-loader').hide();
-                // }, 1000)
+                }, 600)
             })
         </script>
 
