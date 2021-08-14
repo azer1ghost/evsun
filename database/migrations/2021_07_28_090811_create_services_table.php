@@ -17,6 +17,11 @@ class CreateServicesTable extends Migration
             $table->id();
             $table->string('icon')->nullable();
             $table->string('image')->nullable();
+            $table->string('banner')->nullable();
+            $table->string('btn_text')->nullable();
+            $table->string('btn_url')->nullable();
+            $table->string('dynamic_image')->nullable();
+            $table->string('heading')->nullable();
             $table->string('title')->nullable();
             $table->text('detail')->nullable();
             $table->string('meta_title')->nullable();
@@ -27,6 +32,7 @@ class CreateServicesTable extends Migration
             $table->boolean('in_menu')->default(true);
             $table->boolean('featured')->default(true);
             $table->integer('ordering')->nullable();
+            $table->foreignId('service_id')->nullable()->constrained()->nullOnDelete();
             $table->softDeletes();
             $table->timestamps();
         });

@@ -14,7 +14,15 @@ class Service extends Model
 {
     use Translatable, HasFactory, SoftDeletes;
 
-    protected array $translatable = ['title', 'detail', 'meta_title', 'meta_description', 'meta_keywords'];
+    protected array $translatable = [
+        'title',
+        'detail',
+        'meta_title',
+        'meta_description',
+        'meta_keywords',
+        'btn_text',
+        'heading',
+        ];
 
     public function scopeActive($query)
     {

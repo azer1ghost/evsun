@@ -107,7 +107,7 @@ class ServiceBreadMaker extends Seeder
                 'type'         => 'image',
                 'display_name' => "Image",
                 'required'     => 0,
-                'browse'       => 1,
+                'browse'       => 0,
                 'read'         => 1,
                 'edit'         => 1,
                 'add'          => 1,
@@ -117,13 +117,39 @@ class ServiceBreadMaker extends Seeder
                         'width' => '2',
                     ],
                     'resize' => [
-                        'width'  => '1000',
+                        'width'  => '800',
                         'height' => 'null',
                     ],
                     'quality'    => '90%',
                     'upsize'     => true,
                 ],
                 'order' => 3,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($pageDataType, 'banner');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'image',
+                'display_name' => "Banner",
+                'required'     => 0,
+                'browse'       => 0,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => [
+                    'display' => [
+                        'width' => '2',
+                    ],
+                    'resize' => [
+                        'width'  => '800',
+                        'height' => 'null',
+                    ],
+                    'quality'    => '90%',
+                    'upsize'     => true,
+                ],
+                'order' => 4,
             ])->save();
         }
 
@@ -138,7 +164,67 @@ class ServiceBreadMaker extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 4,
+                'order'        => 5,
+                'details'      => [
+                    'display' => [
+                        'width' => '3',
+                    ],
+                ],
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($pageDataType, 'btn_text');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text',
+                'display_name' => "Button text",
+                'required'     => 0,
+                'browse'       => 0,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 6,
+                'details'      => [
+                    'display' => [
+                        'width' => '3',
+                    ],
+                ],
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($pageDataType, 'btn_url');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text',
+                'display_name' => "Button Url",
+                'required'     => 0,
+                'browse'       => 0,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 7,
+                'details'      => [
+                    'display' => [
+                        'width' => '3',
+                    ],
+                ],
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($pageDataType, 'heading');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text',
+                'display_name' => "Heading",
+                'required'     => 0,
+                'browse'       => 0,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 8,
                 'details'      => [
                     'display' => [
                         'width' => '3',
@@ -153,7 +239,7 @@ class ServiceBreadMaker extends Seeder
                 'type'         => 'image',
                 'display_name' => 'Icon',
                 'required'     => 0,
-                'browse'       => 1,
+                'browse'       => 0,
                 'read'         => 1,
                 'edit'         => 1,
                 'add'          => 1,
@@ -169,7 +255,7 @@ class ServiceBreadMaker extends Seeder
                     'quality'    => '90%',
                     'upsize'     => true,
                 ],
-                'order' => 5,
+                'order' => 9,
             ])->save();
         }
 
@@ -184,7 +270,7 @@ class ServiceBreadMaker extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 6,
+                'order'        => 10,
                 'details'      => [
                     'display' => [
                         'width' => '5',
@@ -204,7 +290,7 @@ class ServiceBreadMaker extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 7,
+                'order'        => 11,
                 'details'      => [
                     'display' => [
                         'width' => '5',
@@ -224,7 +310,7 @@ class ServiceBreadMaker extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 8,
+                'order'        => 12,
                 'details'      => [
                     'display' => [
                         'width' => '4',
@@ -255,7 +341,7 @@ class ServiceBreadMaker extends Seeder
                         'width' => '3',
                     ],
                 ],
-                'order' => 9,
+                'order' => 13,
             ])->save();
         }
 
@@ -266,7 +352,7 @@ class ServiceBreadMaker extends Seeder
                 'type'         => 'checkbox',
                 'display_name' => __('voyager::seeders.data_rows.status'),
                 'required'     => 1,
-                'browse'       => 1,
+                'browse'       => 0,
                 'read'         => 1,
                 'edit'         => 1,
                 'add'          => 1,
@@ -277,7 +363,7 @@ class ServiceBreadMaker extends Seeder
                         'width' => '1',
                     ],
                 ],
-                'order' => 10,
+                'order' => 14,
             ])->save();
         }
 
@@ -287,7 +373,7 @@ class ServiceBreadMaker extends Seeder
                 'type'         => 'checkbox',
                 'display_name' => 'Show in Menu',
                 'required'     => 1,
-                'browse'       => 1,
+                'browse'       => 0,
                 'read'         => 1,
                 'edit'         => 1,
                 'add'          => 1,
@@ -298,7 +384,7 @@ class ServiceBreadMaker extends Seeder
                         'width' => '1',
                     ],
                 ],
-                'order' => 11,
+                'order' => 15,
             ])->save();
         }
 
@@ -308,7 +394,7 @@ class ServiceBreadMaker extends Seeder
                 'type'         => 'checkbox',
                 'display_name' => 'Featured',
                 'required'     => 1,
-                'browse'       => 1,
+                'browse'       => 0,
                 'read'         => 1,
                 'edit'         => 1,
                 'add'          => 1,
@@ -319,7 +405,7 @@ class ServiceBreadMaker extends Seeder
                         'width' => '1',
                     ],
                 ],
-                'order' => 12,
+                'order' => 16,
             ])->save();
         }
 
@@ -329,12 +415,12 @@ class ServiceBreadMaker extends Seeder
                 'type'         => 'number',
                 'display_name' => 'Order',
                 'required'     => 1,
-                'browse'       => 1,
+                'browse'       => 0,
                 'read'         => 1,
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 5,
+                'order'        => 17,
                 'details'      => [
                     'display' => [
                         'width' => '2',

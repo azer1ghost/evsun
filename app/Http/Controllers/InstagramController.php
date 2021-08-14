@@ -15,7 +15,7 @@ class InstagramController extends Controller
 
     public static function getProfile()
     {
-        return Profile::find(1)->username;
+        return optional(Profile::find(1))->getAttribute('username');
     }
 
     public static function getProfileLink()
@@ -26,7 +26,9 @@ class InstagramController extends Controller
 
     public static function hasInstagramNotAccess(): bool
     {
-        return ! Profile::find(1)->hasInstagramAccess();
+        if ($profile = Profile::find(1))
+        return ! $profile->hasInstagramAccess();
+        else return false;
     }
 
     public function complete(): string
@@ -45,7 +47,7 @@ class InstagramController extends Controller
 
     public function update(Request $request): RedirectResponse
     {
-        $instagramProfile = Profile::find(1);
+        $instagramProfile = Profile::firstOrCreate(['id' => 1]);
 
         if($instagramProfile->username != $request->input('instagram_username')){
             $instagramProfile->username = $request->input('instagram_username');

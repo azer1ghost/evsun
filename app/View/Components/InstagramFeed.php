@@ -5,10 +5,11 @@ namespace App\View\Components;
 use Cache;
 use Dymantic\InstagramFeed\Profile;
 use Illuminate\View\Component;
+use mysql_xdevapi\Exception;
 
 class InstagramFeed extends Component
 {
-    public $instagram_posts;
+    public $instagram_posts = null;
 
     public function __construct()
     {
@@ -18,16 +19,24 @@ class InstagramFeed extends Component
             return now();
         });
 
-        if($cache_time->diff(now())->d >= 1){
-            $this->instagram_posts = Profile::find(1)->refreshFeed(5)->toArray();
-        }else{
-            $this->instagram_posts = Profile::find(1)->feed(5)->toArray();
+        $instagram = Profile::find(1);
+
+        if ($instagram){
+            $instagram_posts = ($cache_time->diff(now())->d >= 1) ?
+                $instagram->refreshFeed(5) :
+                $instagram->feed(5);
+
+            $this->instagram_posts = $instagram_posts->toArray();
         }
 
     }
 
     public function render()
     {
-        return view('website.components.instagram-feed');
+        if ($this->instagram_posts){
+            return view('website.components.instagram-feed');
+        } else {
+            return "<h2 class='text-center text-danger border border-danger'>Please confirm your Instagram Account<h2>";
+        }
     }
 }
