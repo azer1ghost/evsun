@@ -22,8 +22,8 @@ class AttributeFactory extends Factory
     public function definition()
     {
         return [
-            'key' => $this->faker->unique()->slug(),
-            'name' => $this->faker->realText()
+            'key' => $this->faker->unique()->word(),
+            'name' => $this->faker->word()
         ];
     }
 }
