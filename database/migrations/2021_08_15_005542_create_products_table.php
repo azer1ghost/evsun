@@ -17,8 +17,11 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->string('serial')->unique();
-            $table->string('image')->nullable();
+            $table->string('images')->nullable();
+            $table->string('meta_description')->nullable();
+            $table->string('meta_keywords')->nullable();
             $table->string('price')->nullable();
+            $table->boolean('status')->default(true);
             $table->softDeletes();
             $table->timestamps();
         });
@@ -31,6 +34,7 @@ class CreateProductsTable extends Migration
      */
     public function down()
     {
+        Storage::deleteDirectory('products');
         Schema::dropIfExists('products');
     }
 }

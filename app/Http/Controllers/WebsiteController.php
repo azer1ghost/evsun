@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Page;
+use App\Models\Product;
 use App\Models\Service;
 use App\Models\Solution;
 use App\Models\User;
@@ -23,13 +24,21 @@ class WebsiteController extends Controller
     }
 
     public function serviceDetail(Service $service){
-        return view('website.pages.service-detail')
+
+        if ($service->getAttribute('advanced'))
+        {
+            $services = $service->subServices()->active()->select(['id', 'slug', 'title', 'icon'])->orderBy('ordering')->get();
+            $page = "service-main";
+        }
+        else {
+            $page = "service-detail";
+            $services = Service::query()->active()->select(['id', 'slug', 'title', 'icon'])->orderBy('ordering')->get();
+        }
+
+        return view("website.pages.{$page}")
             ->with([
                 'service' => $service,
-                'services' => Service::active()
-                    ->select(['id', 'slug', 'title', 'icon'])
-                    ->orderBy('ordering')
-                    ->get()
+                'services' => $services
             ]);
     }
 
@@ -94,6 +103,18 @@ class WebsiteController extends Controller
         ]));
 
         return back()->withSuccess('done');
+    }
+
+    public function products()
+    {
+        return view('website.pages.products')->with([
+            'products' => Product::active()->get()
+        ]);
+    }
+
+    public function productDetail(Product $product)
+    {
+        return view('website.pages.product-detail', compact('product'));
     }
 
     public function sitemap()

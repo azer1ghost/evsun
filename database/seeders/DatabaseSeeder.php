@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Attribute;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -30,5 +31,13 @@ class DatabaseSeeder extends Seeder
          \App\Models\Solution::factory(4)->create();
          \App\Models\Slide::factory(3)->create();
          \App\Models\Brand::factory(3)->create();
+
+         \App\Models\Product::factory()
+             ->count(5)
+             ->hasAttached(
+                 Attribute::factory()->count(3),
+                 ['value' => 'test']
+             )
+             ->create();
     }
 }

@@ -409,6 +409,27 @@ class ServiceBreadMaker extends Seeder
             ])->save();
         }
 
+        $dataRow = $this->dataRow($pageDataType, 'advanced');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'checkbox',
+                'display_name' => 'Advanced',
+                'required'     => 1,
+                'browse'       => 0,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 8,
+                'details'      => [
+                    'checked' => true,
+                    'display' => [
+                        'width' => '1',
+                    ],
+                ],
+                'order' => 16,
+            ])->save();
+        }
+
         $dataRow = $this->dataRow($pageDataType, 'ordering');
         if (!$dataRow->exists) {
             $dataRow->fill([

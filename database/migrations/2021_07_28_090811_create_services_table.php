@@ -31,6 +31,7 @@ class CreateServicesTable extends Migration
             $table->boolean('status')->default(true);
             $table->boolean('in_menu')->default(true);
             $table->boolean('featured')->default(true);
+            $table->boolean('advanced')->default(true);
             $table->integer('ordering')->nullable();
             $table->foreignId('service_id')->nullable()->constrained()->nullOnDelete();
             $table->softDeletes();

@@ -88,6 +88,23 @@ class WebsiteMenuSeeder extends Seeder
 
         $menuItem = MenuItem::firstOrNew([
             'menu_id' => $menu->id,
+            'title'   => 'Products',
+            'url'     => '',
+            'route'   => 'products',
+        ]);
+        if (!$menuItem->exists) {
+            $menuItem->fill([
+                'target'     => '_self',
+                'icon_class' => null,
+                'color'      => null,
+                'parent_id'  => null,
+                'order'      => 5,
+                'hard'    => true,
+            ])->save();
+        }
+
+        $menuItem = MenuItem::firstOrNew([
+            'menu_id' => $menu->id,
             'title'   => 'Tətbiq sahələri',
             'url'     => '/scope-of-application',
             'route'   => null
@@ -98,7 +115,7 @@ class WebsiteMenuSeeder extends Seeder
                 'icon_class' => null,
                 'color'      => null,
                 'parent_id'  => null,
-                'order'      => 5,
+                'order'      => 6,
                 'hard'       => true,
             ])->save();
         }
@@ -115,7 +132,7 @@ class WebsiteMenuSeeder extends Seeder
                 'icon_class' => null,
                 'color'      => null,
                 'parent_id'  => null,
-                'order'      => 6,
+                'order'      => 7,
                 'hard'    => true,
             ])->save();
         }
@@ -132,7 +149,7 @@ class WebsiteMenuSeeder extends Seeder
                 'icon_class' => null,
                 'color'      => null,
                 'parent_id'  => null,
-                'order'      => 7,
+                'order'      => 8,
                 'hard'    => true,
             ])->save();
         }

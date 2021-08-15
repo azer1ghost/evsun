@@ -409,6 +409,25 @@ class PagesTableSeeder extends Seeder
             ])->save();
         }
 
+        $page = Page::firstOrNew([
+            'slug' => 'products',
+        ]);
+        if (!$page->exists) {
+            $page->fill([
+                'author_id' => 0,
+                'title'     => 'Products',
+                'btnText'   => 'nope',
+                'btnColor'  => 'nope',
+                'btnLink'   => 'nope',
+                'excerpt'   => 'Hang the jib grog grog lly gabi',
+                'body'      => '<p>Hello World. Scallywag grog swab Cat o\'nine tails scuttle rigging hardtack cable nipper</p>',
+                'image'            => 'pages/page1.jpg',
+                'meta_description' => null,
+                'meta_keywords'    => null,
+                'status'           => 'ACTIVE',
+                'key'              => 'products',
+            ])->save();
+        }
 
         $page = Page::firstOrNew([
             'slug' => 'blog',

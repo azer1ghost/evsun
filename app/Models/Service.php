@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use TCG\Voyager\Traits\Translatable;
 
@@ -15,17 +16,21 @@ class Service extends Model
     use Translatable, HasFactory, SoftDeletes;
 
     protected array $translatable = [
-        'title',
-        'detail',
-        'meta_title',
-        'meta_description',
-        'meta_keywords',
-        'btn_text',
-        'heading',
+            'title',
+            'detail',
+            'meta_title',
+            'meta_description',
+            'meta_keywords',
+            'btn_text',
+            'heading',
         ];
 
     public function scopeActive($query)
     {
         return $query->where('status', true);
+    }
+    public function subServices(): BelongsToMany
+    {
+        return $this->belongsToMany(__CLASS__);
     }
 }
