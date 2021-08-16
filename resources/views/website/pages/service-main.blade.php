@@ -44,12 +44,12 @@
         <div class="heler-alt-content pt-5">
             <div class="row">
                 <div class="col-lg-4 col-12 col-md-6">
-                    <div class="heller-list-left">
+                    <div data-aos-delay="300" data-aos-duration="800" data-aos="fade-right" class="heller-list-left">
                         <ul>
                             <li>
                                 <a href="#">
                                     <div class="d-flex align-items-center">
-                                        <span> 01 </span>
+                                        <span> <i class="fas fa-charging-station"></i> </span>
                                         <h2>Yuksek keyfiyyet</h2>
                                     </div>
                                     <p>Sed sed condimentum massa. Morbi auctor vestibulum urna, ut interdum.</p>
@@ -58,7 +58,7 @@
                             <li>
                                 <a href="#">
                                     <div class="d-flex align-items-center">
-                                        <span> 02 </span>
+                                        <span> <i class="fas fa-radiation-alt"></i> </span>
                                         <h2>Yuksek keyfiyyet</h2>
                                     </div>
                                     <p>Sed sed condimentum massa. Morbi auctor vestibulum urna, ut interdum.</p>
@@ -67,7 +67,7 @@
                             <li>
                                 <a href="#">
                                     <div class="d-flex align-items-center">
-                                        <span> 02 </span>
+                                        <span> <i class="fas fa-charging-station"></i> </span>
                                         <h2>Yuksek keyfiyyet</h2>
                                     </div>
                                     <p>Sed sed condimentum massa. Morbi auctor vestibulum urna, ut interdum.</p>
@@ -76,17 +76,17 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-4 col-12 col-md-6 heller-alt-img-div">
+                <div data-aos-delay="300" data-aos-duration="800" data-aos="zoom-in" class="col-lg-4 col-12 col-md-6 heller-alt-img-div">
                     <img class="heller-alt-img" src="http://efuel.like-themes.com/wp-content/uploads/2018/08/advantage-1-1.png" />
                     <img width="100%" src="http://efuel.like-themes.com/wp-content/uploads/2018/08/advantage-bg.png" srcset="http://efuel.like-themes.com/wp-content/uploads/2018/08/advantage-bg.png 568w, http://efuel.like-themes.com/wp-content/uploads/2018/08/advantage-bg-150x150.png 150w, http://efuel.like-themes.com/wp-content/uploads/2018/08/advantage-bg-300x300.png 300w, http://efuel.like-themes.com/wp-content/uploads/2018/08/advantage-bg-340x340.png 340w, http://efuel.like-themes.com/wp-content/uploads/2018/08/advantage-bg-100x100.png 100w, http://efuel.like-themes.com/wp-content/uploads/2018/08/advantage-bg-24x24.png 24w, http://efuel.like-themes.com/wp-content/uploads/2018/08/advantage-bg-48x48.png 48w, http://efuel.like-themes.com/wp-content/uploads/2018/08/advantage-bg-96x96.png 96w, http://efuel.like-themes.com/wp-content/uploads/2018/08/advantage-bg-58x58.png 58w" sizes="(max-width: 568px) 100vw, 568px">
                 </div>
-                <div class="col-lg-4 col-12 col-md-6">
+                <div data-aos-delay="300" data-aos-duration="800" data-aos="fade-left" class="col-lg-4 col-12 col-md-6">
                     <div class="heller-list-right">
                         <ul>
                             <li>
                                 <a href="#">
                                     <div class="d-flex align-items-center">
-                                        <span> 01 </span>
+                                        <span> <i class="fas fa-charging-station"></i> </span>
                                         <h2>Yuksek keyfiyyet</h2>
                                     </div>
                                     <p>Sed sed condimentum massa. Morbi auctor vestibulum urna, ut interdum.</p>
@@ -95,7 +95,7 @@
                             <li>
                                 <a href="#">
                                     <div class="d-flex align-items-center">
-                                        <span> 02 </span>
+                                        <span> <i class="fas fa-charging-station"></i> </span>
                                         <h2>Yuksek keyfiyyet</h2>
                                     </div>
                                     <p>Sed sed condimentum massa. Morbi auctor vestibulum urna, ut interdum.</p>
@@ -104,7 +104,7 @@
                             <li>
                                 <a href="#">
                                     <div class="d-flex align-items-center">
-                                        <span> 02 </span>
+                                        <span> <i class="fas fa-charging-station"></i> </span>
                                         <h2>Yuksek keyfiyyet</h2>
                                     </div>
                                     <p>Sed sed condimentum massa. Morbi auctor vestibulum urna, ut interdum.</p>
