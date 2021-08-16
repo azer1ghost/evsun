@@ -91,6 +91,29 @@ class AttributeBreadMaker extends Seeder
             ])->save();
         }
 
+        $dataRow = $this->dataRow($pageDataType, 'key');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text',
+                'display_name' => "Key",
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 6,
+                'details'      => [
+                    'validation' => [
+                        'rule'  => 'unique:attributes,key',
+                    ],
+                    'display' => [
+                        'width' => '3',
+                    ],
+                ],
+            ])->save();
+        }
+
     }
 
     protected function dataRow($type, $field)

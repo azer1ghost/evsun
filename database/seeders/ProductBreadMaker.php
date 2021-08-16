@@ -122,7 +122,7 @@ class ProductBreadMaker extends Seeder
         $dataRow = $this->dataRow($pageDataType, 'images');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'images',
+                'type'         => 'multiple_images',
                 'display_name' => "Images",
                 'required'     => 0,
                 'browse'       => 0,
