@@ -12,4 +12,9 @@ class Attribute extends Model
     use HasFactory, Translatable, SoftDeletes;
 
     protected array $translatable = ['name'];
+
+    public function scopeActive($query)
+    {
+        return $query->where('status', true);
+    }
 }

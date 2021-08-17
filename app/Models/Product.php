@@ -24,6 +24,11 @@ class Product extends Model
         return $this->belongsToMany(Attribute::class)->withPivot('value');
     }
 
+    public function availableAttributes()
+    {
+        return Attribute::active()->pluck('name', 'id');
+    }
+
     public function scopeActive($query)
     {
         return $query->where('status', true);
