@@ -6352,6 +6352,18 @@ i {
     transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+.heller-left{
+    animation: animateLeftText 1.7s cubic-bezier(0.445, 0.05, 0.55, 0.95) !important;
+}
+
+@keyframes animateLeftText{
+    from{
+        transform: translate(-100vw,0px)
+    }to{
+        transform: translate(0px,0px)
+    }
+}
+
 .heller-left h1{
     font-size: 46px !important;
     margin-bottom: 30px;
@@ -6398,7 +6410,7 @@ i {
     right: -36vw;
     top: -66px;
     width: 1080px;
-    animation: animeRightImg 1.7s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    animation: animeRightImg 1.7s cubic-bezier(0.445, 0.05, 0.55, 0.95) !important;
     animation-iteration-count: 1;
 }
 
@@ -6406,7 +6418,7 @@ i {
     from{
         right: -100vw;
     }to{
-        right: -35vw;
+        right: -36vw;
     }
 }
 
@@ -6456,15 +6468,16 @@ i {
     }
 }
 
-@media screen and (min-width:1400px){
+/* @media screen and (min-width:1401px){
     .heller-img{
         position: absolute !important;
         right: -35vw !important; 
         width: 1050px !important;
-        animation: animeRightImg 1.7s cubic-bezier(0.445, 0.05, 0.55, 0.95) !important;
+        animation: animeRightImg2 1.7s cubic-bezier(0.445, 0.05, 0.55, 0.95) !important;
         animation-iteration-count: 1 !important;
     }
-}
+
+} */
 
 @media screen and (min-width:2000px){
     .heller-img{
@@ -6473,6 +6486,14 @@ i {
         width: 1100px !important;
         animation: animeRightImg 1.7s cubic-bezier(0.445, 0.05, 0.55, 0.95) !important;
         animation-iteration-count: 1 !important;
+    }
+
+    @keyframes animeRightImg{
+        from{
+            right: -100vw;
+        }to{
+            right: -20vw;
+        }
     }
 
     
