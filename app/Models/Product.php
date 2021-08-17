@@ -19,6 +19,8 @@ class Product extends Model
         'meta_keywords',
     ];
 
+    protected $with = ['attributes'];
+
     public function attributes(): BelongsToMany
     {
         return $this->belongsToMany(Attribute::class)->withPivot('value');

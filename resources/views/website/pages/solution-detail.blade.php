@@ -41,6 +41,5 @@
             </div>
         </div>
     </div>
-    <a href="#" class="ltx-go-top ltx-go-top-img floating show"><img width="18" height="28" src="http://efuel.like-themes.com/wp-content/uploads/2018/08/go-top.png" class="attachment-full size-full" alt=""><span>go top</span></a>
 </section>
 @endsection
