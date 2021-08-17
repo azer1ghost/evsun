@@ -4,9 +4,22 @@
 @section('description', $service->getTranslatedAttribute('meta_description'))
 @section('keywords', $service->getTranslatedAttribute('meta_keywords'))
 
+@section('styles')
+    <style>
+
+    </style>
+@endsection
+
+@section('scripts')
+    <script>
+
+    </script>
+@endsection
+
+
 @section('content')
 
-    @if(true)
+    @if(false)
         @include('website.components.breadcrumb', ['image' => $service->image, 'links' => [route('services') => meta('services')->get('title'), $service->getTranslatedAttribute('title') ]])
     @endif
 
