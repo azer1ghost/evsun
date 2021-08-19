@@ -17,6 +17,7 @@
             this.brands_slider();
             this.heller_slider();
             this.about_slider();
+            this.prod_slider();
             this.testimonial_slider();
             this.ss_click();
             this.services_page_slider();
@@ -58,6 +59,35 @@
                     },
                     992: {
                         slidesPerView: 2,
+                        spaceBetween: 30,
+                    },
+                },
+            });
+        },
+        prod_slider: function () {
+            var swiper = new Swiper(".prod-page-slider .swiper-container", {
+                slidesPerView: 5,
+                spaceBetween: 30,
+                speed: 1000,
+                autoplay: {
+                    delay: 2000,
+                },
+                loop: true,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                    },
+                    480: {
+                        slidesPerView: 1,
+                        spaceBetween: 20,
+                    },
+                    992: {
+                        slidesPerView: 3,
                         spaceBetween: 30,
                     },
                 },

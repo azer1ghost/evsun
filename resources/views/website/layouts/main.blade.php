@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <!-- Stellar Nav CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/stellarnav.min.css') }}">
-
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" crossorigin="anonymous" />
@@ -72,6 +72,8 @@
     <script src="{{ asset('assets/js/stellarnav.min.js') }}"></script>
     <!-- aos JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
     <script type="text/javascript">
         jQuery(document).ready(function($) {
