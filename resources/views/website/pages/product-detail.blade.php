@@ -74,17 +74,17 @@
 @include('website.components.breadcrumb', ['image' => meta('products')->image(), 'links' => array(route('products') => meta('products')->get('title'), str_limit($product->getTranslatedAttribute('name'), 20))])
 @endif
 
-<div class="p-5">
+<div class="p-2 p-lg-4">
     <div class="row">
         <div class="col-lg-5 col-12">
             <div class="slider slider-single">
-                <div class="slider-for-img">
+                <div data-toggle="modal" data-target=".bd-example-modal-lg" class="slider-for-img">
                     <img src="https://tesla-cdn.thron.com/delivery/public/image/tesla/088d64b2-afcc-43c6-9fa1-8f37e567a3d0/bvlatuR/std/2880x2400/desktop_model_3_v2" />
                 </div>
-                <div class="slider-for-img">
+                <div data-toggle="modal" data-target=".bd-example-modal-lg" class="slider-for-img">
                     <img src="https://img.phonandroid.com/2021/07/tesla-model-s-retard.jpg" />
                 </div>
-                <div class="slider-for-img">
+                <div data-toggle="modal" data-target=".bd-example-modal-lg" class="slider-for-img">
                     <img src="https://1news.az/images/articles/2015/01/22/thumb_20150122054323314.jpg?2021-02-17+09%3A23%3A27" />
                 </div>
             </div>
@@ -205,6 +205,25 @@
                                 <a data-toggle="modal" data-target=".bd-example-modal-lg" class="prod-view" href="#"><i class="fas fa-search"></i> </a>
                                 <a class="prod-link" href="#"><i class="fas fa-link"></i> </a>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="prod-modal-image">
+                            <img src="https://tesla-cdn.thron.com/delivery/public/image/tesla/088d64b2-afcc-43c6-9fa1-8f37e567a3d0/bvlatuR/std/2880x2400/desktop_model_3_v2" />
                         </div>
                     </div>
                 </div>
