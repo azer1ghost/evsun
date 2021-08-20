@@ -12,6 +12,7 @@ class Attribute extends Model
     use HasFactory, Translatable, SoftDeletes;
 
     protected array $translatable = ['name'];
+    protected $fillable = ['name'];
 
     public function scopeActive($query)
     {

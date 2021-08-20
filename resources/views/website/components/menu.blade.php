@@ -45,7 +45,7 @@
 
                 @if($item->route == "services" || $item->route == "solutions")
                     <ul>
-                       @foreach(('App\Models\\'.ucfirst(substr($item->route, 0, -1)))::select('title', 'slug')->where('in_menu', true)->get() as $data)
+                       @foreach(('App\Models\\'.ucfirst(substr($item->route, 0, -1)))::select('title', 'slug')->where('in_menu', true)->orderBy('ordering')->get() as $data)
                             <li class="{{ $isActive }}">
                                 <a href="{{ route(substr($item->route, 0, -1), $data->slug) }}">{{$data->title}}</a>
                             </li>

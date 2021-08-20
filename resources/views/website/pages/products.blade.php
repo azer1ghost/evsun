@@ -11,7 +11,7 @@ $meta = meta('products');
 @section('content')
 
 @if(true)
-@include('website.components.breadcrumb', ['image' => $meta->image(), 'links' => array($meta->get('title')) ])
+    @include('website.components.breadcrumb', ['image' => $meta->image(), 'links' => array($meta->get('title')) ])
 @endif
 
 
@@ -19,67 +19,60 @@ $meta = meta('products');
     <div class="row">
         <div class="col-lg-3">
             <div class="filter-sec">Filter</div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Search">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button">
+                        <i class="fal fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            <hr>
+            <div class="filter-radio ">
+                <p class="filter-head"> Kateqoriyalar </p>
+                <ul class="list-group">
+                    <a href="">
+                        <li class="list-group-item">
+                            Mavi
+                        </li>
+                    </a>
+                    <a href="">
+                        <li class="list-group-item">
+                            Qara
+                        </li>
+                    </a>
+                </ul>
+            </div>
+            <hr>
             <div class="filter-check">
                 <p class="filter-head"> Xüsusiyyətlər </p>
                 <ul>
-                    <li>
-                        <p>Mavi </p>
-                        <input type="checkbox" name="check" />
+                    @foreach($attributes as $attribute)
+                    <li class="btn col-6">
+                        <input type="checkbox" name="check" class="mr-3"/>
+                        {{$attribute->name}}
                     </li>
-                    <li>
-                        <p>Qırmızı </p>
-                        <input type="checkbox" name="check" />
-                    </li>
-                    <li>
-                        <p>Sarı </p>
-                        <input type="checkbox" name="check" />
-                    </li>
-                    <li>
-                        <p>Boz </p>
-                        <input type="checkbox" name="check" />
-                    </li>
-                    <li>
-                        <p>Qara </p>
-                        <input type="checkbox" name="check" />
-                    </li>
-                    <li>
-                        <p>Qara </p>
-                        <input type="checkbox" name="check" />
-                    </li>
-                </ul>
-            </div>
-            <div class="filter-radio">
-                <p class="filter-head"> Xüsusiyyətlər </p>
-                <ul>
-                    <li>
-                        <p>Mavi </p>
-                        <input type="radio" name="check" />
-                    </li>
-                    <li>
-                        <p>Qırmızı </p>
-                        <input type="radio" name="check" />
-                    </li>
-                    <li>
-                        <p>Sarı </p>
-                        <input type="radio" name="check" />
-                    </li>
-                    <li>
-                        <p>Boz </p>
-                        <input type="radio" name="check" />
-                    </li>
-                    <li>
-                        <p>Qara </p>
-                        <input type="radio" name="check" />
-                    </li>
-                    <li>
-                        <p>Qara </p>
-                        <input type="radio" name="check" />
-                    </li>
+                    @endforeach
                 </ul>
             </div>
         </div>
         <div class="col-lg-9">
             <div class="row">
+                <div class="col-12">
+                    <ul class="nav justify-content-between">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">154 items avaliable</a>
+                        </li>
+                        <li class="nav-item">
+                            <select name="hard-select" class="form-control">
+                                <option value="">Select Any filter</option>
+                                <option value="">option 1</option>
+                                <option value="">option 2</option>
+                                <option value="">option 3</option>
+                            </select>
+                        </li>
+                    </ul>
+                </div>
                 @foreach($products as $product)
                 <div class="col-xl-3 col-lg-4 col-12 col-md-4 py-3">
                     <div class="product-itm">
@@ -100,7 +93,6 @@ $meta = meta('products');
         </div>
     </div>
 
-
     <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -117,6 +109,7 @@ $meta = meta('products');
             </div>
         </div>
     </div>
+
 </div>
 
 @endsection

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Attribute;
 use App\Models\Page;
 use App\Models\Product;
 use App\Models\Service;
@@ -27,18 +28,18 @@ class WebsiteController extends Controller
 
         if ($service->getAttribute('advanced'))
         {
-            $services = $service->subServices()->active()->select(['id', 'slug', 'title', 'icon'])->orderBy('ordering')->get();
+            $services = $service->subServices();
             $page = "service-main";
         }
         else {
             $page = "service-detail";
-            $services = Service::query()->active()->select(['id', 'slug', 'title', 'icon'])->orderBy('ordering')->get();
+            $services = Service::query();
         }
 
         return view("website.pages.{$page}")
             ->with([
                 'service' => $service,
-                'services' => $services
+                'services' => $services->active()->select(['id', 'slug', 'title', 'icon'])->orderBy('ordering')->get()
             ]);
     }
 
@@ -108,7 +109,8 @@ class WebsiteController extends Controller
     public function products()
     {
         return view('website.pages.products')->with([
-            'products' => Product::active()->get()
+            'products' => Product::active()->get(),
+            'attributes' => Attribute::active()->get(),
         ]);
     }
 

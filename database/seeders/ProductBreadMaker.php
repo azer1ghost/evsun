@@ -27,7 +27,7 @@ class ProductBreadMaker extends Seeder
                 'display_name_plural'   => 'Products',
                 'icon'                  => 'fal fa-truck-loading',
                 'model_name'            => 'App\\Models\\Product',
-                'controller'            => '',
+                'controller'            => 'App\\Http\\Controllers\\Voyager\\ProductController',
                 'generate_permissions'  => 1,
                 'description'           => '',
                 'details'               =>
