@@ -12,7 +12,11 @@ class Services extends Component
     public function __construct()
     {
         $this->services = Cache::remember("homepage_services", config('cache.timeout'), function (){
-            return \App\Models\Service::select(['id', 'title', 'slug', 'icon', 'meta_description'])->active()->orderBy('ordering')->get();
+            return \App\Models\Service::select(['id', 'title', 'slug', 'icon', 'meta_description', 'ordering'])
+                ->whereNull('service_id')
+                ->active()
+                ->orderBy('ordering')
+                ->get();
         });
 
     }

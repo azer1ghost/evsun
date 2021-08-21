@@ -10,7 +10,7 @@
         <div class="row">
             <!-- Service Area End -->
             @foreach([0, 1] as $serviceLoop)
-            <div class="col-xl-4 col-lg-6 @if(!$loop->first) order-xl-last mt-lg-0 mt-md-4 @endif">
+            <div class="col-xl-4 col-lg-6 @if(!$loop->last) order-xl-last mt-lg-0 mt-md-4 @endif">
                 <div class="ss_four_left">
                     @foreach($services as $service)
                     @if(in_array($loop->iteration/$loop->parent->iteration, [1,2,3]))

@@ -153,6 +153,32 @@ class ServiceBreadMaker extends Seeder
             ])->save();
         }
 
+        $dataRow = $this->dataRow($pageDataType, 'dynamic_image');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'image',
+                'display_name' => "Dynamic Image",
+                'required'     => 0,
+                'browse'       => 0,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => [
+                    'display' => [
+                        'width' => '2',
+                    ],
+                    'resize' => [
+                        'width'  => '800',
+                        'height' => 'null',
+                    ],
+                    'quality'    => '90%',
+                    'upsize'     => true,
+                ],
+                'order' => 5,
+            ])->save();
+        }
+
         $dataRow = $this->dataRow($pageDataType, 'title');
         if (!$dataRow->exists) {
             $dataRow->fill([
@@ -164,7 +190,7 @@ class ServiceBreadMaker extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 5,
+                'order'        => 6,
                 'details'      => [
                     'display' => [
                         'width' => '3',
@@ -184,7 +210,7 @@ class ServiceBreadMaker extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 6,
+                'order'        => 7,
                 'details'      => [
                     'display' => [
                         'width' => '3',
@@ -204,7 +230,7 @@ class ServiceBreadMaker extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 7,
+                'order'        => 8,
                 'details'      => [
                     'display' => [
                         'width' => '3',
@@ -224,7 +250,7 @@ class ServiceBreadMaker extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 8,
+                'order'        => 9,
                 'details'      => [
                     'display' => [
                         'width' => '3',
@@ -255,7 +281,7 @@ class ServiceBreadMaker extends Seeder
                     'quality'    => '90%',
                     'upsize'     => true,
                 ],
-                'order' => 9,
+                'order' => 10,
             ])->save();
         }
 
@@ -270,7 +296,7 @@ class ServiceBreadMaker extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 10,
+                'order'        => 11,
                 'details'      => [
                     'display' => [
                         'width' => '5',
@@ -290,7 +316,7 @@ class ServiceBreadMaker extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 11,
+                'order'        => 12,
                 'details'      => [
                     'display' => [
                         'width' => '5',
@@ -310,7 +336,7 @@ class ServiceBreadMaker extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 12,
+                'order'        => 13,
                 'details'      => [
                     'display' => [
                         'width' => '4',
@@ -341,7 +367,7 @@ class ServiceBreadMaker extends Seeder
                         'width' => '3',
                     ],
                 ],
-                'order' => 13,
+                'order' => 14,
             ])->save();
         }
 
@@ -363,7 +389,7 @@ class ServiceBreadMaker extends Seeder
                         'width' => '1',
                     ],
                 ],
-                'order' => 14,
+                'order' => 15,
             ])->save();
         }
 
@@ -384,7 +410,7 @@ class ServiceBreadMaker extends Seeder
                         'width' => '1',
                     ],
                 ],
-                'order' => 15,
+                'order' => 16,
             ])->save();
         }
 
@@ -405,7 +431,7 @@ class ServiceBreadMaker extends Seeder
                         'width' => '1',
                     ],
                 ],
-                'order' => 16,
+                'order' => 17,
             ])->save();
         }
 
@@ -426,7 +452,7 @@ class ServiceBreadMaker extends Seeder
                         'width' => '1',
                     ],
                 ],
-                'order' => 16,
+                'order' => 18,
             ])->save();
         }
 
@@ -441,7 +467,7 @@ class ServiceBreadMaker extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 17,
+                'order'        => 19,
                 'details'      => [
                     'display' => [
                         'width' => '2',
@@ -450,6 +476,101 @@ class ServiceBreadMaker extends Seeder
             ])->save();
         }
 
+        $dataRow = $this->dataRow($pageDataType, 'service_id');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'number',
+                'display_name' => 'Order',
+                'required'     => 0,
+                'browse'       => 0,
+                'read'         => 0,
+                'edit'         => 1,
+                'add'          => 0,
+                'delete'       => 0,
+                'order'        => 19,
+                'details'      => [
+                    'display' => [
+                        'width' => '2',
+                    ],
+                ],
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($pageDataType, 'service_belongsto_service_relationship');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'relationship',
+                'display_name' => 'Parent Service',
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 20,
+                'details'      => [
+                    'model' => 'App\\Models\\Service',
+                    'table' => 'services',
+                    'type'  => 'belongsTo',
+                    'column' => 'service_id',
+                    'key' => 'id',
+                    'label' => 'title',
+                    'pivot_table' => 'attribute_product',
+                    'pivot' => '0',
+                    'taggable' => '0',
+                    'display' => [
+                        'width' => '3',
+                    ],
+                ],
+            ])->save();
+        }
+
+
+
+        $dataRow = $this->dataRow($pageDataType, 'created_at');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'timestamp',
+                'display_name' => __('voyager::seeders.data_rows.created_at'),
+                'required'     => 0,
+                'browse'       => 0,
+                'read'         => 0,
+                'edit'         => 0,
+                'add'          => 0,
+                'delete'       => 0,
+                'order'        => 21,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($pageDataType, 'updated_at');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'timestamp',
+                'display_name' => __('voyager::seeders.data_rows.updated_at'),
+                'required'     => 0,
+                'browse'       => 0,
+                'read'         => 0,
+                'edit'         => 0,
+                'add'          => 0,
+                'delete'       => 0,
+                'order'        => 22,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($pageDataType, 'deleted_at');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'timestamp',
+                'display_name' => __('voyager::seeders.data_rows.updated_at'),
+                'required'     => 0,
+                'browse'       => 0,
+                'read'         => 0,
+                'edit'         => 0,
+                'add'          => 0,
+                'delete'       => 0,
+                'order'        => 23,
+            ])->save();
+        }
 
     }
 

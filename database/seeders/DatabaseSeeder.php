@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Attribute;
+use App\Models\Service;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -27,7 +28,16 @@ class DatabaseSeeder extends Seeder
             SocialsTableSeeder::class
         ]);
 
-         \App\Models\Service::factory(6)->create();
+         \App\Models\Service::factory(4)->create();
+
+         \App\Models\Service::factory(2)->state([
+             'advanced' => true,
+         ])->has(
+             Service::factory(6)->state([
+                 'in_menu' => false,
+             ]), 'subServices'
+         )->create();
+
          \App\Models\Solution::factory(4)->create();
          \App\Models\Slide::factory(3)->create();
          \App\Models\Brand::factory(3)->create();

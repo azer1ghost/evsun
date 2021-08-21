@@ -33,7 +33,7 @@ class WebsiteController extends Controller
         }
         else {
             $page = "service-detail";
-            $services = Service::query();
+            $services = Service::whereNull('service_id');
         }
 
         return view("website.pages.{$page}")
