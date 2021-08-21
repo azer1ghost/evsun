@@ -65,6 +65,14 @@
 
         $('.slider-single').slick('slickGoTo', goToSingleSlide);
     });
+
+    $('#lightSlider').lightSlider({
+        gallery: true,
+        item: 1,
+        loop: true,
+        slideMargin: 0,
+        thumbItem: 9
+    });
 </script>
 @endsection
 
@@ -76,16 +84,28 @@
 
 <div class="p-2 p-lg-4">
     <div class="row">
-        <div class="col-lg-5 col-12">
+        <div class="col-lg-5">
+            <div class="prod-slideri">
+                <ul id="lightSlider">
+                    <li data-thumb="https://s1.1zoom.me/prev/586/Geometry_Tracery_Texture_Blue_Light_Blue_585841_600x340.jpg">
+                        <img data-toggle="modal" data-target=".bd-example-modal-lg" src="https://s1.1zoom.me/prev/586/Geometry_Tracery_Texture_Blue_Light_Blue_585841_600x340.jpg" />
+                    </li>
+                    <li data-thumb="https://s1.1zoom.me/prev/470/469089.jpg">
+                        <img data-toggle="modal" data-target=".bd-example-modal-lg" src="https://s1.1zoom.me/prev/470/469089.jpg" />
+                    </li>
+                    <li data-thumb="https://www.heesenyachts.com/wp-content/uploads/2021/01/19650-Aura-ext-600x340.jpg">
+                        <img data-toggle="modal" data-target=".bd-example-modal-lg" src="https://www.heesenyachts.com/wp-content/uploads/2021/01/19650-Aura-ext-600x340.jpg" />
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- <div class="col-lg-5 col-12">
             <div class="slider slider-single">
                 <div data-toggle="modal" data-target=".bd-example-modal-lg" class="slider-for-img">
                     <img src="https://tesla-cdn.thron.com/delivery/public/image/tesla/088d64b2-afcc-43c6-9fa1-8f37e567a3d0/bvlatuR/std/2880x2400/desktop_model_3_v2" />
                 </div>
                 <div data-toggle="modal" data-target=".bd-example-modal-lg" class="slider-for-img">
-                    <img src="https://img.phonandroid.com/2021/07/tesla-model-s-retard.jpg" />
-                </div>
-                <div data-toggle="modal" data-target=".bd-example-modal-lg" class="slider-for-img">
-                    <img src="https://1news.az/images/articles/2015/01/22/thumb_20150122054323314.jpg?2021-02-17+09%3A23%3A27" />
+                    <img src="https://tesla-cdn.thron.com/delivery/public/image/tesla/088d64b2-afcc-43c6-9fa1-8f37e567a3d0/bvlatuR/std/2880x2400/desktop_model_3_v2" />
                 </div>
             </div>
             <div class="slider slider-nav">
@@ -93,13 +113,10 @@
                     <img src="https://tesla-cdn.thron.com/delivery/public/image/tesla/088d64b2-afcc-43c6-9fa1-8f37e567a3d0/bvlatuR/std/2880x2400/desktop_model_3_v2" />
                 </div>
                 <div class="slider-nav-img">
-                    <img src="https://img.phonandroid.com/2021/07/tesla-model-s-retard.jpg" />
-                </div>
-                <div class="slider-nav-img">
-                    <img src="https://1news.az/images/articles/2015/01/22/thumb_20150122054323314.jpg?2021-02-17+09%3A23%3A27" />
+                    <img src="https://tesla-cdn.thron.com/delivery/public/image/tesla/088d64b2-afcc-43c6-9fa1-8f37e567a3d0/bvlatuR/std/2880x2400/desktop_model_3_v2" />
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="col-lg-7  col-12">
             <div class="prod-page-main">
                 <div class="prod-page-name">

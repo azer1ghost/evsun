@@ -72,6 +72,7 @@
     <script src="{{ asset('assets/js/stellarnav.min.js') }}"></script>
     <!-- aos JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://sachinchoolur.github.io/lightslider/dist/js/lightslider.js"></script>
 
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
