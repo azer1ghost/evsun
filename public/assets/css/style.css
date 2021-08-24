@@ -7169,12 +7169,12 @@ i {
     width:100%;
     overflow: hidden;
 }
-ul {
+.prod-slideri ul {
     list-style: none outside none;
     padding-left: 0;
     margin-bottom:0;
 }
-li {
+.prod-slideri ul li {
     display: block;
     float: left;
     margin-right: 6px;
