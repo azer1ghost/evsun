@@ -14,22 +14,13 @@
                 <div class="col-lg-5 col-md-12">
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="solar_about_img">
-                                    <img
-                                        src="http://kamleshyadav.com/html/solar-supplier/index5/assets/images/aboutus.png"
-                                        alt=""
-                                    />
+                            @foreach(json_decode($page->images) as $image)
+                                <div class="swiper-slide">
+                                    <div class="solar_about_img">
+                                        <img src="{{ asset(Voyager::image($image)) }}" />
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="solar_about_img">
-                                    <img
-                                        src="http://kamleshyadav.com/html/solar-supplier/index5/assets/images/aboutus.png"
-                                        alt=""
-                                    />
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>

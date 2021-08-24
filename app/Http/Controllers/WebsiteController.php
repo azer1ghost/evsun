@@ -24,12 +24,17 @@ class WebsiteController extends Controller
         return redirect()->route('service', Service::active()->select(['id','slug'])->first());
     }
 
-    public function serviceDetail(Service $service){
+    public function serviceDetail(Service $service)
+    {
+        if ($service->getAttribute('service_id')){
+            $page = "service-detail";
+            $services = $service->getRelationValue('parentService')->subServices();
+        }
 
-        if ($service->getAttribute('advanced'))
+        elseif ($service->getAttribute('advanced'))
         {
-            $services = $service->subServices();
             $page = "service-main";
+            $services = $service->subServices();
         }
         else {
             $page = "service-detail";
@@ -39,7 +44,7 @@ class WebsiteController extends Controller
         return view("website.pages.{$page}")
             ->with([
                 'service' => $service,
-                'services' => $services->active()->select(['id', 'slug', 'title', 'icon'])->orderBy('ordering')->get()
+                'services' => $services->active()->select(['id', 'slug', 'title', 'icon', 'detail'])->orderBy('ordering')->get()
             ]);
     }
 

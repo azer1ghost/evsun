@@ -17,6 +17,7 @@ class CreateServicesTable extends Migration
             $table->id();
             $table->string('icon')->nullable();
             $table->string('image')->nullable();
+            $table->string('image2')->nullable();
             $table->string('banner')->nullable();
             $table->string('btn_text')->nullable();
             $table->string('btn_url')->nullable();

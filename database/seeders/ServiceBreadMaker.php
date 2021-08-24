@@ -127,6 +127,32 @@ class ServiceBreadMaker extends Seeder
             ])->save();
         }
 
+        $dataRow = $this->dataRow($pageDataType, 'image2');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'image',
+                'display_name' => "Centered Image",
+                'required'     => 0,
+                'browse'       => 0,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => [
+                    'display' => [
+                        'width' => '2',
+                    ],
+                    'resize' => [
+                        'width'  => '800',
+                        'height' => 'null',
+                    ],
+                    'quality'    => '90%',
+                    'upsize'     => true,
+                ],
+                'order' => 3,
+            ])->save();
+        }
+
         $dataRow = $this->dataRow($pageDataType, 'banner');
         if (!$dataRow->exists) {
             $dataRow->fill([

@@ -36,32 +36,29 @@
 @section('content')
 
 @if(false)
-@include('website.components.breadcrumb', ['image' => $service->image, 'links' => [route('services') => meta('services')->get('title'), $service->getTranslatedAttribute('title') ]])
+    @include('website.components.breadcrumb', ['image' => $service->image, 'links' => [route('services') => meta('services')->get('title'), $service->getTranslatedAttribute('title') ]])
 @endif
 
 <div class="heller-img-left">
-    <img src="{{asset('assets/images/slider-flowing.jpg')}}" />
+    <img src="{!!asset(Voyager::image($service->dynamic_image))!!}" />
 </div>
 
 <div class="container-heller m-5 p-5">
     <div class="row">
         <div class="col-lg-6 col-12">
             <div class="heller-left">
-
                 <div class="d-block">
-                    <h1>EV-Charging points
-                        for your business </h1>
-                    <p>Fusce ac justo ligula. Pellentesque ac metus a turpis bibendum scelerisque. Pellentesque ac
-                        orci eget urna vestibulum consequat rutrum vitae pu</p>
-                    <button class="heller-btn">
-                        <p>Get Charging</p>
-                    </button>
+                    <h1>{{$service->getTranslatedAttribute('title')}} </h1>
+                    <p>{!! $service->getTranslatedAttribute('detail') !!}</p>
+{{--                    <button class="heller-btn">--}}
+{{--                        <p>Get Charging</p>--}}
+{{--                    </button>--}}
                 </div>
             </div>
         </div>
         <div class="col-lg-6 col-12">
             <div class="heller-img">
-                <img src="{{asset('assets/images/slider-car-full.jpg')}}" />
+                <img src="{!!asset(Voyager::image($service->image))!!}" />
             </div>
         </div>
     </div>
@@ -69,8 +66,8 @@
 
 <div class="heller-alt-container">
     <div class="container-fluid">
-        <h1 class="text-center mb-2">Heller heading</h1>
-        <h3 class="ss_h3_center text-center">Heller list</h3>
+        <h1 class="text-center mb-2">{{$service->getTranslatedAttribute('heading')}}</h1>
+        <h3 class="ss_h3_center text-center">{{$service->getTranslatedAttribute('meta_title')}}</h3>
         <div class="heler-alt-content pt-5">
             <div class="row">
                 <div data-aos-delay="300" data-aos-duration="800" data-aos="fade-right" class="order-xl-first col-lg-3 col-12 col-md-6">
@@ -80,10 +77,10 @@
                                 <li>
                                     <a href="{{route('service', $subService)}}">
                                         <div class="d-flex align-items-center">
-                                            <span> <i class="fas fa-charging-station"></i> </span>
+                                            <span> <i class="{{$subService->icon}}></i> </span>
                                             <h2>{{str_limit($subService->getTranslatedAttribute('title'), 20)}}</h2>
                                         </div>
-                                        <p>{{str_limit($subService->getTranslatedAttribute('meta_description'))}}</p>
+                                        <p>{{str_limit($subService->getTranslatedAttribute('detail'))}}</p>
                                     </a>
                                 </li>
                             @endforeach
@@ -97,10 +94,10 @@
                                 <li>
                                     <a href="{{route('service', $subService)}}">
                                         <div class="d-flex align-items-center">
-                                            <span> <i class="fas fa-charging-station"></i> </span>
+                                            <span> <i class="{{$subService->icon}}"></i> </span>
                                             <h2>{{str_limit($subService->getTranslatedAttribute('title'), 20)}}</h2>
                                         </div>
-                                        <p>{{str_limit($subService->getTranslatedAttribute('meta_description'))}}</p>
+                                        <p>{{str_limit($subService->getTranslatedAttribute('detail'))}}</p>
                                     </a>
                                 </li>
                             @endforeach
@@ -113,7 +110,7 @@
     align-items: center;
     justify-content: center;
 " class="col-lg-6 col-12 col-md-6 heller-alt-img-div">
-                    <img class="heller-alt-img" src="{{asset('assets/images/advantage-1-1.png')}}" />
+                    <img class="heller-alt-img" src="{!!asset(Voyager::image($service->image2))!!}" />
                     <img width="75%" src="{{asset('assets/images/advantage-bg.png')}}">
                 </div>
             </div>

@@ -25,11 +25,13 @@ class CreatePagesTable extends Migration
             $table->text('video')->nullable();
             $table->text('body')->nullable();
             $table->string('image')->nullable();
+            $table->string('images')->nullable();
             $table->string('heading')->nullable();
             $table->string('slug')->unique();
             $table->text('meta_description')->nullable();
             $table->text('meta_keywords')->nullable();
             $table->enum('status', Page::$statuses)->default(Page::STATUS_INACTIVE);
+            $table->boolean('show_contact')->default(true);
             $table->softDeletes();
             $table->timestamps();
         });

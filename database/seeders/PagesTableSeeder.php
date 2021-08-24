@@ -252,6 +252,26 @@ class PagesTableSeeder extends Seeder
             ])->save();
         }
 
+        $dataRow = $this->dataRow($pageDataType, 'show_contact');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'checkbox',
+                'display_name' => 'Show Contact Section',
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 4,
+                'details'      => [
+                    'display' => [
+                        'width' => '1',
+                    ],
+                ],
+            ])->save();
+        }
+
         $dataRow = $this->dataRow($pageDataType, 'created_at');
         if (!$dataRow->exists) {
             $dataRow->fill([
@@ -344,6 +364,32 @@ class PagesTableSeeder extends Seeder
                         'width' => '3',
                     ],
                 ],
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($pageDataType, 'images');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'multiple_images',
+                'display_name' => "Images",
+                'required'     => 0,
+                'browse'       => 0,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => [
+                    'display' => [
+                        'width' => '2',
+                    ],
+                    'resize' => [
+                        'width'  => '800',
+                        'height' => 'null',
+                    ],
+                    'quality'    => '90%',
+                    'upsize'     => true,
+                ],
+                'order' => 3,
             ])->save();
         }
 

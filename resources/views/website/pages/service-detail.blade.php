@@ -9,7 +9,7 @@
 
     <div class="container-fluid py-5">
         <div class="floating-img">
-            <img src="https://image.flaticon.com/icons/png/512/427/427115.png" />
+            <img src="{!!asset(Voyager::image($service->banner))!!}" />
         </div>
         <div class="row">
             <div class="col-lg-4 order-last order-md-first">
