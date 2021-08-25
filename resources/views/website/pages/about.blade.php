@@ -11,10 +11,10 @@
     <div class="solar_aboutus_page">
         <div class="container">
             <div class="row">
-                <div class="col-lg-5 col-md-12">
+                <div class="col-lg-5 col-md-12 mt-5">
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
-                            @foreach(json_decode($page->images) as $image)
+                            @foreach(json_decode($page->images) ?? [$page->image] as $image)
                                 <div class="swiper-slide">
                                     <div class="solar_about_img">
                                         <img src="{{ asset(Voyager::image($image)) }}" />

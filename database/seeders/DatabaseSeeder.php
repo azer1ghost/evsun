@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Attribute;
+use App\Models\ProductCategory;
 use App\Models\Service;
 use Illuminate\Database\Seeder;
 
@@ -25,7 +26,7 @@ class DatabaseSeeder extends Seeder
             VoyagerDatabaseSeeder::class,
             VoyagerDummyDatabaseSeeder::class,
             WebsiteMenuSeeder::class,
-            SocialsTableSeeder::class
+            SocialsTableSeeder::class,
         ]);
 
          \App\Models\Service::factory(4)->create();
@@ -42,12 +43,13 @@ class DatabaseSeeder extends Seeder
          \App\Models\Slide::factory(3)->create();
          \App\Models\Brand::factory(3)->create();
 
-         \App\Models\Product::factory()
-             ->count(5)
-             ->hasAttached(
-                 Attribute::factory()->count(3),
-                 ['value' => 'test']
-             )
-             ->create();
+        \App\Models\ProductCategory::factory(4)->has(
+             \App\Models\Product::factory(5)
+                 ->hasAttached(
+                     Attribute::factory(3),
+                     ['value' => 'test']
+                 )
+         , 'products')->create();
+
     }
 }
