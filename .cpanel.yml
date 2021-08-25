@@ -19,4 +19,4 @@ deployment:
     - /bin/cp server.php     $DEPLOYPATH/
     - /bin/cp webpack.mix.js $DEPLOYPATH/
     # Composer install
-    - /home/evsunaz/composer install
+    #- /home/evsunaz/composer install --optimize-autoloader --no-dev
