@@ -5,7 +5,6 @@ namespace App\View\Components;
 use Cache;
 use Dymantic\InstagramFeed\Profile;
 use Illuminate\View\Component;
-use mysql_xdevapi\Exception;
 
 class InstagramFeed extends Component
 {
@@ -36,7 +35,7 @@ class InstagramFeed extends Component
         if ($this->instagram_posts){
             return view('website.components.instagram-feed');
         } else {
-            return "<h2 class='text-center text-danger border border-danger'>Please confirm your Instagram Account<h2>";
+            return "<h2 class='text-center text-danger border border-danger'>Please confirm your Instagram Account</h2>";
         }
     }
 }

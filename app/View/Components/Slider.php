@@ -12,7 +12,7 @@ class Slider extends Component
 
     public function __construct()
     {
-        $this->slides = Cache::remember("homepage_slides", 600, function (){
+        $this->slides = Cache::remember("homepage_slides", config('cache.timeout'), function (){
             return \App\Models\Slide::active()->orderBy('ordering')->get();
         });
 

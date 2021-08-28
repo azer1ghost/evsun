@@ -1,20 +1,22 @@
 <div class="solar_blog_sidebar">
     <div class="sl_search_btn">
-        <h4>Search Here</h4>
+        <h4>Blogda Axtar</h4>
         @livewire('search-posts')
     </div>
 </div>
 <div class="solar_blog_sidebar">
     <div class="sl_search_btn">
-        <h4>Blog post</h4>
+        <h4>Blog Postları</h4>
         @foreach($posts as $post)
-            <div href="{{route('post', $post)}}" class="solar_list_post">
+            <div class="solar_list_post">
                 <div class="solar_list_img">
-                    <img width="100px" src="{!!asset(Voyager::image($post->image))!!}" alt="{{$post->title}}" />
+                    <a href="{{route('post', $post)}}">
+                        <img width="100px" src="{!!asset(Voyager::image($post->image))!!}" alt="{{$post->title}}" />
+                    </a>
                 </div>
                 <div class="solar_listing">
                     <p>{{$post->created_at->format('d, F, Y')}}</p>
-                    <a href="javascript:;">{{str_limit($post->getTranslatedAttribute('title'), 20)}}</a>
+                    <a href="{{route('post', $post)}}">{{str_limit($post->getTranslatedAttribute('title'), 20)}}</a>
                 </div>
             </div>
         @endforeach
@@ -22,7 +24,7 @@
 </div>
 <div class="solar_blog_sidebar">
     <div class="sidebar_category">
-        <h4>Categories</h4>
+        <h4>Kateqoriyalar</h4>
         <ul>
             @foreach($categories as $category)
             <li>

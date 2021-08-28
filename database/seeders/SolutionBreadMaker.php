@@ -127,6 +127,26 @@ class SolutionBreadMaker extends Seeder
             ])->save();
         }
 
+        $dataRow = $this->dataRow($pageDataType, 'video');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'media_picker',
+                'display_name' => "Video",
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => [
+                    'display' => [
+                        'width' => '6'
+                    ]
+                ],
+                'order' => 3,
+            ])->save();
+        }
+
         $dataRow = $this->dataRow($pageDataType, 'title');
         if (!$dataRow->exists) {
             $dataRow->fill([
@@ -192,7 +212,7 @@ class SolutionBreadMaker extends Seeder
         $dataRow = $this->dataRow($pageDataType, 'meta_description');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'text',
+                'type'         => 'text_area',
                 'display_name' => __('voyager::seeders.data_rows.meta_description'),
                 'required'     => 1,
                 'browse'       => 0,
@@ -212,7 +232,7 @@ class SolutionBreadMaker extends Seeder
         $dataRow = $this->dataRow($pageDataType, 'meta_keywords');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'text',
+                'type'         => 'text_area',
                 'display_name' => __('voyager::seeders.data_rows.meta_keywords'),
                 'required'     => 1,
                 'browse'       => 0,

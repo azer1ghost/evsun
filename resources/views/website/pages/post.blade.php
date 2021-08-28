@@ -43,7 +43,7 @@
                                             <i class="fa fa-user" aria-hidden="true"></i>
                                             {{optional($post->category)->getTranslatedAttribute('name') ?? "Katerqoriyasız"}}
                                         </a>
-                                        <a href="javascript:void(0)"><i class="fa fa-eye" aria-hidden="true"></i>{{$post->views ?? 0}}</a>
+                                        <a href="javascript:void(0)"><i class="fa fa-eye" aria-hidden="true"></i>{{$post->view_count ?? 0}}</a>
                                     </li>
                                 </ul>
                             </div>

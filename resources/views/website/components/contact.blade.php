@@ -9,12 +9,12 @@
                         <p>Nömrənizi qeyd edin, sizə zəng edək</p>
                     </div>
                 </div>
-                <div class="col-md-5 align-self-center">
+                <form class="col-md-5 align-self-center" method="POST" action="{{route('call.me')}}"> @csrf
                     <div class="ss_foot_news_one">
-                        <input type="text" placeholder="Nömrənizi daxil edin" />
-                        <button class="ss_btn">Göndər</button>
+                        <input type="text" name="number" required placeholder="Nömrənizi daxil edin" />
+                        <button type="submit" class="ss_btn">Göndər</button>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>

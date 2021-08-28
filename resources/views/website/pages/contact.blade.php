@@ -11,9 +11,6 @@
 @section('content')
     @include('website.components.breadcrumb', ['image' => $meta->image(), 'links' =>  [$meta->get('title') ]])
 
-{{--    {!!$page->getTranslatedAttribute('body') !!}--}}
-{{--    {{$page->getTranslatedAttribute('title')}}--}}
-
     <section class="ss_map">
         <iframe
             src="https://maps.google.com/maps?q={{setting('site.address')}}&t=&z=15&ie=UTF8&iwloc=&output=embed"
@@ -109,21 +106,34 @@
                     <div class="col-lg-8 col-md-7">
                         <div class="ss_contact_right">
                             <h1>Bizə yazın</h1>
-                            <form>
+                            <form method="POST" action="{{route('contact.form')}}">
+                                @csrf
                                 <div class="ss_contact_form">
-                                    <label>Ad</label>
+                                    <label for="name">Ad</label>
                                     <input
                                         type="text"
                                         placeholder="Adınızı daxil edin"
-                                        name="full_name"
-                                        id="full_name"
+                                        name="name"
+                                        id="name"
                                         class="require"
+                                        data-error="Xahiş edirik ad hissəsini boş qoymayın"
                                     />
                                 </div>
                                 <div class="ss_contact_form">
-                                    <label>Email</label>
+                                    <label for="number">Nömrə</label>
                                     <input
                                         type="text"
+                                        name="number"
+                                        id="number"
+                                        placeholder="Nömrənizi daxil edin"
+                                        class="require"
+                                        data-error="Xahiş edirik nömrə hissəsini boş qoymayın"
+                                    />
+                                </div>
+                                <div class="ss_contact_form">
+                                    <label for="email">Email</label>
+                                    <input
+                                        type="email"
                                         name="email"
                                         id="email"
                                         placeholder="E-mail adresinizi daxil edin"
@@ -133,13 +143,14 @@
                                     />
                                 </div>
                                 <div class="ss_contact_form">
-                                    <label>Mövzu</label>
+                                    <label for="subject">Mövzu</label>
                                     <input
                                         type="text"
                                         name="subject"
                                         id="subject"
                                         placeholder="Mövzunu daxil edin"
                                         class="require"
+                                        data-error="Xahiş edirik mövzu hissəsini boş qoymayın"
                                     />
                                 </div>
                                 <div class="ss_contact_form">
@@ -149,9 +160,10 @@
                                         id="message"
                                         placeholder="Mesajınızı daxil edin"
                                         class="require"
+                                        data-error="Xahiş edirik mesaj hissəsini boş qoymayın"
                                     ></textarea>
                                 </div>
-                                <button type="button" class="ss_btn submitForm">
+                                <button type="submit" class="ss_btn submitForm">
                                     Göndər
                                 </button>
                                 <div class="response"></div>

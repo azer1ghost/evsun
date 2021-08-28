@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\ProductCategory;
 use Illuminate\Database\Seeder;
 
 class VoyagerDummyDatabaseSeeder extends Seeder
@@ -27,6 +26,7 @@ class VoyagerDummyDatabaseSeeder extends Seeder
             ProductBreadMaker::class,
             AttributeBreadMaker::class,
             BrandBreadMaker::class,
+            ContactBreadMaker::class,
             ProductCategoriesBreadMaker::class,
             PermissionRoleTableSeeder::class,
         ]);

@@ -27,6 +27,7 @@ class CreatePostsTable extends Migration
             $table->text('meta_keywords');
             $table->enum('status', ['PUBLISHED', 'DRAFT', 'PENDING'])->default('DRAFT');
             $table->boolean('featured')->default(0);
+            $table->integer('view_count')->default(0);
             $table->softDeletes();
             $table->timestamps();
 

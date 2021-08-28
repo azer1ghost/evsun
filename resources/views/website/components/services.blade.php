@@ -13,27 +13,27 @@
             <div class="col-xl-4 col-lg-6 @if(!$loop->last) order-xl-last mt-lg-0 mt-md-4 @endif">
                 <div class="ss_four_left">
                     @foreach($services as $service)
-                    @if(in_array($loop->iteration/$loop->parent->iteration, [1,2,3]))
-                    @continue
-                    @endif
-                    <a href="{{route('service', $service)}}" class="ss_box_bg @if(!$loop->first) mt-4 @endif wow fadeIn" data-wow-delay="@if($loop->parent->first) 0.1s @else 0.3s @endif" data-wow-duration="1s">
-                        <div class="row">
-                            <div class="col-3">
-                                <div class="ss_four_one">
-                                    <img class="img-fluid" src="{{asset(Voyager::image($service->icon))}}" alt="{{str_limit($service->getTranslatedAttribute('title'), 20)}}" />
+                        @if(in_array($loop->iteration/$loop->parent->iteration, [1,2,3]))
+                            @continue
+                        @endif
+                        <a href="{{route('service', $service)}}" class="ss_box_bg @if(!$loop->first) mt-4 @endif wow fadeIn" data-wow-delay="@if($loop->parent->first) 0.1s @else 0.3s @endif" data-wow-duration="1s">
+                            <div class="row">
+                                <div class="col-3">
+                                    <div class="ss_four_one">
+                                        <img class="img-fluid" src="{{asset(Voyager::image($service->icon))}}" alt="{{str_limit($service->getTranslatedAttribute('title'), 20)}}" />
+                                    </div>
+                                </div>
+                                <div class="col-9">
+                                    <div class="ss_four_two">
+                                        <h2>{{str_limit($service->getTranslatedAttribute('title'), 20)}}</h2>
+                                        <p>{{str_limit($service->getTranslatedAttribute('meta_description'))}}</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-9">
-                                <div class="ss_four_two">
-                                    <h2>{{str_limit($service->getTranslatedAttribute('title'), 20)}}</h2>
-                                    <p>{{str_limit($service->getTranslatedAttribute('meta_description'))}}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    @if($loop->iteration === 3*$loop->parent->iteration)
-                    @break
-                    @endif
+                        </a>
+                        @if($loop->iteration === 3*$loop->parent->iteration)
+                            @break
+                        @endif
                     @endforeach
                 </div>
             </div>

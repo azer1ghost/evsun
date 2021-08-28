@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Attribute;
+use App\Models\Contact;
 use App\Models\Page;
 use App\Models\Product;
 use App\Models\Service;
@@ -15,7 +16,8 @@ use TCG\Voyager\Models\Post;
 
 class WebsiteController extends Controller
 {
-    public function homepage(){
+    public function homepage()
+    {
         return view('website.pages.home');
     }
 
@@ -53,7 +55,8 @@ class WebsiteController extends Controller
         return redirect()->route('solution', Solution::active()->select(['id','slug'])->first());
     }
 
-    public function solutionDetail(Solution $solution){
+    public function solutionDetail(Solution $solution)
+    {
         return view('website.pages.solution-detail')
             ->with([
                 'solution' => $solution,
@@ -64,7 +67,8 @@ class WebsiteController extends Controller
             ]);
     }
 
-    public function blog(string $category = null){
+    public function blog(string $category = null)
+    {
 
         if (Category::whereSlug($category)->exists()){
             $posts = Category::whereSlug($category)->first()->posts()->latest()->simplePaginate(2);
@@ -79,11 +83,15 @@ class WebsiteController extends Controller
             ]);
     }
 
-    public function post(Post $post){
+    public function post(Post $post)
+    {
+        $post->increment('view_count');
+
         return view('website.pages.post', compact('post'));
     }
 
-    public function contact(){
+    public function contact()
+    {
         return view('website.pages.contact');
     }
 
@@ -94,21 +102,43 @@ class WebsiteController extends Controller
         ]);
     }
 
-    public function page(Page $page){
+    public function page(Page $page)
+    {
         return view('website.pages.page', compact('page'));
+    }
+
+    public function callMe(Request $request)
+    {
+        $validated = $request->validate([
+            'number' => 'required|min:6|max:20',
+        ]);
+
+        Contact::create($validated);
+
+        return back()->withSuccess('Sizinlə əlaqə quracağıq');
     }
 
     public function contactForm(Request $request): \Illuminate\Http\RedirectResponse
     {
-        $user = User::where('role_id', 2)->first();
+        $validated = $request->validate([
+            'name' => 'required|max:25',
+            'email' => 'required|email:dns|max:30',
+            'number' => 'required|min:6|max:20',
+            'subject' => 'required|min:3|max:255',
+            'message' => 'required|min:10|max:500'
+        ]);
 
-        $user->notify(new ContactForm([
-            'name'  => $request->get('name'),
-            'email' => $request->get('email'),
-            'message' => $request->get('message'),
-        ]));
+        Contact::create($validated);
 
-        return back()->withSuccess('done');
+//        $user = User::where('role_id', 2)->first();
+//
+//        $user->notify(new ContactForm([
+//            'name'  => $request->get('name'),
+//            'email' => $request->get('email'),
+//            'message' => $request->get('message'),
+//        ]));
+
+        return back()->withSuccess('Təşəkkürlər, sizinlə ən qısa zamanda əlaqə saxlanılacaq!');
     }
 
     public function products()

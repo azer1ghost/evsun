@@ -17,6 +17,7 @@ class CreateSolutionsTable extends Migration
             $table->id();
             $table->string('icon')->nullable();
             $table->string('image')->nullable();
+            $table->string('video')->nullable();
             $table->string('title')->nullable();
             $table->text('detail')->nullable();
             $table->string('meta_title')->nullable();

@@ -29,8 +29,6 @@ class DatabaseSeeder extends Seeder
             SocialsTableSeeder::class,
         ]);
 
-         \App\Models\Service::factory(4)->create();
-
          \App\Models\Service::factory(2)->state([
              'advanced' => true,
          ])->has(

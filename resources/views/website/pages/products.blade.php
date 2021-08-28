@@ -92,7 +92,7 @@
                 <div class="col-xl-3 col-lg-4 col-12 col-md-4 py-3">
                     <div class="product-itm">
                         <a href="{{route('product', $product->getAttribute('serial'))}}">
-                            <img src="https://static.wixstatic.com/media/f2e78a_adc40ca1d58d478cb98bc0351b75f150~mv2.png/v1/fill/w_640,h_378,al_c,q_85,usm_0.66_1.00_0.01/f2e78a_adc40ca1d58d478cb98bc0351b75f150~mv2.webp" />
+                            <img src="{!!asset(Voyager::image(json_decode($product->images[0])))!!}" />
                             <p>{{str_limit($product->getAttribute('name'), 20)}}
                                 <span>{{$product->category->name}}</span>
                             </p>

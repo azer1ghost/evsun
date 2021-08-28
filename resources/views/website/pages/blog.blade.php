@@ -45,7 +45,7 @@
                                 <ul class="post-bar">
                                     <li>
                                         <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Admin</a>
-                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>{{$post->views ?? 0}}</a>
+                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>{{$post->view_count ?? 0}}</a>
                                     </li>
                                 </ul>
                                 <a href="{{route('post', $post)}}" class="read-more">Ətraflı</a>

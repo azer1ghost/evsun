@@ -35,6 +35,7 @@ if (Schema::hasTable('pages')){
     Route::get($page('products').'/{product:serial}', [WebsiteController::class, 'productDetail'])->name('product');
 
     Route::post('contact-form', [WebsiteController::class, 'contactForm'])->name('contact.form');
+    Route::post('call-me', [WebsiteController::class, 'callMe'])->name('call.me');
 
     Route::group(['prefix' => 'admin'], function () {
         Voyager::routes();

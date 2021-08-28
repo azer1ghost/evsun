@@ -9,9 +9,17 @@
     <div class="solar_aboutus_page">
         <div class="container">
             <div class="row">
-                <div class="col-lg-5 col-md-12">
+                <div class="col-lg-5 col-md-12 mt-5 mb-5">
                     <div class="swiper-container">
-                        <img src="http://kamleshyadav.com/html/solar-supplier/index5/assets/images/aboutus.png" alt=""/>
+                        <div class="swiper-wrapper">
+                            @foreach(json_decode($page->images) ?? [$page->image] as $image)
+                                <div class="swiper-slide">
+                                    <div class="solar_about_img">
+                                        <img src="{{ asset(Voyager::image($image)) }}" />
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-7 col-md-12 mt-5">

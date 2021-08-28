@@ -19,7 +19,7 @@
                         <div class="swiper-slide">
                             <a href="{{route('solution', $single_solution)}}" @class(['service-div', 'active'=> (route('solution', $single_solution) == url()->current()) ])" >
                                 <div class="service-img">
-                                    <i class="{{$single_solution->icon}} fa-2x text-dark"></i>
+                                    <i class="{{$single_solution->getAttribute('icon')}} fa-2x text-dark"></i>
                                 </div>
                                 <p>{{$single_solution->getTranslatedAttribute('title')}}</p>
                             </a>
@@ -28,16 +28,20 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-12">
-                <div class="text-left mb-5">
-                    <h1>{{$solution->getTranslatedAttribute('title')}}</h1>
+            <div class="col-lg-12 row">
+                <div class="col-md-4">
+                   <div class="service-image">
+                       <video width="500px" height="400px" preload="none" autoplay loop src="{!!asset(Voyager::image($solution->video))!!}"></video>
+                   </div>
                 </div>
-                {{-- <div class="service-image">--}}
-                {{-- <img src="{{asset(Voyager::image($solution->image))}}"/>--}}
-                {{-- </div>--}}
-                <p>
-                    {!!$solution->getTranslatedAttribute('detail')!!}
-                </p>
+                <div class="col-md-8">
+                    <div class="text-left mb-5">
+                        <h1>{{$solution->getTranslatedAttribute('title')}}</h1>
+                    </div>
+                    <p>
+                        {!!$solution->getTranslatedAttribute('detail')!!}
+                    </p>
+                </div>
             </div>
         </div>
     </div>

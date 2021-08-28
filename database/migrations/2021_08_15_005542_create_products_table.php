@@ -25,6 +25,7 @@ class CreateProductsTable extends Migration
             $table->boolean('status')->default(true);
             $table->integer('ordering')->nullable();
             $table->foreignId('product_category_id')->nullable()->constrained('product_categories')->onDelete('SET NULL');
+            $table->integer('view_count');
             $table->softDeletes();
             $table->timestamps();
         });

@@ -334,7 +334,7 @@ class ServiceBreadMaker extends Seeder
         $dataRow = $this->dataRow($pageDataType, 'meta_description');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'text',
+                'type'         => 'text_area',
                 'display_name' => __('voyager::seeders.data_rows.meta_description'),
                 'required'     => 1,
                 'browse'       => 0,
@@ -354,7 +354,7 @@ class ServiceBreadMaker extends Seeder
         $dataRow = $this->dataRow($pageDataType, 'meta_keywords');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'text',
+                'type'         => 'text_area',
                 'display_name' => __('voyager::seeders.data_rows.meta_keywords'),
                 'required'     => 1,
                 'browse'       => 0,
