@@ -158,4 +158,7 @@
 
 </div>
 
+@if(meta('products')->get('show_contact'))
+    @include('website.components.contact')
+@endif
 @endsection

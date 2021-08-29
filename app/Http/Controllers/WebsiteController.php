@@ -8,8 +8,6 @@ use App\Models\Page;
 use App\Models\Product;
 use App\Models\Service;
 use App\Models\Solution;
-use App\Models\User;
-use App\Notifications\ContactForm;
 use Illuminate\Http\Request;
 use TCG\Voyager\Models\Category;
 use TCG\Voyager\Models\Post;

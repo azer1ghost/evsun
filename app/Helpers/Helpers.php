@@ -11,7 +11,7 @@ if (! function_exists('meta')) {
             {
                 $this->key  = $key;
                 $this->page = Cache::remember("page_$key", config('cache.timeout'), function () use ($select){
-                    return \App\Models\Page::select(array_merge(['title', 'meta_description', 'meta_keywords', 'image'], $select))->key($this->key)->firstOrFail();
+                    return \App\Models\Page::select(array_merge(['title', 'meta_description', 'meta_keywords', 'image', 'show_contact'], $select))->key($this->key)->firstOrFail();
                 });
             }
 

@@ -27,7 +27,7 @@ $meta = meta('homepage', ['excerpt', 'image', 'btnText', 'btnLink']);
                 <div class="ss_three_right">
                     <!-- <h3>best service</h3> -->
                     <h1>{{$meta->get('title')}}</h1>
-                    <p>{!! $meta->get('excerpt') !!}</p>
+                    {!! $meta->get('body') !!}
                     <a href="{{$meta->get('btnLink')}}" class="ss_btn mt-4">{{$meta->get('btnText')}}</a>
                 </div>
             </div>
@@ -45,5 +45,9 @@ $meta = meta('homepage', ['excerpt', 'image', 'btnText', 'btnLink']);
 <x-brands />
 
 <x-blog />
+
+@if($meta->get('show_contact'))
+    @include('website.components.contact')
+@endif
 
 @endsection

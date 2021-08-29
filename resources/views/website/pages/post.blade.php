@@ -56,4 +56,8 @@
             </div>
         </div>
     </div>
+
+    @if(meta('blog')->get('show_contact'))
+        @include('website.components.contact')
+    @endif
 @endsection

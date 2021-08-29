@@ -48,8 +48,6 @@
 
     @yield('content')
 
-    @include('website.components.contact')
-
     @include('website.components.scroll')
 
     <x-footer />

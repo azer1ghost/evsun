@@ -46,4 +46,8 @@
         </div>
     </div>
 </section>
+
+@if(meta('solutions')->get('show_contact'))
+    @include('website.components.contact')
+@endif
 @endsection

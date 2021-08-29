@@ -5,7 +5,7 @@
 @section('keywords', $page->getTranslatedAttribute('meta_keywords'))
 
 @section('content')
-    @include('website.components.breadcrumb', ['image' => $page->image, 'links' =>  [$page->getTranslatedAttribute('title') ]])
+    @include('website.components.breadcrumb', ['image' => $page->image, 'links' =>  [$page->getTranslatedAttribute('heading') ]])
     <div class="solar_aboutus_page">
         <div class="container">
             <div class="row">
@@ -33,4 +33,8 @@
             </div>
         </div>
     </div>
+
+    @if($page->get('show_contact'))
+        @include('website.components.contact')
+    @endif
 @endsection

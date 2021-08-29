@@ -4,9 +4,8 @@
 @section('description', $page->getTranslatedAttribute('meta_description'))
 @section('keywords', $page->getTranslatedAttribute('meta_keywords'))
 
-
 @section('content')
-    @include('website.components.breadcrumb', ['image' => $page->image, 'links' =>  [$page->getTranslatedAttribute('title') ]])
+    @include('website.components.breadcrumb', ['image' => $page->image, 'links' =>  [$page->getTranslatedAttribute('heading') ]])
 
     <div class="solar_aboutus_page">
         <div class="container">
@@ -35,4 +34,8 @@
     </div>
 
     <x-instagram-feed/>
+
+    @if($page->getAttribute('show_contact'))
+        @include('website.components.contact')
+    @endif
 @endsection

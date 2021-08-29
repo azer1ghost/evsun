@@ -175,4 +175,8 @@
         </div>
     </section>
 
+    @if($meta->get('show_contact'))
+        @include('website.components.contact')
+    @endif
+
 @endsection

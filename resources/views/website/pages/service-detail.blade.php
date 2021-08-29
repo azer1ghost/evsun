@@ -38,4 +38,8 @@
             </div>
         </div>
     </div>
+
+    @if(meta('services')->get('show_contact'))
+        @include('website.components.contact')
+    @endif
 @endsection
