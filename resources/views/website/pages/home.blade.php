@@ -1,7 +1,7 @@
 @extends('website.layouts.main')
 
 @php
-$meta = meta('homepage', ['excerpt', 'image', 'btnText', 'btnLink']);
+$meta = meta('homepage', ['excerpt', 'image', 'btnText', 'btnLink', 'body']);
 @endphp
 
 @section('title', $meta->get('title'))
