@@ -1,4 +1,8 @@
-<div class="ss_breadcrumb text-center" style="background-image: url('{!!asset(Voyager::image($image))!!}'); background-repeat: no-repeat; background-size: 100%">
+<div class="ss_breadcrumb text-center"
+     style="background-image: url('{!!asset(Voyager::image($image))!!}');
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-position: center;">
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
