@@ -18,4 +18,9 @@ class Attribute extends Model
     {
         return $query->where('status', true);
     }
+
+    public function scopeOnlyFilterable($query)
+    {
+        return $query->where('is_filterable', true);
+    }
 }

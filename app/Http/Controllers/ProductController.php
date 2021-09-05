@@ -10,10 +10,7 @@ class ProductController extends Controller
 {
     public function products()
     {
-        return view('website.pages.products')->with([
-            'products' => Product::active()->get(),
-            'attributes' => Attribute::active()->get(),
-        ]);
+        return view('website.pages.products');
     }
 
     public function productDetail(Product $product)
