@@ -80,7 +80,7 @@
                                             <span> <i class="{{$subService->icon}}"></i> </span>
                                             <h2>{{str_limit($subService->getTranslatedAttribute('title'), 50)}}</h2>
                                         </div>
-                                        <p>{{str_limit($subService->getTranslatedAttribute('meta_description'))}}</p>
+                                        <p>{{str_limit($subService->getTranslatedAttribute('meta_description')) ?? 'no desc'}}</p>
                                     </a>
                                 </li>
                             @endforeach
@@ -97,7 +97,7 @@
                                             <span> <i class="{{$subService->icon}}"></i> </span>
                                             <h2>{{str_limit($subService->getTranslatedAttribute('title'), 50)}}</h2>
                                         </div>
-                                        <p>{{str_limit($subService->getTranslatedAttribute('meta_description'))}}</p>
+                                        <p>{{str_limit($subService->getTranslatedAttribute('meta_description')) ?? 'no desc'}}</p>
                                     </a>
                                 </li>
                             @endforeach
