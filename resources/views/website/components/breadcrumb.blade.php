@@ -3,6 +3,7 @@
             background-repeat: no-repeat;
             background-size: 100%;
             background-position: center;">
+<div class="b_cover"></div>
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">

@@ -1386,7 +1386,8 @@ h3.ss_h3_center:before {
 
 .ss_four_left .ss_box_bg {
     border: 2px solid transparent;
-    height: 160px;
+    height: 200px;
+    margin-top: 25px;
     display: block;
     color: gray;
     background: white;

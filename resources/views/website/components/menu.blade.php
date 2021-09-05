@@ -38,7 +38,7 @@
         @endphp
         @if($item->status)
             <li class="{{ $isActive }} @if(!$originalItem->children->isEmpty() || $item->route == "services" || $item->route == "solutions") drop-left @endif">
-                <a href="{{ url($item->link()) }}" target="{{ $item->target }}" style="{{ $styles }}">
+                <a href="{{ url($item->link()) }}" target="{{ $item->target }}" >
                     {!! $icon !!}
                     {{ $item->title }}
                 </a>

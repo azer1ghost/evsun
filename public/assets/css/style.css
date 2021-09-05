@@ -1408,11 +1408,12 @@ h3.ss_h3_center:before {
 
 .ss_four_left .ss_box_bg {
     border: 2px solid transparent;
-    height: 160px;
+    height: 200px;
     display: block;
     color: gray;
     background: white;
     box-shadow: 0px 0px 20px 0px rgb(131 149 255 / 14%);
+    margin-top: 20px;
 }
 
 .ss_four_left .ss_box_bg h2 {
@@ -2864,6 +2865,16 @@ a:hover .fa-pinterest-p {
 .ss_breadcrumb {
     padding: 140px 0px 100px;
     background: linear-gradient(237deg, #36d1dc 0%, #5b86e5 100%);
+    position: relative;
+}
+
+.b_cover{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: black;
+    top: 0;
+    opacity: 0.3;
 }
 
 .ss_breadcrumb h1 {
@@ -5797,6 +5808,7 @@ i {
 
     .ss_four_left .ss_box_bg {
         height: 200px !important;
+        margin-top: 25px;
     }
 
     .ss_eight {
@@ -6311,6 +6323,16 @@ i {
 
 .heller-img img {
     width: 100% !important;
+    height: 500px;
+    object-fit: contain;
+}
+
+@media screen and (max-width: 991px) {
+
+.heller-img img {
+    width: 100% !important;
+    height: unset !important;
+}
 }
 
 .heller-btn {
@@ -6436,7 +6458,8 @@ i {
     }
     .heller-img{
         position: relative !important;
-        width: 100% !important;
+        width: 95% !important;
+        margin: auto;
         right: 0 !important;
         margin-top: 30px !important;
     }
@@ -6629,6 +6652,11 @@ i {
 
     .container-heller{
         padding: 120px 0px !important;
+        padding-bottom: 50px !important;
+    }
+
+    .heller-alt-container{
+        padding-top: 30px !important;
     }
 }
 

@@ -43,10 +43,10 @@
     <img src="{!!asset(Voyager::image($service->dynamic_image))!!}" />
 </div>
 
-<div class="container-heller m-5 p-5">
+<div class="container-heller m-2 p-2 m-lg-5 p-lg-5">
     <div class="row">
         <div class="col-lg-6 col-12">
-            <div class="heller-left">
+            <div class="heller-left text-center">
                 <div class="d-block">
                     <h1>{{$service->getTranslatedAttribute('title')}} </h1>
                     <p>{!! $service->getTranslatedAttribute('detail') !!}</p>

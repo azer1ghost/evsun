@@ -600,6 +600,8 @@ $(".submitForm").on("click", function () {
     }
 });
 
+
+
 $(document).ready(function () {
     $(".main-carousel .owl-carousel").owlCarousel({
         autoplay: true,
@@ -629,6 +631,13 @@ $(document).ready(function () {
 
     var header = document.querySelector(".ss_index_one");
     var toTop = document.querySelector(".ltx-go-top");
+
+    window.addEventListener("load", function () {
+        if (this.window.pageYOffset > 70) {
+            header.style.background = "#00000097";
+            toTop.style.display = "block";
+        }
+    });
 
     window.addEventListener("scroll", function () {
         if (this.window.pageYOffset > 70) {
