@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\InstagramController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\WebsiteController;
 use App\Http\Middleware\Localization;
 use App\Models\Page;
@@ -31,8 +32,8 @@ if (Schema::hasTable('pages')){
     Route::get( $page('about'), [WebsiteController::class, 'about'])->name('about');
     Route::get( $page('contact'), [WebsiteController::class, 'contact'])->name('contact');
 
-    Route::get( $page('products'), [WebsiteController::class, 'products'])->name('products');
-    Route::get($page('products').'/{product:serial}', [WebsiteController::class, 'productDetail'])->name('product');
+    Route::get( $page('products'), [ProductController::class, 'products'])->name('products');
+    Route::get($page('products').'/{product:serial}', [ProductController::class, 'productDetail'])->name('product');
 
     Route::post('contact-form', [WebsiteController::class, 'contactForm'])->name('contact.form');
     Route::post('call-me', [WebsiteController::class, 'callMe'])->name('call.me');

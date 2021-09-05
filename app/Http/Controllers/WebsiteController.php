@@ -139,19 +139,6 @@ class WebsiteController extends Controller
         return back()->withSuccess('Təşəkkürlər, sizinlə ən qısa zamanda əlaqə saxlanılacaq!');
     }
 
-    public function products()
-    {
-        return view('website.pages.products')->with([
-            'products' => Product::active()->get(),
-            'attributes' => Attribute::active()->get(),
-        ]);
-    }
-
-    public function productDetail(Product $product)
-    {
-        return view('website.pages.product-detail', compact('product'));
-    }
-
     public function sitemap()
     {
         return response(file_get_contents(public_path('sitemap.xml')))
