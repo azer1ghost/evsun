@@ -78,9 +78,9 @@
                                     <a href="{{route('service', $subService)}}">
                                         <div class="d-flex align-items-center">
                                             <span> <i class="{{$subService->icon}}"></i> </span>
-                                            <h2>{{str_limit($subService->getTranslatedAttribute('title'), 20)}}</h2>
+                                            <h2>{{str_limit($subService->getTranslatedAttribute('title'), 50)}}</h2>
                                         </div>
-                                        <p>{{str_limit($subService->getTranslatedAttribute('detail'))}}</p>
+                                        <p>{{str_limit($subService->getTranslatedAttribute('meta_description'))}}</p>
                                     </a>
                                 </li>
                             @endforeach
