@@ -15,32 +15,32 @@
             </div>
             <div class="col-lg-3 col-md-3 col-12">
                 <div class="ss_foot_sec">
-                    <h2 class="ss_foot_head text-center">Services</h2>
+                    <h2 class="ss_foot_head text-center">@lang('static.services')</h2>
                     <ul class="text-center">
                         @foreach($services as $service)
-                        <li><a href="{{route('service', $service)}}"><i class="fa fa-angle-double-right"></i>  {{$service->title}}</a></li>
+                        <li><a href="{{route('service', $service)}}"><i class="fa fa-angle-double-right"></i>  {{$service->getTranslatedAttribute('title')}}</a></li>
                         @endforeach
                     </ul>
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-12">
                 <div class="ss_foot_sec">
-                    <h2 class="ss_foot_head text-center">Company</h2>
+                    <h2 class="ss_foot_head text-center">@lang('static.solutions')</h2>
                     <ul class="text-center">
-                        @foreach(menu('website', '_json') as $fast_menu)
-                            <li><a href="{{$fast_menu->link()}}"><i class="fa fa-angle-double-right"></i> {{$fast_menu->getTranslatedAttribute('title')}}</a></li>
+                        @foreach($solutions as $solution)
+                            <li><a href="{{route('solution', $solution)}}"><i class="fa fa-angle-double-right"></i> {{$solution->getTranslatedAttribute('title')}}</a></li>
                         @endforeach
                     </ul>
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-12">
                 <div class="ss_foot_sec">
-                    <h2 class="ss_foot_head text-center">Contact Us</h2>
+                    <h2 class="ss_foot_head text-center">@lang('static.contact_us')</h2>
                     <ul class="text-center">
-                        <li>Address : {{setting('site.address')}}</li>
+                        <li>@lang('static.address') : {{setting('site.address')}}</li>
                         <li>{{setting('site.address_additional')}}</li>
-                        <li>Email : {{setting('site.mail')}}</li>
-                        <li>Phone : {{setting('site.phone')}}</li>
+                        <li>@lang('static.email') : {{setting('site.mail')}}</li>
+                        <li>@lang('static.phone') : {{setting('site.phone')}}</li>
                         <li>Mobile : {{setting('site.mobile')}}</li>
                     </ul>
                 </div>

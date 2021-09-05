@@ -50,6 +50,33 @@
 
     @include('website.components.scroll')
 
+
+    <div class="modal" tabindex="-1" role="dialog" id="notifyModal">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content  alert @if($errors->any()) alert-danger @else alert-success @endif">
+                <div class="modal-header">
+                    <h5 class="modal-title">Bildiriş</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    @if ($errors->any())
+                        <ul class="list-group">
+                            @foreach ($errors->all() as $error)
+                                <li class="list-group-item">{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
+                    @if(session()->has('success'))
+                        {{session()->get('success')}}
+                    @endif
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <x-footer />
 
     <!-- jQuery -->
@@ -99,6 +126,12 @@
     <script src="{{ asset('assets/js/script.js') }}"></script>
 
     @yield('scripts')
+
+    @if ($errors->any() or session()->has('success'))
+        <script>
+            $('#notifyModal').modal('show')
+        </script>
+    @endif
 </body>
 
 </html>

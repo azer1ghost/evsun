@@ -28,9 +28,9 @@
                         </div>
                         <div class="post-slide2 solar_post_detail">
                             <div class="post-content">
-                                <h3 class="post-title">
-                                    <p>{{$post->getTranslatedAttribute('title')}}</p>
-                                </h3>
+                                <h1 style="font-size: 30px" class="post-title">
+                                   {{$post->getTranslatedAttribute('title')}}
+                                </h1>
                                 <p class="post-description">
                                     <blackquote>
                                         {{$post->getTranslatedAttribute('excerpt')}}

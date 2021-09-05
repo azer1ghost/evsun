@@ -17,7 +17,7 @@
                     <div class="swiper-wrapper">
                         @foreach($solutions as $single_solution)
                         <div class="swiper-slide">
-                            <a href="{{route('solution', $single_solution)}}" @class(['service-div', 'active'=> (route('solution', $single_solution) == url()->current()) ])" >
+                            <a href="@if(URL::current() != route('solution', $single_solution)) {{route('solution', $single_solution)}} @else javascript:void(0) @endif "  @class(['service-div', 'active'=> (route('solution', $single_solution) == url()->current()) ])" >
                                 <div class="service-img">
                                     <i class="{{$single_solution->getAttribute('icon')}} fa-2x text-dark"></i>
                                 </div>

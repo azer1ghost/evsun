@@ -21,7 +21,7 @@
                             </div>
                             <div class="col-9">
                                 <div class="ss_four_two">
-                                    <h2>{{str_limit($service->getTranslatedAttribute('title'), 20)}}</h2>
+                                    <h2>{{str_limit($service->getTranslatedAttribute('title'), 50)}}</h2>
                                     <p>{{str_limit($service->getTranslatedAttribute('meta_description'))}}</p>
                                 </div>
                             </div>

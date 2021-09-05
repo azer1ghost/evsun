@@ -7,7 +7,7 @@
             <div class="swiper-wrapper">
                 @foreach($brands as $brand)
                 <div class="swiper-slide">
-                    <a target="_blank" href="{{$brand->url}}" class="ss_eight ss_box_wbg wow fadeIn" data-wow-delay="0.1s" data-wow-duration="1s">
+                    <a target="_blank" href="{{$brand->url ?? 'javascript:void(0)' }}" class="ss_eight ss_box_wbg wow fadeIn" data-wow-delay="0.1s" data-wow-duration="1s">
                         <img class="img-fluid" src="{!!asset(Voyager::image($brand->image))!!}" alt="{{$brand->getAttribute('title')}}" />
                     </a>
                 </div>

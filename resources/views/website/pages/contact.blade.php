@@ -11,6 +11,9 @@
 @section('content')
     @include('website.components.breadcrumb', ['image' => $meta->image(), 'links' =>  [$meta->get('title') ]])
 
+
+
+
     <section class="ss_map">
         <iframe
             src="https://maps.google.com/maps?q={{setting('site.address')}}&t=&z=15&ie=UTF8&iwloc=&output=embed"
@@ -109,62 +112,66 @@
                             <form method="POST" action="{{route('contact.form')}}">
                                 @csrf
                                 <div class="ss_contact_form">
-                                    <label for="name">Ad</label>
+                                    <label for="name">@lang('static.name')</label>
                                     <input
                                         type="text"
-                                        placeholder="Adınızı daxil edin"
+                                        placeholder="@lang('static.enter_name')"
                                         name="name"
                                         id="name"
                                         class="require"
+                                        value="{{old('name')}}"
                                         data-error="Xahiş edirik ad hissəsini boş qoymayın"
                                     />
                                 </div>
                                 <div class="ss_contact_form">
-                                    <label for="number">Nömrə</label>
+                                    <label for="number">@lang('static.phone')</label>
                                     <input
                                         type="text"
                                         name="number"
                                         id="number"
-                                        placeholder="Nömrənizi daxil edin"
+                                        placeholder="@lang('static.enter_number')"
                                         class="require"
+                                        value="{{old('number')}}"
                                         data-error="Xahiş edirik nömrə hissəsini boş qoymayın"
                                     />
                                 </div>
                                 <div class="ss_contact_form">
-                                    <label for="email">Email</label>
+                                    <label for="email">@lang('static.email')</label>
                                     <input
                                         type="email"
                                         name="email"
                                         id="email"
-                                        placeholder="E-mail adresinizi daxil edin"
+                                        placeholder="@lang('static.enter_email')"
                                         class="require"
                                         data-valid="email"
+                                        value="{{old('email')}}"
                                         data-error="Email düzgün deyil."
                                     />
                                 </div>
                                 <div class="ss_contact_form">
-                                    <label for="subject">Mövzu</label>
+                                    <label for="subject">@lang('static.subject')</label>
                                     <input
                                         type="text"
                                         name="subject"
                                         id="subject"
-                                        placeholder="Mövzunu daxil edin"
+                                        placeholder="@lang('static.enter_subject')"
                                         class="require"
+                                        value="{{old('subject')}}"
                                         data-error="Xahiş edirik mövzu hissəsini boş qoymayın"
                                     />
                                 </div>
                                 <div class="ss_contact_form">
-                                    <label class="ss_message">Mesaj</label>
+                                    <label class="ss_message">@lang('static.message')</label>
                                     <textarea
                                         name="message"
                                         id="message"
-                                        placeholder="Mesajınızı daxil edin"
+                                        placeholder="@lang('static.enter_message')"
                                         class="require"
                                         data-error="Xahiş edirik mesaj hissəsini boş qoymayın"
-                                    ></textarea>
+                                    >{{old('message')}}</textarea>
                                 </div>
                                 <button type="submit" class="ss_btn submitForm">
-                                    Göndər
+                                    @lang('static.send')
                                 </button>
                                 <div class="response"></div>
                             </form>
@@ -180,3 +187,4 @@
     @endif
 
 @endsection
+

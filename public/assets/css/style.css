@@ -54,7 +54,7 @@ h6 {
 
 h1 {
     font-size: 40px;
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
 }
 
 h2 {
