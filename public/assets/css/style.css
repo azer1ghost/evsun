@@ -211,13 +211,14 @@ img:focus {
 .main-carousel {
     width: 100%;
     background: linear-gradient(to left, #0362dd, #1b75eb, #0362dd);
-    height: 800px;
+    height: 100vh;
     overflow: hidden;
     object-fit: cover;
+    text-align: center !important;
 }
 
 .carousel-div {
-    height: 800px !important;
+    height: 100vh !important;
     overflow: hidden;
     object-fit: cover;
 }
@@ -257,12 +258,14 @@ img:focus {
     justify-content: center !important;
     padding-top: 340px;
     background: #0000003d;
+    text-align: center;
 }
 
 .main-carousel .main-carousel-text {
     align-items: center;
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 
 .main-carousel .main-carousel-text p {
@@ -5799,11 +5802,12 @@ i {
     }
 
     .carousel-dontent {
-        padding-top: 200px !important;
+        padding-top: 250px !important;
+        text-align: center;
     }
 
     .main-carousel {
-        height: 700px !important;
+        height: 100vh !important;
     }
 
     .ss_four_left .ss_box_bg {
