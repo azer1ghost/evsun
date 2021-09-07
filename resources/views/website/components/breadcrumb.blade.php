@@ -2,7 +2,7 @@
      style="background-image: url('{!!asset(Voyager::image($image))!!}');
             background-repeat: no-repeat;
             background-size: 100%;
-            background-position: center;">
+            background-position: center;background-size: cover;">
 <div class="b_cover"></div>
     <div class="container-fluid">
         <div class="row">

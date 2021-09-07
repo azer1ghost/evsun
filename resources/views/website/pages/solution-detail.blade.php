@@ -8,7 +8,7 @@
 @include('website.components.breadcrumb', ['image' => $solution->image, 'links' => [route('solutions') => meta('solutions')->get('title'), $solution->getTranslatedAttribute('title') ]]))
 
 <section class="heller-details">
-    <div class="container-fluid py-5">
+    <div class="container-fluid pb-5">
         <div class="row">
             <div class="col-lg-12 order-last order-md-first mb-5">
                 <h3 class="ss_h3_center text-center">Həllər</h3>
