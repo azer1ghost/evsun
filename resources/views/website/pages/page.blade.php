@@ -22,7 +22,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-7 col-md-12 mt-5">
+                <div class="col-lg-7 col-md-12 mt-0 mt-md-5 ">
                     <div class="solar_our_vison_detail mb-5">
                         <h1 class="text_span mb-3">{{$page->getTranslatedAttribute('title')}}</h1>
                         <p>
