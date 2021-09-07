@@ -646,6 +646,13 @@ $(document).ready(function () {
     var header = document.querySelector(".ss_index_one");
     var toTop = document.querySelector(".ltx-go-top");
 
+    window.onload = function() {
+        if (this.window.pageYOffset > 70) {
+            header.style.background = "#00000097";
+            toTop.style.display = "block";
+        }
+    };
+
     window.addEventListener("load", function () {
         if (this.window.pageYOffset > 70) {
             header.style.background = "#00000097";
