@@ -11,7 +11,7 @@
                         <a href="{{$slide->btnUrl}}" class="ss_btn mt-4">{{$slide->getTranslatedAttribute('btnText')}}</a>
                     </div>
                 </div>
-                <img src="{!!asset(Voyager::image($slide->image))!!}" alt="{{$slide->getTranslatedAttribute('title')}}" />
+                <img @if(!$loop->first) loading="lazy" @endif src="{!!asset(Voyager::image($slide->image))!!}" alt="{{$slide->getTranslatedAttribute('title')}}" />
             </div>
             @endforeach
         </div>
