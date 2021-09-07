@@ -7245,7 +7245,7 @@ img {
     padding-top: 1rem;
 }
 
-.ss_btn, .white_btn, .promo_code .ss_btn{
+.ss_section_two .ss_btn, .white_btn, .promo_code .ss_btn{
     min-width: 75px !important;
     height: 34px !important;
     line-height: 30px !important;
