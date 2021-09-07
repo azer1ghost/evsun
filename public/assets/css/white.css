@@ -22,7 +22,7 @@ h6 {
 
 h1 {
     font-size: 40px;
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
 }
 
 h2 {
@@ -35,7 +35,7 @@ h3 {
     letter-spacing: 1px;
     margin-bottom: 40px;
     position: relative;
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
 }
 
 input:focus,
@@ -4114,7 +4114,7 @@ html {
 .elite_section h1 {
     color: #fff;
     font-weight: 700;
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
 }
 
 .elite_section h2 {

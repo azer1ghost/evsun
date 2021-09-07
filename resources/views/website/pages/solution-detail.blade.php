@@ -10,7 +10,7 @@
 <section class="heller-details">
     <div class="container-fluid pb-5">
         <div class="row">
-            <div class="col-lg-12 order-last order-md-first mb-5">
+            <div class="col-lg-12 mb-5">
                 <h3 class="ss_h3_center text-center">Həllər</h3>
                 <!-- dediyim kimi corusel ele/ bu foreach ozu loop-layacaq /kalslara filan oyna seliqye sal ifsyo -->
                 <div class="swiper-container">
@@ -28,14 +28,15 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-12 row">
-                <div class="col-md-4">
-                   <div class="service-image">
-                       <video width="500px" height="400px" preload="none" autoplay loop src="{!!asset(Voyager::image($solution->video))!!}"></video>
-                   </div>
+            <div class="col-lg-12 row no-gutters p-0">
+                <div class="col-md-4 m-0">
+                   <video width="100%" class="p-2" preload="none" muted autoplay playsinline loop>
+                       <source src="{!!asset(Voyager::image($solution->video))!!}" type="video/mp4">
+{{--                       <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">--}}
+                   </video>
                 </div>
-                <div class="col-md-8">
-                    <div class="text-left mb-5">
+                <div class="col-md-8 pr-3 pl-3 mt-3">
+                    <div class="text-left mb-3">
                         <h1>{{$solution->getTranslatedAttribute('title')}}</h1>
                     </div>
                     <p>

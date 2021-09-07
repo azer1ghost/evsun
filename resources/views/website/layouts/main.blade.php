@@ -105,6 +105,7 @@
         jQuery(document).ready(function($) {
             jQuery('.stellarnav').stellarNav({
                 breakpoint: 990,
+                scrollbarFix: true
             });
         });
     </script>

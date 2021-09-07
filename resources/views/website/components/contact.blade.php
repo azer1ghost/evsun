@@ -11,7 +11,7 @@
                 </div>
                 <form class="col-md-5 align-self-center" method="POST" action="{{route('call.me')}}"> @csrf
                     <div class="ss_foot_news_one">
-                        <input type="text" name="number" required placeholder="@lang('static.enter_number')" />
+                        <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" name="number" required placeholder="@lang('static.enter_number') Format: 055-333-33-33" />
                         <button type="submit" class="ss_btn">@lang('static.send')</button>
                     </div>
                 </form>

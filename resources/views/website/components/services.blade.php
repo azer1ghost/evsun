@@ -10,7 +10,7 @@
         <div class="row">
             <!-- Service Area End -->
             @foreach($services as $service)
-            <div class="col-xl-4 d-flex align-items-center col-lg-6 @if(!$loop->last) order-xl-last d-flex align-items-center mt-lg-0 mt-md-4 @endif">
+            <div class="col-xl-4 d-flex align-items-center col-lg-6 @if(!$loop->last) order-last d-flex align-items-center mt-lg-0 mt-md-4 @endif">
                 <div class="ss_four_left">
                     <a href="{{route('service', $service)}}" class="ss_box_bg wow fadeIn" data-wow-delay="@if($loop->first) 0.1s @else 0.3s @endif" data-wow-duration="1s">
                         <div class="row">

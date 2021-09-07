@@ -76,27 +76,10 @@
         <h3 class="ss_h3_center text-center">{{$service->getTranslatedAttribute('meta_title')}}</h3>
         <div class="heler-alt-content pt-5">
             <div class="row">
-                <div data-aos-delay="300" data-aos-duration="800" data-aos="fade-right" class="order-xl-first col-lg-3 col-12 col-md-6">
+                <div data-aos-delay="300" data-aos-duration="800" data-aos="fade-right" class="col-lg-3 col-12 col-md-6">
                     <div class="heller-list-left">
                         <ul>
                             @foreach($services->take(3) as $subService)
-                                <li>
-                                    <a href="{{route('service', $subService)}}">
-                                        <div class="d-flex align-items-center">
-                                            <span> <i class="{{$subService->icon_awesome ?? 'fa fa-cog'}}"></i> </span>
-                                            <h2>{{str_limit($subService->getTranslatedAttribute('title'), 50)}}</h2>
-                                        </div>
-                                        <p>{{str_limit($subService->getTranslatedAttribute('meta_description'))}}</p>
-                                    </a>
-                                </li>
-                            @endforeach
-                        </ul>
-                    </div>
-                </div>
-                <div data-aos-delay="300" data-aos-duration="800" data-aos="fade-left" class="order-xl-last col-lg-3 col-12 col-md-6">
-                    <div class="heller-list-right">
-                        <ul>
-                            @foreach($services->slice(3)->all() as $subService)
                                 <li>
                                     <a href="{{route('service', $subService)}}">
                                         <div class="d-flex align-items-center">
@@ -118,6 +101,23 @@
 " class="col-lg-6 col-12 col-md-6 heller-alt-img-div">
                     <img class="heller-alt-img" src="{!!asset(Voyager::image($service->image2))!!}" />
                     <img width="75%" src="{{asset('assets/images/advantage-bg.png')}}">
+                </div>
+                <div data-aos-delay="300" data-aos-duration="800" data-aos="fade-left" class="col-lg-3 col-12 col-md-6">
+                    <div class="heller-list-right">
+                        <ul>
+                            @foreach($services->slice(3)->all() as $subService)
+                                <li>
+                                    <a href="{{route('service', $subService)}}">
+                                        <div class="d-flex align-items-center">
+                                            <span> <i class="{{$subService->icon_awesome ?? 'fa fa-cog'}}"></i> </span>
+                                            <h2>{{str_limit($subService->getTranslatedAttribute('title'), 50)}}</h2>
+                                        </div>
+                                        <p>{{str_limit($subService->getTranslatedAttribute('meta_description'))}}</p>
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
