@@ -646,11 +646,11 @@ $(document).ready(function () {
     var header = document.querySelector(".ss_index_one");
     var toTop = document.querySelector(".ltx-go-top");
 
-    if(! document.getElementsByClassName('ss_breadcrumb')[0])
-    {
-        alert('oks')
-        header.style.background = "#00000097";
-        toTop.style.display = "block";
+    if(! document.getElementsByClassName('ss_breadcrumb')[0]) {
+        if (window.location.pathname != '/'){
+            header.style.background = "#00000097";
+            toTop.style.display = "block";
+         }
     }
 
     window.addEventListener("scroll", function () {
