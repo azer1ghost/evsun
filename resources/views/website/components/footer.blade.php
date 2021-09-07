@@ -15,8 +15,8 @@
             </div>
             <div class="col-lg-3 col-md-3 col-12">
                 <div class="ss_foot_sec">
-                    <h2 class="ss_foot_head text-center">@lang('static.services')</h2>
-                    <ul class="text-center">
+                    <h2 class="ss_foot_head text-left">@lang('static.services')</h2>
+                    <ul class="text-left">
                         @foreach($services as $service)
                         <li><a href="{{route('service', $service)}}"><i class="fa fa-angle-double-right"></i>  {{$service->getTranslatedAttribute('title')}}</a></li>
                         @endforeach
@@ -25,8 +25,8 @@
             </div>
             <div class="col-lg-3 col-md-3 col-12">
                 <div class="ss_foot_sec">
-                    <h2 class="ss_foot_head text-center">@lang('static.solutions')</h2>
-                    <ul class="text-center">
+                    <h2 class="ss_foot_head text-left">@lang('static.solutions')</h2>
+                    <ul class="text-left">
                         @foreach($solutions as $solution)
                             <li><a href="{{route('solution', $solution)}}"><i class="fa fa-angle-double-right"></i> {{$solution->getTranslatedAttribute('title')}}</a></li>
                         @endforeach
