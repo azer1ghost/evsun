@@ -215,14 +215,14 @@ img:focus {
 .main-carousel {
     width: 100%;
     background: linear-gradient(to left, #0362dd, #1b75eb, #0362dd);
-    height: 80vh;
+    height: 100vh;
     overflow: hidden;
     object-fit: cover;
     text-align: center !important;
 }
 
 .carousel-div {
-    height: 80vh !important;
+    height: 100vh !important;
     overflow: hidden;
     object-fit: cover;
 }
@@ -5803,12 +5803,12 @@ i {
 
     .main-carousel .main-carousel-text h1 {
         text-align: center !important;
-        font-size: 27px !important;
+        font-size: 21px !important;
     }
 
     .main-carousel .owl-item.active .main-carousel-text p{
         padding: 10px 0px !important;
-        font-size: 15px !important;
+        font-size: 13px !important;
     }
 
     .carousel-dontent {
@@ -7230,4 +7230,18 @@ img {
     display: block;
     height: auto;
     max-width: 100%;
+}
+
+.armud-container{
+    display: -webkit-box;
+}
+
+.heler-alt-content{
+    padding-top: 3rem;
+}
+
+@media screen and (max-width:991px) {
+.heler-alt-content{
+    padding-top: 1rem;
+}
 }
