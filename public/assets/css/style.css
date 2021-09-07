@@ -71,7 +71,7 @@ h3 {
     letter-spacing: 1px;
     margin-bottom: 40px;
     position: relative;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
 }
 
 input:focus,
@@ -643,7 +643,7 @@ h3.ss_h3_center:before {
     position: relative;
     padding: 0px 30px;
     border: none;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
 }
 
 .white_btn {
@@ -4163,7 +4163,7 @@ html {
 .elite_section h1 {
     color: #fff;
     font-weight: 700;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
 }
 
 .elite_section h2 {
@@ -5246,7 +5246,7 @@ i {
     font-weight: 600;
     line-height: 1.1;
     color: #495569 !important;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     margin-bottom: 0px;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
@@ -5327,7 +5327,7 @@ i {
     font-size: 17px;
     font-weight: 600;
     margin-top: 0;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
 }
 .post-slide2 .post-title a {
     display: inline-block;
@@ -5377,7 +5377,7 @@ i {
     background: linear-gradient(90deg, #5e64cd, #8f94fb 51%, #5e64cd)
         var(--x, 0) / 200%;
     border-radius: 100px;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -ms-transition: all 0.3s ease-in-out;
