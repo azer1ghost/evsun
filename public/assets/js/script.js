@@ -646,8 +646,9 @@ $(document).ready(function () {
     var header = document.querySelector(".ss_index_one");
     var toTop = document.querySelector(".ltx-go-top");
 
-    if(document.getElementsByClassName('ss_index_one'))
+    if(! document.getElementsByClassName('ss_breadcrumb')[0])
     {
+        alert('oks')
         header.style.background = "#00000097";
         toTop.style.display = "block";
     }
