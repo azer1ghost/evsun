@@ -7245,7 +7245,16 @@ img {
     padding-top: 1rem;
 }
 
-.ss_section_two .ss_btn, .white_btn, .promo_code .ss_btn{
+.armud-text{
+    text-align: center;
+}
+
+.armud-text button{
+    margin:auto;
+    margin-top: 10px;
+}
+
+.main-carousel-text .ss_btn{
     min-width: 75px !important;
     height: 34px !important;
     line-height: 30px !important;

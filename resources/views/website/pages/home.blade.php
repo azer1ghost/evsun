@@ -24,9 +24,9 @@ $meta = meta('homepage', ['excerpt', 'image', 'btnText', 'btnLink', 'body']);
                 </div>
             </div>
             <div class="col-lg-6 align-self-center">
-                <div class="ss_three_right text-center">
+                <div class="ss_three_right armud-text">
                     <!-- <h3>best service</h3> -->
-                    <h1 class="text-center">{{$meta->get('title')}}</h1>
+                    <h1>{{$meta->get('title')}}</h1>
                     {!! $meta->get('body') !!}
                     <a href="{{$meta->get('btnLink')}}" class="ss_btn mt-4">{{$meta->get('btnText')}}</a>
                 </div>
