@@ -83,7 +83,7 @@
                                 <li>
                                     <a href="{{route('service', $subService)}}">
                                         <div class="armud-container">
-                                            <div class="armud-icon"> <i class="{{$subService->icon_awesome ?? 'fa fa-cog'}}"></i> </div>
+                                            <span> <i class="{{$subService->icon_awesome ?? 'fa fa-cog'}}"></i> </span>
                                             <h2>{{str_limit($subService->getTranslatedAttribute('title'), 50)}}</h2>
                                         </div>
                                         <p>{{str_limit($subService->getTranslatedAttribute('meta_description'))}}</p>
@@ -108,7 +108,7 @@
                             @foreach($services->slice(3)->all() as $subService)
                                 <li>
                                     <a href="{{route('service', $subService)}}">
-                                        <div class="d-flex align-items-center">
+                                        <div class="armud-container">
                                             <span> <i class="{{$subService->icon_awesome ?? 'fa fa-cog'}}"></i> </span>
                                             <h2>{{str_limit($subService->getTranslatedAttribute('title'), 50)}}</h2>
                                         </div>
