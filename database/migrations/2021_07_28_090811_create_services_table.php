@@ -24,6 +24,7 @@ class CreateServicesTable extends Migration
             $table->string('dynamic_image')->nullable();
             $table->string('heading')->nullable();
             $table->string('title')->nullable();
+            $table->string('icon_awesome')->nullable();
             $table->text('detail')->nullable();
             $table->string('meta_title')->nullable();
             $table->string('meta_description')->nullable();
