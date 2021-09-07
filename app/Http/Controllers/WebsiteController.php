@@ -44,7 +44,7 @@ class WebsiteController extends Controller
         return view("website.pages.{$page}")
             ->with([
                 'service' => $service,
-                'services' => $services->active()->select(['id', 'slug', 'title', 'icon', 'detail'])->orderBy('ordering')->get()
+                'services' => $services->active()->select(['id', 'slug', 'title', 'icon', 'detail', 'icon_awesome'])->orderBy('ordering')->get()
             ]);
     }
 
