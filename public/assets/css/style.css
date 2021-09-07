@@ -1466,7 +1466,7 @@ h3.ss_h3_center:before {
 }
 
 .section_brands {
-    padding: 150px 0px !important;
+    padding: 150px 0px;
 }
 
 /* ===Section Six=== */
@@ -7243,5 +7243,13 @@ img {
 @media screen and (max-width:991px) {
 .heler-alt-content{
     padding-top: 1rem;
+}
+
+.ss_btn, .white_btn, .promo_code .ss_btn{
+    min-width: 75px !important;
+    height: 34px !important;
+    line-height: 30px !important;
+    font-size: 14px !important;
+    margin-top: 10px !important;
 }
 }
