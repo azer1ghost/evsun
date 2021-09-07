@@ -618,7 +618,7 @@ $(".submitForm").on("click", function () {
 
 $(document).ready(function () {
     $(".main-carousel .owl-carousel").owlCarousel({
-        autoplay: false,
+        autoplay: true,
         autoplayTimeout: 5000,
         animateOut: "fadeOut",
         margin: 0,
