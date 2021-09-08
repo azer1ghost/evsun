@@ -32,12 +32,11 @@
                 <div class="sidebar_category">
                     <h4>Kateqoriyalar</h4>
                     <ul>
+                        @foreach($categories as $category)
                         <li>
-                            <a href="http://evsun.test/blog/category-1">Kateqoriya 1</a><span>(20)</span>
+                            <a href="http://evsun.test/blog/category-1"> {{$category->getTranslatedAttribute('name')}}</a><span>({{$category->products_count}})</span>
                         </li>
-                        <li>
-                            <a href="http://evsun.test/blog/category-2">Kateqoriya 2</a><span>(76)</span>
-                        </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
@@ -46,10 +45,10 @@
                     <p class="filter-head"> Xüsusiyyətlər </p>
                     <ul>
                         @foreach($attributes as $attribute)
-                            <li class="btn col-6">
-                                <input type="checkbox" name="check" class="mr-3" />
-                                {{$attribute->name}}
-                            </li>
+                        <li class="btn col-6">
+                            <input type="checkbox" name="check" class="mr-3" />
+                            {{$attribute->getTranslatedAttribute('name')}}
+                        </li>
                         @endforeach
                     </ul>
                 </div>
@@ -60,7 +59,7 @@
                 <div class="col-12">
                     <ul class="nav justify-content-between">
                         <li class="nav-item">
-                            <a class="nav-link active" style="color: gray" href="#"><i class="fal fa-long-arrow-right mr-1"></i> <strong>342</strong> items avaliable</a>
+                            <a class="nav-link active" style="color: gray" href="#"><i class="fal fa-long-arrow-right mr-1"></i> <strong>{{$products->total()}}</strong> mövcuddur</a>
                         </li>
                         <li class="nav-item">
                             <select name="hard-select" class="form-control">
@@ -72,13 +71,14 @@
                         </li>
                     </ul>
                 </div>
-                @foreach($products as $product)
+                @forelse($products as $product)
                     <div class="col-xl-3 col-lg-4 col-12 col-md-4 py-3">
                         <div class="product-itm">
                             <a href="{{route('product', $product->getAttribute('serial'))}}">
-                                <img src="{!!asset(Voyager::image(json_decode($product->images[0])))!!}" />
-                                <p>{{str_limit($product->getAttribute('name'), 20)}}
-                                    <span>{{$product->category->name}}</span>
+{{--                                <img src="{!!asset(Voyager::image(json_decode($product->images[0])))!!}" />--}}
+                                <img src="{{asset('assets/images/ss_about1.jpg')}}" />
+                                <p>{{str_limit($product->getTranslatedAttribute('name'), 50)}}
+                                    <span>{{$product->category->getTranslatedAttribute('name')}}</span>
                                 </p>
                             </a>
                             <div class="prod-actions">
@@ -87,7 +87,18 @@
                             </div>
                         </div>
                     </div>
-                @endforeach
+                @empty
+                    <div class="col-12 py-3 text-center">
+                        <p>No items available</p>
+                    </div>
+                @endforelse
+                <div class="col-12 py-3 text-center">
+                @if($products->hasMorePages())
+                    <button class="btn btn-outline-primary" wire:click.prevent="loadMore">Load more</button>
+                @else
+                    <p>No more items</p>
+                @endif
+                </div>
             </div>
         </div>
     </div>
