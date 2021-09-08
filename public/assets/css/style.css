@@ -6332,7 +6332,7 @@ i {
     width: 70% !important;
     margin: auto !important;
     position: relative !important;
-    padding: 250px 0px !important;
+    padding: 280px 0px !important;
 }
 
 .heller-img {
@@ -6492,7 +6492,7 @@ i {
     .heller-img{
         position: absolute !important;
         right: -45vw !important;
-        width: 750px !important;
+        width: 880px !important;
         animation: animeRightImg 1.7s cubic-bezier(0.445, 0.05, 0.55, 0.95) !important;
         animation-iteration-count: 1 !important;
     }
@@ -7261,4 +7261,28 @@ img {
     font-size: 14px !important;
     margin-top: 10px !important;
 }
+}
+
+@media screen and (min-width: 1800px){
+    .heller-img{
+        width: 1400px !important;
+    }
+    .heller-img-left{
+        width: 250px !important;
+    }
+
+    .container-heller{
+        padding: 324px 0px !important;
+    }
+}
+
+@media screen and (min-width:1200px) and (max-width:1400px){
+    .heller-img{
+        width: 1000px !important;
+    }
+
+    .heller-img-left {
+        width: 200px !important;
+    }
+
 }
