@@ -7262,3 +7262,27 @@ img {
     margin-top: 10px !important;
 }
 }
+
+@media screen and (min-width: 1800px){
+    .heller-img{
+        width: 1400px !important;
+    }
+    .heller-img-left{
+        width: 250px !important;
+    }
+
+    .container-heller{
+        padding: 324px 0px !important;
+    }
+}
+
+@media screen and (min-width:1200px) and (max-width:1400px){
+    .heller-img{
+        width: 1000px !important;
+    }
+
+    .heller-img-left {
+        width: 200px !important;
+    }
+
+}
