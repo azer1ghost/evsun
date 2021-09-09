@@ -2350,6 +2350,10 @@ button.ss_btn:hover {
     margin-top: 15px;
 }
 
+.ss_contact {
+    margin-top: 100px;
+}
+
 .ss_contact .ss_contact_right button,
 .ss_cmnt_form button {
     margin: 20px 0px 0px 125px;
@@ -2361,13 +2365,8 @@ button.ss_btn:hover {
 }
 
 .ss_map iframe {
-    height: 600px;
+    height: 750px;
     width: 100%;
-    -webkit-filter: grayscale(100%);
-    -moz-filter: grayscale(100%);
-    -ms-filter: grayscale(100%);
-    -o-filter: grayscale(100%);
-    filter: grayscale(100%);
 }
 
 /* ===About Css=== */
@@ -5128,7 +5127,7 @@ html {
         margin-top: 30px;
     }
     .ss_map iframe {
-        height: 400px;
+        height: 600px;
         width: 100%;
     }
     .s_login .ss_box_bg {
@@ -7284,5 +7283,6 @@ img {
     .heller-img-left {
         width: 200px !important;
     }
+
 
 }
