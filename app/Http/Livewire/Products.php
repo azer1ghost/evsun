@@ -13,9 +13,16 @@ class Products extends Component
 
     public ?int $byCategory = null;
 
+    public ?Product $product = null;
+
     public function loadMore()
     {
         $this->perPage += 4;
+    }
+
+    public function quickView($id)
+    {
+        $this->product = Product::find($id);
     }
 
     public function render()
@@ -26,7 +33,7 @@ class Products extends Component
 
             'products' => Product::query()
                 ->when($this->byCategory, function ($query){
-                    $query->where('product_category_id');
+                    $query->where('product_category_id', $this->byCategory);
                 })
                 ->active()
                 ->paginate($this->perPage),

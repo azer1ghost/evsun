@@ -34,7 +34,7 @@
                     <ul>
                         @foreach($categories as $category)
                         <li>
-                            <a href="http://evsun.test/blog/category-1"> {{$category->getTranslatedAttribute('name')}}</a><span>({{$category->products_count}})</span>
+                            <a href="{{route('products', ['category' => $category->id])}}"> {{$category->getTranslatedAttribute('name')}}</a><span>({{$category->products_count}})</span>
                         </li>
                         @endforeach
                     </ul>
@@ -82,8 +82,8 @@
                                 </p>
                             </a>
                             <div class="prod-actions">
-                                <a data-toggle="modal" data-target=".bd-example-modal-lg" class="prod-view" href="#"><i class="fas fa-search"></i> </a>
-                                <a class="prod-link" href="#"><i class="fas fa-link"></i> </a>
+                                <a data-toggle="modal" data-target="#quickView" wire:click="quickView({{ $product->id }})" class="prod-view" href="#"><i class="fas fa-search"></i> </a>
+                                <a class="prod-link" href="{{route('product', $product->getAttribute('serial'))}}"><i class="fas fa-link"></i> </a>
                             </div>
                         </div>
                     </div>
@@ -103,7 +103,7 @@
         </div>
     </div>
 
-    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div wire:ignore.self  class="modal fade" id="quickView" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
@@ -120,7 +120,7 @@
                     <div class="col-lg-6 col-12">
                         <div class="prod-page-main">
                             <div class="prod-page-name">
-                                <h1>Productun adi bura </h1>
+                                <h1>{{$product->name}}</h1>
                                 <p> Kateqoriya:<span>Productun kateqoriyasi bura </span></p>
                             </div>
                             <div class="prod-page-details">

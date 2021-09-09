@@ -27,7 +27,6 @@ class Product extends Model
         return $this->belongsTo(ProductCategory::class, 'product_category_id');
     }
 
-
     public function attributes(): BelongsToMany
     {
         return $this->belongsToMany(Attribute::class)->withPivot('value');
