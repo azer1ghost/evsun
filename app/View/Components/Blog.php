@@ -13,7 +13,7 @@ class Blog extends Component
     public function __construct()
     {
         $this->posts = Cache::remember("posts_homepage", config('cache.timeout'), function (){
-            return Post::select(['id','title','slug','excerpt','image','created_at'])->published()->latest()->limit(3)->get();
+            return Post::select(['id','title','slug','excerpt','image','created_at'])->published()->latest()->limit(4)->get();
         });
     }
 

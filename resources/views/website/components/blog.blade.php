@@ -14,7 +14,7 @@
                     <div class="post-slide2">
                         <div class="post-img">
                             <a href="{{route('post', $post)}}">
-                                <img src="{!!asset(Voyager::image($post->image))!!}" alt="{{$post->title}}" />
+                                <img loading="lazy" src="{!!asset(Voyager::image($post->image))!!}" alt="{{$post->title}}" />
                             </a>
                             <div class="post-date">
                                 <span class="date">{{$post->created_at->format('d')}}</span>

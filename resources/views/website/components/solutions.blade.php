@@ -13,7 +13,7 @@
                     <div class="ss_two_sec wow fadeIn" data-aos="fade-up">
                         <i class="{{$solution->icon}} fa-3x text-dark"></i>
                         <h2>{{str_limit($solution->getTranslatedAttribute('title'), 20)}}</h2>
-                        <p>{{str_limit($solution->getTranslatedAttribute('meta_description'), 20)}}</p>
+{{--                        <p>{{str_limit($solution->getTranslatedAttribute('meta_description'), 20)}}</p>--}}
                     </div>
                 </a>
                 @endforeach
