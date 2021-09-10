@@ -58,7 +58,7 @@ h6 {
 
 h1 {
     font-size: 40px;
-    /*text-transform: capitalize;*/
+    /**/
 }
 
 h2 {
@@ -71,7 +71,7 @@ h3 {
     letter-spacing: 1px;
     margin-bottom: 40px;
     position: relative;
-    /* text-transform: capitalize; */
+
 }
 
 input:focus,
@@ -643,7 +643,7 @@ h3.ss_h3_center:before {
     position: relative;
     padding: 0px 30px;
     border: none;
-    /* text-transform: capitalize; */
+
 }
 
 .white_btn {
@@ -2350,6 +2350,10 @@ button.ss_btn:hover {
     margin-top: 15px;
 }
 
+.ss_contact {
+    margin-top: 100px;
+}
+
 .ss_contact .ss_contact_right button,
 .ss_cmnt_form button {
     margin: 20px 0px 0px 125px;
@@ -2361,13 +2365,8 @@ button.ss_btn:hover {
 }
 
 .ss_map iframe {
-    height: 600px;
+    height: 750px;
     width: 100%;
-    -webkit-filter: grayscale(100%);
-    -moz-filter: grayscale(100%);
-    -ms-filter: grayscale(100%);
-    -o-filter: grayscale(100%);
-    filter: grayscale(100%);
 }
 
 /* ===About Css=== */
@@ -4163,7 +4162,7 @@ html {
 .elite_section h1 {
     color: #fff;
     font-weight: 700;
-    /* text-transform: capitalize; */
+
 }
 
 .elite_section h2 {
@@ -5128,7 +5127,7 @@ html {
         margin-top: 30px;
     }
     .ss_map iframe {
-        height: 400px;
+        height: 600px;
         width: 100%;
     }
     .s_login .ss_box_bg {
@@ -5246,7 +5245,7 @@ i {
     font-weight: 600;
     line-height: 1.1;
     color: #495569 !important;
-    /* text-transform: capitalize; */
+
     margin-bottom: 0px;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
@@ -5327,7 +5326,7 @@ i {
     font-size: 17px;
     font-weight: 600;
     margin-top: 0;
-    /* text-transform: capitalize; */
+
 }
 .post-slide2 .post-title a {
     display: inline-block;
@@ -5377,7 +5376,7 @@ i {
     background: linear-gradient(90deg, #5e64cd, #8f94fb 51%, #5e64cd)
         var(--x, 0) / 200%;
     border-radius: 100px;
-    /* text-transform: capitalize; */
+
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -ms-transition: all 0.3s ease-in-out;
@@ -6332,7 +6331,7 @@ i {
     width: 70% !important;
     margin: auto !important;
     position: relative !important;
-    padding: 250px 0px !important;
+    padding: 280px 0px !important;
 }
 
 .heller-img {
@@ -6492,7 +6491,7 @@ i {
     .heller-img{
         position: absolute !important;
         right: -45vw !important;
-        width: 750px !important;
+        width: 880px !important;
         animation: animeRightImg 1.7s cubic-bezier(0.445, 0.05, 0.55, 0.95) !important;
         animation-iteration-count: 1 !important;
     }
@@ -7284,5 +7283,6 @@ img {
     .heller-img-left {
         width: 200px !important;
     }
+
 
 }
