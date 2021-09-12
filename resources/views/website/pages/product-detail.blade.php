@@ -86,7 +86,7 @@
         <div class="col-lg-5">
             <div class="prod-slideri">
                 <ul id="lightSlider">
-                    @foreach(json_decode($product->getAttribute('images')) ?? [$product->getAttribute('images')] as $image)
+                    @foreach(json_decode($product->getAttribute('images')) ?? [] as $image)
                         <li data-thumb="{{ asset(Voyager::image($image)) }}">
                             <img data-toggle="modal" data-target=".bd-example-modal-lg" src="{{ asset(Voyager::image($image)) }}" />
                         </li>

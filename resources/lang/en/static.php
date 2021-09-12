@@ -38,6 +38,15 @@ return [
     'products' => 'Products',
     'similar' => 'Similar',
     'features' => 'Features',
+    'notSelected' => 'Not selected',
+    'categories' => 'Categories',
+    'available' => 'available',
+    'loadMore' => 'Load More',
+    'noProduct' => 'No products available',
+    'thatAll' => 'That\'s all',
+
+
+
 
 
 ];

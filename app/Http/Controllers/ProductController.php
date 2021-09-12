@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Attribute;
 use App\Models\Product;
-use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
@@ -15,6 +13,8 @@ class ProductController extends Controller
 
     public function productDetail(Product $product)
     {
+        $product->increment('view_count');
+
         return view('website.pages.product-detail')
             ->with([
                 'product' => $product,

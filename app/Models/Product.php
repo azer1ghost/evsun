@@ -44,6 +44,6 @@ class Product extends Model
 
     public function scopeOrderByView($query)
     {
-        return $query->orderBy('view_count');
+        return $query->orderByDesc('view_count');
     }
 }

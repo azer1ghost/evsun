@@ -13,7 +13,7 @@ class Products extends Component
 
     public ?int $byCategory = null;
 
-    public ?Product $product = null;
+    public ?int $product_id = 0;
 
     public function loadMore()
     {
@@ -22,8 +22,14 @@ class Products extends Component
 
     public function quickView($id)
     {
-        $this->product = Product::find($id);
+        $this->product_id = $id;
     }
+
+    public function getModalProperty()
+    {
+        return Product::find($this->product_id);
+    }
+
 
     public function render()
     {
@@ -35,10 +41,19 @@ class Products extends Component
                 ->when($this->byCategory, function ($query){
                     $query->where('product_category_id', $this->byCategory);
                 })
+                ->orderByView()
                 ->active()
                 ->paginate($this->perPage),
 
-            'attributes' => Attribute::onlyFilterable()->active()->get()->unique(),
+            'attributes' => Attribute::with([
+                    'products' => function ($query) {
+                        $query->select('id');
+                    }
+                ])
+                ->onlyFilterable()
+                ->active()
+                ->get()
+                ->unique(),
 
         ]);
     }

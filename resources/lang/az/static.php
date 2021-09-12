@@ -38,5 +38,11 @@ return [
     'products' => 'Məhsullar',
     'similar' => 'Oxşar',
     'features' => 'Xüsusiyyətlər',
+    'notSelected' => 'Seçilməyib',
+    'categories' => 'Kateqoriyalar',
+    'available' => 'mövcuddur',
+    'loadMore' => 'Daha çoxunu gətir',
+    'noProduct' => 'Heç bir məhsul mövcud deyil',
+    'thatAll' => 'Hamısı bu qədər',
 
 ];
