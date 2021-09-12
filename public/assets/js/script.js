@@ -668,9 +668,11 @@ $(document).ready(function () {
     });
 });
 
-function myFunction() {
+$('#lngButton').on('click', function (e){
     document.getElementById("languageSelector").classList.toggle("show");
-}
+    e.stopPropagation()
+})
+
 
 window.onclick = function (event) {
     if (!event.target.matches(".dropbtn")) {

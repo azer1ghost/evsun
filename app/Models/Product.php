@@ -27,7 +27,6 @@ class Product extends Model
         return $this->belongsTo(ProductCategory::class, 'product_category_id');
     }
 
-
     public function attributes(): BelongsToMany
     {
         return $this->belongsToMany(Attribute::class)->withPivot('value');
@@ -41,5 +40,10 @@ class Product extends Model
     public function scopeActive($query)
     {
         return $query->where('status', true);
+    }
+
+    public function scopeOrderByView($query)
+    {
+        return $query->orderByDesc('view_count');
     }
 }

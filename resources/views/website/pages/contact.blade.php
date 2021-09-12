@@ -11,9 +11,6 @@
 @section('content')
     @include('website.components.breadcrumb', ['image' => $meta->image(), 'links' =>  [$meta->get('title') ]])
 
-
-
-
     <section class="ss_map">
         <iframe
             src="https://maps.google.com/maps?q={{setting('site.address')}}&t=&z=15&ie=UTF8&iwloc=&output=embed"

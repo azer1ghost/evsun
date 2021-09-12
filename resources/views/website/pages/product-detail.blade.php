@@ -4,7 +4,6 @@
 @section('description', $product->getTranslatedAttribute('meta_description'))
 @section('keywords', $product->getTranslatedAttribute('meta_keywords'))
 
-
 @section('scripts')
 <script>
     $('.slider-single').slick({
@@ -87,15 +86,11 @@
         <div class="col-lg-5">
             <div class="prod-slideri">
                 <ul id="lightSlider">
-                    <li data-thumb="https://s1.1zoom.me/prev/586/Geometry_Tracery_Texture_Blue_Light_Blue_585841_600x340.jpg">
-                        <img data-toggle="modal" data-target=".bd-example-modal-lg" src="https://s1.1zoom.me/prev/586/Geometry_Tracery_Texture_Blue_Light_Blue_585841_600x340.jpg" />
-                    </li>
-                    <li data-thumb="https://s1.1zoom.me/prev/470/469089.jpg">
-                        <img data-toggle="modal" data-target=".bd-example-modal-lg" src="https://s1.1zoom.me/prev/470/469089.jpg" />
-                    </li>
-                    <li data-thumb="https://www.heesenyachts.com/wp-content/uploads/2021/01/19650-Aura-ext-600x340.jpg">
-                        <img data-toggle="modal" data-target=".bd-example-modal-lg" src="https://www.heesenyachts.com/wp-content/uploads/2021/01/19650-Aura-ext-600x340.jpg" />
-                    </li>
+                    @foreach(json_decode($product->getAttribute('images')) ?? [] as $image)
+                        <li data-thumb="{{ asset(Voyager::image($image)) }}">
+                            <img data-toggle="modal" data-target=".bd-example-modal-lg" src="{{ asset(Voyager::image($image)) }}" />
+                        </li>
+                    @endforeach
                 </ul>
             </div>
         </div>
@@ -120,67 +115,34 @@
         <div class="col-lg-7  col-12">
             <div class="prod-page-main">
                 <div class="prod-page-name">
-                    <h1>Productun adi bura </h1>
-                    <p> Kateqoriya:<span>Productun kateqoriyasi bura </span></p>
+                    <h1>{{$product->getTranslatedAttribute('name')}} </h1>
+                    <p> @lang('static.category'): <span>{{$product->getRelationValue('category')->getTranslatedAttribute('name')}} </span></p>
                 </div>
                 <div class="prod-page-details">
-                    <p class="prod-page-details-head">Xüsusiyyətləri</p>
-                    <ul>
-                        <li>
-                            <p> Prod detail 1 </p>
-                        </li>
-                        <li>
-                            <p> Prod detail 1 </p>
-                        </li>
-                        <li>
-                            <p> Prod detail 1 </p>
-                        </li>
-                        <li>
-                            <p> Prod detail 1 </p>
-                        </li>
-                    </ul>
+                    <p class="prod-page-details-head">@lang('static.specification')</p>
+                    <p>{!! $product->getTranslatedAttribute('detail') !!}</p>
                 </div>
 
                 <div class="prod-page-btn">
-                    <a class="prod-modal-btn ss_btn my-4">Əlaqə saxla </a>
+                    <a href="{{route('contact')}}" class="prod-modal-btn ss_btn my-4">@lang('static.contact_us')</a>
                 </div>
 
                 <div class="prod-page-tabs">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
+
                         <li class="nav-item" role="presentation">
-                            <a class="nav-link active" id="comments-tab" data-toggle="tab" href="#comments" role="tab" aria-controls="comments" aria-selected="true">Rəylər</a>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="props-tab" data-toggle="tab" href="#props" role="tab" aria-controls="props" aria-selected="false">Xüsusiyyətlər</a>
+                            <a class="nav-link active" id="props-tab" data-toggle="tab" href="#props" role="tab" aria-controls="props" aria-selected="true">@lang('static.features')</a>
                         </li>
                     </ul>
                     <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="comments" role="tabpanel" aria-labelledby="comments-tab">Reyler</div>
-                        <div class="tab-pane fade" id="props" role="tabpanel" aria-labelledby="props-tab">
+                        <div class="tab-pane fade show active" id="props" role="tabpanel" aria-labelledby="props-tab">
                             <div class="prod-page-details mt-3">
-                                <p class="prod-page-details-head">Xüsusiyyətləri</p>
                                 <ul>
-                                    <li>
-                                        <p> Prod detail 1 </p>
-                                    </li>
-                                    <li>
-                                        <p> Prod detail 1 </p>
-                                    </li>
-                                    <li>
-                                        <p> Prod detail 1 </p>
-                                    </li>
-                                    <li>
-                                        <p> Prod detail 1 </p>
-                                    </li>
-                                    <li>
-                                        <p> Prod detail 1 </p>
-                                    </li>
-                                    <li>
-                                        <p> Prod detail 1 </p>
-                                    </li>
-                                    <li>
-                                        <p> Prod detail 1 </p>
-                                    </li>
+                                    @foreach($product->getRelationValue('attributes') as $attribute)
+                                        <li>
+                                            <p> {{$attribute->name}} : {{$attribute->pivot->value}} </p>
+                                        </li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>
@@ -191,39 +153,27 @@
     </div>
     <div class="row mt-4">
         <div class="col-12">
-            <h3 class="ss_h3_center text-center">Oxşar məhsullar</h3>
+            <h3 class="ss_h3_center text-center">@lang('static.similar') @lang('static.products')</h3>
         </div>
         <div class="col-lg-12 my-5 prod-page-slider">
             <div class="swiper-container">
                 <div class="swiper-wrapper">
+                    @foreach($similar_products as $sm_product)
                     <div class="swiper-slide">
                         <div class="product-itm">
-                            <a href="#">
-                                <img src="https://static.wixstatic.com/media/f2e78a_adc40ca1d58d478cb98bc0351b75f150~mv2.png/v1/fill/w_640,h_378,al_c,q_85,usm_0.66_1.00_0.01/f2e78a_adc40ca1d58d478cb98bc0351b75f150~mv2.webp" />
-                                <p>Produkt adi
-                                    <span>Electric chargers</span>
+                            <a href="{{route('product', $sm_product)}}">
+                                <img src="{!!asset(Voyager::image(json_decode($sm_product->images[0])))!!}" />
+                                <p>{{$sm_product->getTranslatedAttribute('name')}}
+                                    <span>{{$sm_product->getRelationValue('category')->getTranslatedAttribute('name')}}</span>
                                 </p>
                             </a>
                             <div class="prod-actions">
                                 <a data-toggle="modal" data-target=".bd-example-modal-lg" class="prod-view" href="#"><i class="fas fa-search"></i> </a>
-                                <a class="prod-link" href="#"><i class="fas fa-link"></i> </a>
+                                <a class="prod-link" href="{{route('product', $sm_product)}}"><i class="fas fa-link"></i> </a>
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="product-itm">
-                            <a href="#">
-                                <img src="https://static.wixstatic.com/media/f2e78a_adc40ca1d58d478cb98bc0351b75f150~mv2.png/v1/fill/w_640,h_378,al_c,q_85,usm_0.66_1.00_0.01/f2e78a_adc40ca1d58d478cb98bc0351b75f150~mv2.webp" />
-                                <p>Produkt adi
-                                    <span>Electric chargers</span>
-                                </p>
-                            </a>
-                            <div class="prod-actions">
-                                <a data-toggle="modal" data-target=".bd-example-modal-lg" class="prod-view" href="#"><i class="fas fa-search"></i> </a>
-                                <a class="prod-link" href="#"><i class="fas fa-link"></i> </a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

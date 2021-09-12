@@ -18,10 +18,10 @@
 
 @section('content')
     @if(true)
-        @include('website.components.breadcrumb', ['image' => $meta->image(), 'links' => array($meta->get('title')) ])
+        @include('website.components.breadcrumb', ['image' => $meta->image(), 'links' => array($meta->get('title'))])
     @endif
 
-    @livewire('products')
+    @livewire('products', ['byCategory' => request()->get('category')])
 
     @if(meta('products')->get('show_contact'))
         @include('website.components.contact')

@@ -18,6 +18,8 @@ class CreateAttributesTable extends Migration
             $table->string('key')->unique();
             $table->string('name')->nullable();
             $table->boolean('status')->default(true);
+            $table->boolean('filterable')->default(true);
+            $table->boolean('hard')->default(true);
             $table->softDeletes();
             $table->timestamps();
         });
