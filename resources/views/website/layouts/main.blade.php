@@ -30,7 +30,7 @@
     <!-- OwlCarousel CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}" />
     <!-- Main CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css?version=1') }}">
     <!-- Stellar Nav CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/stellarnav.min.css') }}">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
@@ -126,7 +126,7 @@
     </script>
 
     <!-- Custom JS -->
-    <script src="{{ asset('assets/js/script.js') }}"></script>
+    <script src="{{ asset('assets/js/script.js?version=1') }}"></script>
 
     @yield('scripts')
 
