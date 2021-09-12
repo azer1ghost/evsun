@@ -10,7 +10,7 @@
                 <div class="row">
                     <div class="col-lg-6 col-12">
                         <div class="prod-modal-image">
-                            <img src="{!!asset(Voyager::image(json_decode(array_first(optional($product)->images))))!!}" />
+                            <img src="{!!asset(Voyager::image(json_decode(optional($product)->images)[0] ?? ''))!!}" />
                         </div>
                     </div>
                     <div class="col-lg-6 col-12">
