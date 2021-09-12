@@ -21,6 +21,11 @@ class Attribute extends Model
 
     public function scopeOnlyFilterable($query)
     {
-        return $query->where('is_filterable', true);
+        return $query->where('filterable', true);
+    }
+
+    public function scopeOnlyHardFilterable($query)
+    {
+        return $query->where('hard', true);
     }
 }

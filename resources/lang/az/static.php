@@ -33,5 +33,10 @@ return [
     'enter_message' => 'Mesajınızı daxil edin',
     'search_in_blog' => 'Blogda axtar',
     'enter_keywords' => 'Açar sözlər daxil edin',
+    'category' => 'Kateqoriya',
+    'specification' => "Spesifikasiya",
+    'products' => 'Məhsullar',
+    'similar' => 'Oxşar',
+    'features' => 'Xüsusiyyətlər',
 
 ];

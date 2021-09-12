@@ -33,5 +33,11 @@ return [
     'enter_message' => 'Enter your message',
     'search_in_blog' => 'Search in blog',
     'enter_keywords' => 'Enter keywords',
+    'category' => 'Category',
+    'specification' => "Specification",
+    'products' => 'Products',
+    'similar' => 'Similar',
+    'features' => 'Features',
+
 
 ];

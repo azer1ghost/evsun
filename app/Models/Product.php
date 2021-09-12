@@ -41,4 +41,9 @@ class Product extends Model
     {
         return $query->where('status', true);
     }
+
+    public function scopeOrderByView($query)
+    {
+        return $query->orderBy('view_count');
+    }
 }

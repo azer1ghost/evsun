@@ -89,14 +89,14 @@
                     </div>
                 @empty
                     <div class="col-12 py-3 text-center">
-                        <p>No items available</p>
+                        <p>Heç bir məhsul mövcud deyil</p>
                     </div>
                 @endforelse
                 <div class="col-12 py-3 text-center">
-                @if($products->hasMorePages())
-                    <button class="btn btn-outline-primary" wire:click.prevent="loadMore">Load more</button>
+                @if($products->count() && $products->hasMorePages())
+                    <button class="btn btn-outline-primary" wire:click.prevent="loadMore">Daha çoxunu gətir</button>
                 @else
-                    <p>No more items</p>
+                    <p>Hamısı bu qədər</p>
                 @endif
                 </div>
             </div>
