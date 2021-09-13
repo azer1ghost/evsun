@@ -17,7 +17,7 @@
                       {{ucfirst(session()->get('locale') ?? 'en')}}
                 </button>
                 <div id="languageSelector" class="dropdown-content">
-                    @foreach(config('voyager.multilingual.locales') as $lang)
+                    @foreach(config('app.locales') as $lang)
                         <a class="dropdown-item" href="{{route('locale', $lang)}}"><span class="flag-icon flag-icon-{{$lang == 'en' ? 'gb' : $lang}}"></span> {{ucfirst($lang)}}</a>
                     @endforeach
                 </div>
