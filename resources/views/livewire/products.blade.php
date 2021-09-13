@@ -5,10 +5,10 @@
             <div class="filter-sec">Filter</div>
             <div class="solar_blog_sidebar mb-3">
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="@lang('static.search')">
+                    <input type="text" wire:model.lazy="search" class="form-control" placeholder="@lang('static.search')">
                     <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="button">
-                            <i class="fal fa-search"></i>
+                        <button wire:click='resetFilter' class="btn btn-outline-secondary" type="button">
+                            <i class="fal fa-times"></i>
                         </button>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
                     @foreach($attributes as $attribute)
                     <div class="form-group col-6">
                         <label for="attribute_{{$attribute->getAttribute('id')}}">{{$attribute->getTranslatedAttribute('name')}}</label>
-                        <select class="form-control" id="attribute_{{$attribute->getAttribute('id')}}">
+                        <select wire:model="filters.{{$attribute->getTranslatedAttribute('key')}}" class="form-control" id="attribute_{{$attribute->getAttribute('id')}}">
                             <option value="" selected>@lang('static.notSelected')</option>
                             @foreach($attribute->getRelationValue('products') as $product)
                             <option>{{$product->pivot->value}}</option>

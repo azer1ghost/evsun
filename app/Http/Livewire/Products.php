@@ -15,6 +15,10 @@ class Products extends Component
 
     public ?int $product_id = 0;
 
+    public ?string $search = null;
+
+    public array $filters = [];
+
     public function loadMore()
     {
         $this->perPage += 4;
@@ -30,6 +34,11 @@ class Products extends Component
         return Product::find($this->product_id);
     }
 
+    public function resetFilter()
+    {
+        $this->search = null;
+        $this->filters = [];
+    }
 
     public function render()
     {
@@ -38,10 +47,32 @@ class Products extends Component
             'categories' => ProductCategory::withCount('products')->get(),
 
             'products' => Product::query()
+                ->orderByView()
                 ->when($this->byCategory, function ($query){
                     $query->where('product_category_id', $this->byCategory);
                 })
-                ->orderByView()
+                ->when($this->search, function ($query){
+                    $query
+                        ->where('name', 'LIKE', "%$this->search%")
+                        ->orWhere('serial', 'LIKE', "%$this->search%");
+                })
+                ->where(function ($query)  {
+                    foreach ($this->filters as $column => $value) {
+                        $query->when($this->filters[$column], function ($query) use ($column, $value){
+                            if (is_array($value)) {
+                                $query->whereHas('attributes', function ($query) use ($column) {
+                                    $query->whereIn('attribute_product.value', $this->filters[$column]);
+                                });
+                            } else {
+                                $query->whereHas('attributes', function($query) use ($value) {
+                                    $query
+                                        ->where('attribute_product.value', 'LIKE', "%" . trim($value) . "%")
+                                        ->orWhere('attribute_product.value', 'LIKE', "%" . $value . "%");
+                                });
+                            }
+                        });
+                    }
+                })
                 ->active()
                 ->paginate($this->perPage),
 
