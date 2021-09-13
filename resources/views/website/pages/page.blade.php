@@ -15,7 +15,7 @@
                             @foreach(json_decode($page->images) ?? [$page->image] as $image)
                                 <div class="swiper-slide">
                                     <div class="solar_about_img">
-                                        <img src="{{ asset(Voyager::image($image)) }}" />
+                                        <img loading="lazy"  src="{{ asset(Voyager::image($image)) }}" />
                                     </div>
                                 </div>
                             @endforeach

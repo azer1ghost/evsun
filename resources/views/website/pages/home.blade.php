@@ -20,7 +20,7 @@ $meta = meta('homepage', ['excerpt', 'image', 'btnText', 'btnLink', 'body']);
         <div class="row">
             <div class="col-lg-6">
                 <div data-aos="zoom-in" data-aos-delay="300" data-aos-duration="800" class="ss_three_left">
-                    <img class="img-fluid" src="{!!asset(Voyager::image($meta->get('image')))!!}" alt="{{config('app.name')}}" />
+                    <img class="img-fluid" loading="lazy"  src="{!!asset(Voyager::image($meta->get('image')))!!}" alt="{{config('app.name')}}" />
                 </div>
             </div>
             <div class="col-lg-6 align-self-center">
