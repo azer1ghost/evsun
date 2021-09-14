@@ -54,7 +54,11 @@ class Products extends Component
                 ->when($this->search, function ($query){
                     $query
                         ->where('name', 'LIKE', "%$this->search%")
-                        ->orWhere('serial', 'LIKE', "%$this->search%");
+                        ->orWhere('name', "$this->search")
+                        ->orWhere('serial', 'LIKE', "%$this->search%")
+                        ->orWhere('name', 'LIKE', "%$this->search")
+                        ->orWhere('detail', 'LIKE', "%$this->search%");
+
                 })
                 ->where(function ($query)  {
                     foreach ($this->filters as $column => $value) {

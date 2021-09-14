@@ -140,7 +140,7 @@
                                 <ul>
                                     @foreach($product->getRelationValue('attributes') as $attribute)
                                         <li>
-                                            <p> {{$attribute->name}} : {{$attribute->pivot->value}} </p>
+                                            <p> {{$attribute->getTranslatedAttribute('name')}} : {{$attribute->pivot->value}} </p>
                                         </li>
                                     @endforeach
                                 </ul>

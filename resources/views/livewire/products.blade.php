@@ -65,7 +65,12 @@
                     <div class="col-xl-3 col-lg-4 col-12 col-md-4 py-3">
                         <div class="product-itm">
                             <a href="{{route('product', $product->getAttribute('serial'))}}">
-                                <img src="{!!asset(Voyager::image(json_decode($product->images)[0]))!!}" />
+                                @if( is_array($product->images) )
+                                    <img src="{!!asset(Voyager::image(json_decode($product->images)[0]))!!}" />
+                                @else
+                                    <img src="{!!asset(Voyager::image($product->images))!!}" />
+                                @endif
+
                                 <p>{{str_limit($product->getTranslatedAttribute('name'), 50)}}
                                     <span>{{$product->category->getTranslatedAttribute('name')}}</span>
                                 </p>

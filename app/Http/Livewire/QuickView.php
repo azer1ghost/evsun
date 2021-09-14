@@ -7,7 +7,6 @@ use Livewire\Component;
 
 class QuickView extends Component
 {
-
     public ?Product $product;
     public bool $show = false;
 
