@@ -14,11 +14,11 @@ class Footer extends Component
 
     public function __construct()
     {
-        $this->services = Cache::remember('footer_services', config('cache.timeout'), function () {
-                return Service::select(['title', 'slug'])->active()->where('in_menu', true)->orderBy('service_id')->orderBy('ordering')->get();
+        $this->services = Cache::remember('footer_services_'.app()->getLocale(), config('cache.timeout'), function () {
+            return Service::select(['title', 'slug'])->active()->where('in_menu', true)->orderBy('service_id')->orderBy('ordering')->get();
         });
 
-        $this->solutions = Cache::remember('footer_solutions', config('cache.timeout'), function () {
+        $this->solutions = Cache::remember('footer_solutions_'.app()->getLocale(), config('cache.timeout'), function () {
             return Solution::select(['title', 'slug'])->active()->orderBy('ordering')->get();
         });
     }

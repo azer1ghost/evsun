@@ -44,6 +44,7 @@ return [
     'loadMore' => 'Load More',
     'noProduct' => 'No products available',
     'thatAll' => 'That\'s all',
+    'brands' => 'Brands',
 
 
 

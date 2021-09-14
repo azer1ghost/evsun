@@ -1,7 +1,7 @@
 <section style="background: rgb(18 66 165 / 5%);" class="ss_section_eight section_brands ss_section_sec_bg spacer_top spacer_bottom">
     <!--===== Section Eight Start =====-->
     <div class="container-fluid">
-        <h3 class="ss_h3_center text-center">Brendlər</h3>
+        <h3 class="ss_h3_center text-center">@lang('static.brands')</h3>
         <!-- <h1 class="text-center mb-5">Latest news</h1> -->
         <div class="swiper-container">
             <div class="swiper-wrapper">
