@@ -113,12 +113,10 @@
     </script>
 
     <script>
-        $(window).on('load', function() {
-            setTimeout(function() {
-                $('#preloader').hide();
-                $('.pace').hide();
-            }, 300)
-        })
+        setTimeout(function() {
+            $('#preloader').hide();
+            $('.pace').hide();
+        }, 500)
     </script>
 
     <script>
