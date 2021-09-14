@@ -1,6 +1,6 @@
 <div class="col-md-12">
     @forelse($attributes as $index => $attribute)
-        <table class="vw-100">
+        <table class="vw-100" wire:key="attribute_{{$index}}">
             <tr>
                 <td style="width: 50vw; padding: 5px">
                     <select class="form-control" name="attributes[{{$index}}][id]">
