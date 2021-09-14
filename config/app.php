@@ -83,7 +83,7 @@ return [
     'locale' => 'az',
 
     'locales' => [
-//        'en',
+        'en',
         'az',
 //        'ru',
 //        'tr'
