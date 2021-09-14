@@ -66,9 +66,9 @@
                         <div class="product-itm">
                             <a href="{{route('product', $product->getAttribute('serial'))}}">
                                 @if( is_array($product->images) )
-                                    <img src="{!!asset(Voyager::image(json_decode($product->images)[0]))!!}" />
+                                    <img src="{!! asset(Voyager::image(json_decode($product->images)[0]) )!!}" />
                                 @else
-                                    <img src="{!!asset(Voyager::image($product->images))!!}" />
+                                    <img src="{!! asset(Voyager::image($product->images)) !!}" />
                                 @endif
 
                                 <p>{{str_limit($product->getTranslatedAttribute('name'), 50)}}
