@@ -88,8 +88,26 @@
                 <ul id="lightSlider">
                     @foreach(json_decode($product->getAttribute('images')) ?? [] as $image)
                         <li data-thumb="{{ asset(Voyager::image($image)) }}">
-                            <img data-toggle="modal" data-target=".bd-example-modal-lg" src="{{ asset(Voyager::image($image)) }}" />
+                            <img data-toggle="modal" data-target=".bd-example-modal-lg-{{$loop->iteration}}" src="{{ asset(Voyager::image($image)) }}" />
                         </li>
+                        <div class="modal fade bd-example-modal-lg-{{$loop->iteration}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="prod-modal-image">
+                                                <img src="{{ asset(Voyager::image($image)) }}" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     @endforeach
                 </ul>
             </div>
@@ -174,25 +192,6 @@
                         </div>
                     </div>
                     @endforeach
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="prod-modal-image">
-                            <img src="https://tesla-cdn.thron.com/delivery/public/image/tesla/088d64b2-afcc-43c6-9fa1-8f37e567a3d0/bvlatuR/std/2880x2400/desktop_model_3_v2" />
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
