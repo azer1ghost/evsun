@@ -47,7 +47,7 @@
                     <ul>
                        @foreach(('App\Models\\'.ucfirst(substr($item->route, 0, -1)))::select('id','title', 'slug', 'ordering')->where('in_menu', true)->orderBy('ordering')->get() as $data)
                             <li class="{{ $isActive }}">
-                                <a href="{{ route(substr($item->route, 0, -1), $data->slug) }}">{{$data->title}}</a>
+                                <a href="{{ route(substr($item->route, 0, -1), $data->slug) }}">{{$data->getTranslatedAttribute('title')}}</a>
                             </li>
                        @endforeach
                     </ul>
