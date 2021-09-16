@@ -24,7 +24,7 @@
                                 <ul>
                                     @foreach(optional($product)->getRelationValue('attributes') ?? [] as $attribute)
                                         <li>
-                                            <p> {{$attribute->getTranslatedAttribute('name')}} : {{$attribute->pivot->value}} </p>
+                                            <p> {{$attribute->getTranslatedAttribute('name')}} : {{$attribute->pivot->value()->first()->getTranslatedAttribute('content')}} </p>
                                         </li>
                                     @endforeach
                                 </ul>
