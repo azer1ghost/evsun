@@ -53,10 +53,10 @@
                         </li>
                         <li class="nav-item">
                             <select name="hard-select" class="form-control">
-                                <option value="">Select Any filter</option>
-                                <option value="">option 1</option>
-                                <option value="">option 2</option>
-                                <option value="">option 3</option>
+                                <option value="">Hard filter</option>
+                                <option value="">First</option>
+                                <option value="">Second</option>
+                                <option value="">Third</option>
                             </select>
                         </li>
                     </ul>
