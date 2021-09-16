@@ -7,9 +7,9 @@
                 <div class="input-group mb-3">
                     <input type="text" wire:model.lazy="search" class="form-control" placeholder="@lang('static.search')">
                     <div class="input-group-append">
-                        <button wire:click='resetFilter' class="btn btn-outline-secondary" type="button">
+                        <a href="{{route('products')}}" class="btn btn-outline-secondary" type="button">
                             <i class="fal fa-times"></i>
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>

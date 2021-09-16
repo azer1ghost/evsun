@@ -54,12 +54,9 @@ class Products extends Component
                 ->when($this->search, function ($query){
                     $query
                         ->where('name', $this->search)
-                        ->whereTranslation('name', 'LIKE', "%$this->search%")
-                        ->where('name', strtoupper($this->search))
+                        ->whereTranslation('name', "%$this->search%", 'LIKE')
                         ->orWhere('name', 'LIKE', "%$this->search%")
-                        ->orWhere('name', 'LIKE', "%".strtoupper($this->search)."%")
                         ->orWhere('serial', 'LIKE', "%$this->search%")
-                        ->orWhere('name', 'LIKE', "%$this->search")
                         ->orWhere('detail', 'LIKE', "%$this->search%");
 
                 })
@@ -84,9 +81,9 @@ class Products extends Component
                 ->paginate($this->perPage),
 
             'attributes' => Attribute::with([
-                    'products' => function ($query) {
-                        $query->select('id');
-                    }
+//                    'products' => function ($query) {
+//                        $query->select(['id', 'name']);
+//                    }
                 ])
                 ->onlyFilterable()
                 ->active()

@@ -40,7 +40,7 @@ class ProductFactory extends Factory
         return [
             'name' => $this->faker->word(),
             'serial' => $this->faker->unique()->slug(),
-            'images' => "$folder/".$this->faker->image(public_path("storage/$folder"),'972px','300px', null, false),
+            'images' => '["'."$folder/".$this->faker->image(public_path("storage/$folder"),'972px','300px', null, false).'"]',
             'price' => random_int(100, 1000),
         ];
     }

@@ -80,12 +80,12 @@ return [
     |
     */
 
-    'locale' => 'az',
+    'locale' => 'en',
 
     'locales' => [
         'en',
         'az',
-        'ru',
+//        'ru',
 //        'tr'
     ],
 
@@ -100,7 +100,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'az',
+    'fallback_locale' => 'en',
 
     /*
     |--------------------------------------------------------------------------

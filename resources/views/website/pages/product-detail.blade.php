@@ -88,30 +88,34 @@
                 <ul id="lightSlider">
                     @foreach(json_decode($product->getAttribute('images')) ?? [] as $image)
                         <li data-thumb="{{ asset(Voyager::image($image)) }}">
-                            <img data-toggle="modal" data-target=".bd-example-modal-lg-{{$loop->iteration}}" src="{{ asset(Voyager::image($image)) }}" />
+                            <img data-toggle="modal" data-target="#image_{{$loop->iteration}}" src="{{ asset(Voyager::image($image)) }}" />
                         </li>
-                        <div class="modal fade bd-example-modal-lg-{{$loop->iteration}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="prod-modal-image">
-                                                <img src="{{ asset(Voyager::image($image)) }}" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     @endforeach
                 </ul>
             </div>
         </div>
+
+        @foreach(json_decode($product->getAttribute('images')) ?? [] as $image_modal)
+        <div class="modal fade bd-example-modal-lg" id="image_{{$loop->iteration}}" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="prod-modal-image">
+                                <img src="{{ asset(Voyager::image($image_modal)) }}" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endforeach
+
         <!-- <div class="col-lg-5 col-12">
             <div class="slider slider-single">
                 <div data-toggle="modal" data-target=".bd-example-modal-lg" class="slider-for-img">
@@ -180,7 +184,7 @@
                     <div class="swiper-slide">
                         <div class="product-itm">
                             <a href="{{route('product', $sm_product)}}">
-                                <img src="{!!asset(Voyager::image(json_decode($sm_product->images[0])))!!}" />
+                                <img src="{!! asset( Voyager::image(json_decode($sm_product->images)[0]) ) !!}" />
                                 <p>{{$sm_product->getTranslatedAttribute('name')}}
                                     <span>{{$sm_product->getRelationValue('category')->getTranslatedAttribute('name')}}</span>
                                 </p>
