@@ -38,7 +38,7 @@
                     <h2 class="ss_foot_head text-center">@lang('static.contact_us')</h2>
                     <ul class="text-center">
                         <li>@lang('static.address') : @lang('static.address_1')</li>
-                        <li>{{@lang('static.address_2')}}</li>
+                        <li>@lang('static.address_2')</li>
                         <li>@lang('static.email') : {{setting('site.mail')}}</li>
                         <li>@lang('static.phone') : {{setting('site.phone')}}</li>
                         <li>Mobile : {{setting('site.mobile')}}</li>
