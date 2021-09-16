@@ -1,12 +1,12 @@
 <div class="solar_blog_sidebar">
     <div class="sl_search_btn">
-        <h4>Blogda Axtar</h4>
+        <h4>@lang('static.search_in_blog')</h4>
         @livewire('search-posts')
     </div>
 </div>
 <div class="solar_blog_sidebar">
     <div class="sl_search_btn">
-        <h4>Blog Postları</h4>
+        <h4>@lang('static.blog_posts')</h4>
         @foreach($posts as $post)
             <div class="solar_list_post">
                 <div class="solar_list_img">
@@ -24,7 +24,7 @@
 </div>
 <div class="solar_blog_sidebar">
     <div class="sidebar_category">
-        <h4>Kateqoriyalar</h4>
+        <h4>@lang('static.categories')</h4>
         <ul>
             @foreach($categories as $category)
             <li>

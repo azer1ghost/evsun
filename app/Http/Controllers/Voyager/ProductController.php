@@ -369,7 +369,7 @@ class ProductController extends VoyagerBaseController
         $this->deleteBreadImages($original_data, $to_remove);
 
         // Custom links functionality
-        $this->updateLinks($request, $data);
+        $this->updateAttributes($request, $data);
 
         event(new BreadDataUpdated($dataType, $data));
 
@@ -454,7 +454,7 @@ class ProductController extends VoyagerBaseController
         $data = $this->insertUpdateData($request, $slug, $dataType->addRows, new $dataType->model_name());
 
         // Custom links functionality
-        $this->updateLinks($request, $data);
+        $this->updateAttributes($request, $data);
 
         event(new BreadDataAdded($dataType, $data));
 
@@ -807,7 +807,7 @@ class ProductController extends VoyagerBaseController
         $this->authorize('edit', app($dataType->model_name));
 
         if (empty($dataType->order_column) || empty($dataType->order_display_column)) {
-            return redirect()
+             redirect()
                 ->route("voyager.{$dataType->slug}.index")
                 ->with([
                     'message'    => __('voyager::bread.ordering_not_set'),
@@ -978,14 +978,14 @@ class ProductController extends VoyagerBaseController
         })->first();
     }
 
-    protected function updateLinks($request, $data)
+    protected function updateAttributes($request, $data)
     {
         // My custom link functionality
         $attributes = [];
 
         foreach ($request->get('attributes') as $attribute)
         {
-            $attributes[$attribute['id']] = ['value' => $attribute['value']];
+            $attributes[$attribute['id']] = ['value_id' => $attribute['value_id']];
         }
 
         $data->attributes()->sync($attributes);

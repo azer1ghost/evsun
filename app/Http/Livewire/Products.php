@@ -63,17 +63,10 @@ class Products extends Component
                 ->where(function ($query)  {
                     foreach ($this->filters as $column => $value) {
                         $query->when($this->filters[$column], function ($query) use ($column, $value){
-                            if (is_array($value)) {
-                                $query->whereHas('attributes', function ($query) use ($column) {
-                                    $query->whereIn('attribute_product.value', $this->filters[$column]);
-                                });
-                            } else {
-                                $query->whereHas('attributes', function($query) use ($value) {
-                                    $query
-                                        ->where('attribute_product.value', 'LIKE', "%" . trim($value) . "%")
-                                        ->orWhere('attribute_product.value', 'LIKE', "%" . $value . "%");
-                                });
-                            }
+                            $query->whereHas('attributes', function ($query) use ($column) {
+                                $attribute_id = Attribute::where('key', $column)->first()->getAttribute('id');
+                                $query->where('id', $attribute_id)->where('attribute_product.value_id', $this->filters[$column]);
+                            });
                         });
                     }
                 })

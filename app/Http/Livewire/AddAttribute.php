@@ -2,8 +2,6 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Attribute;
-use App\Models\Product;
 use Illuminate\Support\Collection;
 use Livewire\Component;
 
@@ -11,13 +9,14 @@ class AddAttribute extends Component
 {
     public object $product;
     public array $attributes;
+    public Collection $availableValues;
     public Collection $availableAttributes;
 
     public function mount($product)
     {
-        $this->availableAttributes = $product->availableAttributes();
-
         $this->attributes = $product->attributes()->select('id', 'name')->get()->toArray();
+        $this->availableAttributes = $product->availableAttributes();
+        $this->availableValues = $product->availableValues();
     }
 
     public function addAttribute()

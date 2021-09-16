@@ -48,4 +48,7 @@ return [
     'address_1' => 'Nərimanov rayonu ,Əhməd Rəcəbli 33',
     'address_2' => 'Esra Plaza, Blok B , 5-ci mərtəbə',
     'slogan' => 'Elektromobil şarj stansiyaları və bərpa olunan enerji sektorunda Azərbaycanda 1 nömrə',
+    'read_more' => 'Ətraflı',
+    'blog_posts' => 'Blog Postları',
+
 ];

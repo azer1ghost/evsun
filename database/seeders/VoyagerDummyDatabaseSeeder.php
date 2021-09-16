@@ -28,6 +28,7 @@ class VoyagerDummyDatabaseSeeder extends Seeder
             BrandBreadMaker::class,
             ContactBreadMaker::class,
             ProductCategoriesBreadMaker::class,
+            ValuesBreadMaker::class,
             PermissionRoleTableSeeder::class,
         ]);
     }

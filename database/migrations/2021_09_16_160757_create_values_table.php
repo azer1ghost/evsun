@@ -11,6 +11,7 @@ class CreateValuesTable extends Migration
         Schema::create('values', function (Blueprint $table) {
             $table->id();
             $table->string('content');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

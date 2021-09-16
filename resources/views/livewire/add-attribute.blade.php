@@ -10,7 +10,12 @@
                     </select>
                 </td>
                 <td style="width: 48vw; padding: 5px">
-                    <input class="form-control" type="text" name="attributes[{{$index}}][value]" value="{{$attribute['pivot']['value']}}">
+                    <select class="form-control" name="attributes[{{$index}}][value_id]">
+                        @foreach($availableValues as $id => $value)
+                            <option @if(isset($attribute['pivot']['value_id']) && $id == $attribute['pivot']['value_id'])) selected @endif value="{{$id}}">{{$value}}</option>
+                        @endforeach
+                    </select>
+{{--                    <input class="form-control" type="text" name="attributes[{{$index}}][value]" value="{{$attribute['pivot']['value']}}">--}}
                 </td>
                 <td style="width: 2vw; padding: 5px">
                     <button type="button" wire:click.prevent="removeAttribute({{$index}})" class="btn btn-danger">

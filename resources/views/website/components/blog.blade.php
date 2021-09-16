@@ -26,7 +26,7 @@
                             <p class="post-description">
                                 {{str_limit($post->getTranslatedAttribute('excerpt'), 200)}}
                             </p>
-                            <a href="{{route('post', $post)}}" class="read-more">Ətraflı</a>
+                            <a href="{{route('post', $post)}}" class="read-more">@lang('static.read_more')</a>
                         </div>
                     </div>
                 </div>

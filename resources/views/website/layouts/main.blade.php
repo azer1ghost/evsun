@@ -15,6 +15,9 @@
     <link rel="shortcut icon" type="image/png" href="{{asset(Voyager::image(setting('site.favicon')))}}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{asset(Voyager::image(setting('site.favicon')))}}">
 
+    <!-- jQuery -->
+    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
     <!-- Fonts CSS -->
@@ -81,8 +84,7 @@
 
     <x-footer />
 
-    <!-- jQuery -->
-    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+
     <!-- Bootstrap JS -->
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
     <!-- Isotope JS -->

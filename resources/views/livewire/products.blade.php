@@ -30,13 +30,20 @@
                    <div class="col-12">
                        <p class="filter-head"> @lang('static.features') </p>
                    </div>
+{{--                    @dd($attributes['0']->getRelationValue('products')[0]->pivot)--}}
                     @foreach($attributes as $attribute)
                     <div class="form-group col-6">
                         <label for="attribute_{{$attribute->getAttribute('id')}}">{{$attribute->getTranslatedAttribute('name')}}</label>
-                        <select wire:model="filters.{{$attribute->getTranslatedAttribute('key')}}" class="form-control" id="attribute_{{$attribute->getAttribute('id')}}">
+                        <select wire:model="filters.{{$attribute->getAttribute('key')}}" class="form-control" id="attribute_{{$attribute->getAttribute('id')}}">
                             <option value="" selected>@lang('static.notSelected')</option>
+                            @php($duplicateChecker = [])
                             @foreach($attribute->getRelationValue('products') as $product)
-                            <option>{{$product->pivot->value}}</option>
+                                @php($value_id = $product->pivot->getAttribute('value_id'))
+                                @if(in_array($value_id, $duplicateChecker))
+                                    @continue
+                                @endif
+                                <option value="{{$value_id}}">{{$product->pivot->value()->first()->getTranslatedAttribute('content')}}</option>
+                                 @php($duplicateChecker[] = $value_id)
                             @endforeach
                         </select>
                     </div>
@@ -52,7 +59,7 @@
                             <a class="nav-link active" style="color: gray" href="#"><i class="fal fa-long-arrow-right mr-1"></i> <strong>{{$products->total()}}</strong> @lang('static.available')</a>
                         </li>
                         <li class="nav-item">
-                            <select name="hard-select" class="form-control">
+                            <select disabled name="hard-select" class="form-control">
                                 <option value="">Hard filter</option>
                                 <option value="">First</option>
                                 <option value="">Second</option>
@@ -91,7 +98,6 @@
             </div>
         </div>
     </div>
-
     @livewire('quick-view')
-
 </div>
+

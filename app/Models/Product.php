@@ -29,12 +29,17 @@ class Product extends Model
 
     public function attributes(): BelongsToMany
     {
-        return $this->belongsToMany(Attribute::class)->withPivot('value');
+        return $this->belongsToMany(Attribute::class)->using(AttributeValue::class)->withPivot(['value', 'value_id']);
     }
 
     public function availableAttributes()
     {
         return Attribute::active()->pluck('name', 'id');
+    }
+
+    public function availableValues()
+    {
+        return Value::pluck('content', 'id');
     }
 
     public function scopeActive($query)
