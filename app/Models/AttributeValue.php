@@ -12,4 +12,9 @@ class AttributeValue extends Pivot
     {
         return $this->belongsTo(Value::class);
     }
+
+    public function attribute(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Attribute::class);
+    }
 }

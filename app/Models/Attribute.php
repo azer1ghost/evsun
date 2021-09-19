@@ -25,11 +25,6 @@ class Attribute extends Model
         return $query->where('filterable', true);
     }
 
-    public function scopeOnlyHardFilterable($query)
-    {
-        return $query->where('hard', true);
-    }
-
     public function products(): BelongsToMany
     {
         return $this->belongsToMany(Product::class)->using(AttributeValue::class)->withPivot(['value', 'value_id']);

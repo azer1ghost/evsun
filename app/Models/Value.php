@@ -9,7 +9,11 @@ use TCG\Voyager\Traits\Translatable;
 
 class Value extends Model
 {
-    use HasFactory, Translatable ;// , SoftDeletes ;
-// TODO soft deletes
+    use HasFactory, Translatable ;
     protected array $translatable = ['content'];
+
+    public function scopeOnlyHardFilterable($query)
+    {
+        return $query->where('is_hard', true);
+    }
 }

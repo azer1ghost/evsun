@@ -59,11 +59,11 @@
                             <a class="nav-link active" style="color: gray" href="#"><i class="fal fa-long-arrow-right mr-1"></i> <strong>{{$products->total()}}</strong> @lang('static.available')</a>
                         </li>
                         <li class="nav-item">
-                            <select disabled name="hard-select" class="form-control">
-                                <option value="">Hard filter</option>
-                                <option value="">First</option>
-                                <option value="">Second</option>
-                                <option value="">Third</option>
+                            <select wire:model="hardFilter"  name="hard-select" class="form-control">
+                                <option value="null">Select Any Filter</option>
+                                @foreach($hardFilters as $filter)
+                                <option value="{{$filter->getAttribute('id')}}">{{$filter->getTranslatedAttribute('content')}}</option>
+                                @endforeach
                             </select>
                         </li>
                     </ul>

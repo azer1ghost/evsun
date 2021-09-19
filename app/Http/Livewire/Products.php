@@ -3,8 +3,10 @@
 namespace App\Http\Livewire;
 
 use App\Models\Attribute;
+use App\Models\AttributeValue;
 use App\Models\Product;
 use App\Models\ProductCategory;
+use App\Models\Value;
 use Livewire\Component;
 
 class Products extends Component
@@ -18,6 +20,8 @@ class Products extends Component
     public ?string $search = null;
 
     public array $filters = [];
+
+    public ?int $hardFilter = null;
 
     public function loadMore()
     {
@@ -51,6 +55,11 @@ class Products extends Component
                 ->when($this->byCategory, function ($query){
                     $query->where('product_category_id', $this->byCategory);
                 })
+                ->when($this->hardFilter, function ($query){
+                    $query->whereHas('attributes', function ($query)  {
+                        $query->where('attribute_product.value_id', $this->hardFilter);
+                    });
+                })
                 ->when($this->search, function ($query){
                     $query
                         ->where('name', $this->search)
@@ -73,13 +82,14 @@ class Products extends Component
                 ->active()
                 ->paginate($this->perPage),
 
-            'attributes' => Attribute::with([
-//                    'products' => function ($query) {
-//                        $query->select(['id', 'name']);
-//                    }
-                ])
+            'attributes' => Attribute::query()
                 ->onlyFilterable()
                 ->active()
+                ->get()
+                ->unique(),
+
+            'hardFilters' => Value::query()
+                ->onlyHardFilterable()
                 ->get()
                 ->unique(),
 
