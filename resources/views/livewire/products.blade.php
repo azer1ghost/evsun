@@ -60,7 +60,7 @@
                         </li>
                         <li class="nav-item">
                             <select wire:model="hardFilter"  name="hard-select" class="form-control">
-                                <option value="null">Select Any Filter</option>
+                                <option value="">@lang('static.notSelected')</option>
                                 @foreach($hardFilters as $filter)
                                 <option value="{{$filter->getAttribute('id')}}">{{$filter->getTranslatedAttribute('content')}}</option>
                                 @endforeach
