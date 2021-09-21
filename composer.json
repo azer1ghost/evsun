@@ -20,7 +20,7 @@
         "livewire/livewire": "^2.5",
         "orangehill/iseed": "^3.0",
         "spatie/laravel-translatable": "^4.6",
-        "tcg/voyager": " 1.4.*",
+        "tcg/voyager": "1.5.*",
         "ext-json": "*"
     },
     "require-dev": {
