@@ -14,7 +14,7 @@
             <div class="dropdown">
                 <button id="lngButton" class="dropbtn" >
                     <span class="flag-icon flag-icon-{{(session()->get('locale') ?? 'en') == 'en' ? 'gb' : session()->get('locale')}}"></span>
-                      {{ucfirst(session()->get('locale') ?? 'en')}}
+                      {{ucfirst(session()->get('locale') ?? 'az')}}
                 </button>
                 <div id="languageSelector" class="dropdown-content">
                     @foreach(config('app.locales') as $lang)
