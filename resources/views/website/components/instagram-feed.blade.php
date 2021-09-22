@@ -1,6 +1,6 @@
 <section class="insta_posts my-5">
     <div class="container">
-        <h3 class="ss_h3_center text-center">Son İnstagram postları</h3>
+        <h3 class="ss_h3_center text-center">@lang('static.instagram_posts')</h3>
         <div class="row">
             <div class="col-lg-6 col-12">
                 @php($first_post = array_shift($instagram_posts))
@@ -11,7 +11,7 @@
                                 'fa-link' => !$first_post['is_carousel'],
                                 'fa-images'=> $first_post['is_carousel']
                                 ])></i>
-                    <img class="insta-icon" src="./assets/images/svg/insta.svg" />
+                    <img class="insta-icon" src="{{asset('assets/images/svg/insta.svg')}}" />
                     <img src="{{$first_post['url']}}"/>
                 </a>
             </div>
@@ -26,7 +26,7 @@
                                     'fa-link' => !$feed_post['is_carousel'],
                                     'fa-images'=> $feed_post['is_carousel']
                                     ])></i>
-                            <img class="insta-icon" src="./assets/images/svg/insta.svg" />
+                            <img class="insta-icon" src="{{asset('assets/images/svg/insta.svg')}}" />
                             <img src="{{$feed_post['url']}}"/>
                         </a>
                     </div>

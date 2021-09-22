@@ -50,6 +50,7 @@ return [
     'slogan' => 'Leading in the field of electric car charging stations and renewable energy in Azerbaijan',
     'read_more' => 'Read More',
     'blog_posts' => 'Blog Posts',
+    'instagram_posts' => 'Latest Instagram shares',
 
 
 

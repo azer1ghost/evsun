@@ -50,5 +50,6 @@ return [
     'slogan' => 'Elektromobil şarj stansiyaları və bərpa olunan enerji sektorunda Azərbaycanda 1 nömrə',
     'read_more' => 'Ətraflı',
     'blog_posts' => 'Blog Postları',
+    'instagram_posts' => 'Son İnstagram paylaşımları',
 
 ];

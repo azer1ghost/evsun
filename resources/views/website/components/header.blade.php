@@ -13,7 +13,7 @@
         <div class="evsun-lang">
             <div class="dropdown">
                 <button id="lngButton" class="dropbtn" >
-                    <span class="flag-icon flag-icon-{{(session()->get('locale') ?? 'en') == 'en' ? 'gb' : session()->get('locale')}}"></span>
+                    <span class="flag-icon flag-icon-{{(session()->get('locale') ?? 'az') == 'en' ? 'gb' : session()->get('locale')}}"></span>
                       {{ucfirst(session()->get('locale') ?? 'az')}}
                 </button>
                 <div id="languageSelector" class="dropdown-content">
