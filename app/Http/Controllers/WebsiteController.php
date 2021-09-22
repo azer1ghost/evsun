@@ -67,7 +67,6 @@ class WebsiteController extends Controller
 
     public function blog(string $category = null)
     {
-
         if (Category::whereSlug($category)->exists()){
             $posts = Category::whereSlug($category)->first()->posts()->latest()->simplePaginate(2);
         }
