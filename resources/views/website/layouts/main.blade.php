@@ -32,7 +32,7 @@
     <!-- OwlCarousel CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}" />
     <!-- Main CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css?version=1') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css?version=1.01') }}">
     <!-- Stellar Nav CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/stellarnav.min.css') }}">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />

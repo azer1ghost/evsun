@@ -8,6 +8,7 @@ use App\Models\Page;
 use App\Models\Product;
 use App\Models\Service;
 use App\Models\Solution;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use TCG\Voyager\Models\Category;
 use TCG\Voyager\Models\Post;
@@ -19,43 +20,50 @@ class WebsiteController extends Controller
         return view('website.pages.home');
     }
 
-    public function services(): \Illuminate\Http\RedirectResponse
+    // Solution (Because there are changed it )
+    public function services(): RedirectResponse
     {
-        return redirect()->route('service', Service::active()->select(['id','slug'])->first());
+        return redirect()->route('service', Service::active()->select(['id', 'slug'])->first());
     }
 
+    // Solution (Because there are changed it )
     public function serviceDetail(Service $service)
     {
+        $next_service = Service::find(Service::where('id', '>', $service->getAttribute('id'))->min('id'));
+
         if ($service->getAttribute('service_id')){
-            $page = "service-detail";
+            $page = "solution-detail";
             $services = $service->getRelationValue('parentService')->subServices();
         }
 
         elseif ($service->getAttribute('advanced'))
         {
-            $page = "service-main";
+            $page = "solution-main";
             $services = $service->subServices();
         }
         else {
-            $page = "service-detail";
+            $page = "solution-detail";
             $services = Service::whereNull('service_id');
         }
 
         return view("website.pages.{$page}")
             ->with([
                 'service' => $service,
+                'next_service' => $next_service,
                 'services' => $services->active()->select(['id', 'slug', 'title', 'icon', 'detail', 'icon_awesome'])->orderBy('ordering')->get()
             ]);
     }
 
-    public function solutions(): \Illuminate\Http\RedirectResponse
+    // Services (Because there are changed it )
+    public function solutions(): RedirectResponse
     {
-        return redirect()->route('solution', Solution::active()->select(['id','slug'])->first());
+        return redirect()->route('solution', Solution::active()->select(['id', 'slug'])->first());
     }
 
+    // Services (Because there are changed it )
     public function solutionDetail(Solution $solution)
     {
-        return view('website.pages.solution-detail')
+        return view('website.pages.service-detail')
             ->with([
                 'solution' => $solution,
                 'solutions' => Solution::active()
@@ -115,7 +123,7 @@ class WebsiteController extends Controller
         return back()->withSuccess('Sizinlə əlaqə quracağıq');
     }
 
-    public function contactForm(Request $request): \Illuminate\Http\RedirectResponse
+    public function contactForm(Request $request): RedirectResponse
     {
         $validated = $request->validate([
             'name' => 'required|max:25',

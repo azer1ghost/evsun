@@ -8,8 +8,8 @@
     @include('website.components.breadcrumb', ['image' => $page->image, 'links' =>  [$page->getTranslatedAttribute('heading') ]])
     <div class="solar_aboutus_page">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-5 col-md-12 mt-5 mb-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-5 col-md-12 mt-5 mb-5 order-last">
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
                             @foreach(json_decode($page->images) ?? [$page->image] as $image)
@@ -22,7 +22,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-7 col-md-12 mt-0 mt-md-5 ">
+                <div class="col-lg-12 col-md-12 mt-0 mt-md-5 ">
                     <div class="solar_our_vison_detail mb-5">
                         <h1 class="text_span mb-3">{{$page->getTranslatedAttribute('title')}}</h1>
                         <p>

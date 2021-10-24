@@ -46,7 +46,7 @@ return [
     'thatAll' => 'That\'s all',
     'brands' => 'Brands',
     'address_1' => 'Narimanov district ,Ahmad Rajabli 33',
-    'address_2' => 'Esra Plaza, Blok B , 5th floor',
+    'address_2' => 'Esra Plaza, Blok C , 3th floor',
     'slogan' => 'Leading in the field of electric car charging stations and renewable energy in Azerbaijan',
     'read_more' => 'Read More',
     'blog_posts' => 'Blog Posts',

@@ -36,7 +36,7 @@
                                     ></path>
                                 </svg>
                                 <div class="d-block">
-                                <h2>Ünvan:</h2>
+                                <h2>@lang('static.address'):</h2>
                                 <p>{{setting('site.address')}}</p>
                                 <p>{{setting('site.address_additional')}}</p>
                                 </div>
@@ -96,7 +96,7 @@
                                     </g>
                                 </svg>
                                 <div class="d-block">
-                                <h2>Phone:</h2>
+                                <h2>@lang('static.phone'):</h2>
                                 <p>{{setting('site.phone')}}</p>
                                 <p>{{setting('site.mobile')}}</p>
                                 </div>
@@ -105,7 +105,7 @@
                     </div>
                     <div class="col-lg-8 col-md-7">
                         <div class="ss_contact_right">
-                            <h1>Bizə yazın</h1>
+                            <h1>@lang('static.write_to_us')</h1>
                             <form method="POST" action="{{route('contact.form')}}">
                                 @csrf
                                 <div class="ss_contact_form">
@@ -129,7 +129,6 @@
                                         placeholder="@lang('static.enter_number')"
                                         class="require"
                                         value="{{old('number')}}"
-                                        data-error="Xahiş edirik nömrə hissəsini boş qoymayın"
                                     />
                                 </div>
                                 <div class="ss_contact_form">
@@ -142,7 +141,6 @@
                                         class="require"
                                         data-valid="email"
                                         value="{{old('email')}}"
-                                        data-error="Email düzgün deyil."
                                     />
                                 </div>
                                 <div class="ss_contact_form">
@@ -154,7 +152,6 @@
                                         placeholder="@lang('static.enter_subject')"
                                         class="require"
                                         value="{{old('subject')}}"
-                                        data-error="Xahiş edirik mövzu hissəsini boş qoymayın"
                                     />
                                 </div>
                                 <div class="ss_contact_form">
@@ -164,7 +161,6 @@
                                         id="message"
                                         placeholder="@lang('static.enter_message')"
                                         class="require"
-                                        data-error="Xahiş edirik mesaj hissəsini boş qoymayın"
                                     >{{old('message')}}</textarea>
                                 </div>
                                 <button type="submit" class="ss_btn submitForm">

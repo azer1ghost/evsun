@@ -38,11 +38,11 @@ class Service extends Model
 
     public function subServices(): HasMany
     {
-        return $this->hasMany(__CLASS__);
+        return $this->hasMany( __CLASS__ );
     }
 
     public function parentService(): BelongsTo
     {
-        return $this->belongsTo(__CLASS__,'service_id');
+        return $this->belongsTo( __CLASS__ , 'service_id');
     }
 }

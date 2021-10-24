@@ -10,8 +10,8 @@
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 @foreach($posts as $post)
-                <div data-aos="fade-up" class="swiper-slide">
-                    <div class="post-slide2">
+                <div data-aos="fade-up" class="swiper-slide " style="height: 100%!important;">
+                    <div class="post-slide2" style="height: 100%!important;">
                         <div class="post-img">
                             <a href="{{route('post', $post)}}">
                                 <img loading="lazy" src="{!!asset(Voyager::image($post->image))!!}" alt="{{$post->title}}" />

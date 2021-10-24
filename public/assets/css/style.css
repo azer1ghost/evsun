@@ -404,31 +404,31 @@ img:focus {
     background: white;
 }
 
-h3:after {
-    position: absolute;
-    bottom: -20px;
-    left: 0;
-    border: 2px solid #5b86e5;
-    width: 100px;
-    height: 4px;
-    content: "";
-    border-radius: 30px;
-    /* border-right-color: #36d1dc; */
-    /* border-left: 90px solid #5b86e5; */
-}
+/*h3:after {*/
+/*    position: absolute;*/
+/*    bottom: -20px;*/
+/*    left: 0;*/
+/*    border: 2px solid #5b86e5;*/
+/*    width: 100px;*/
+/*    height: 4px;*/
+/*    content: "";*/
+/*    border-radius: 30px;*/
+/*    !* border-right-color: #36d1dc; *!*/
+/*    !* border-left: 90px solid #5b86e5; *!*/
+/*}*/
 
-h3:before {
-    position: absolute;
-    bottom: -23px;
-    left: 10px;
-    width: 10px;
-    height: 10px;
-    border-radius: 20px;
-    content: "";
-    z-index: 5;
-    background: #5b86e5;
-    animation: mover 2s infinite alternate;
-}
+/*h3:before {*/
+/*    position: absolute;*/
+/*    bottom: -23px;*/
+/*    left: 10px;*/
+/*    width: 10px;*/
+/*    height: 10px;*/
+/*    border-radius: 20px;*/
+/*    content: "";*/
+/*    z-index: 5;*/
+/*    background: #5b86e5;*/
+/*    animation: mover 2s infinite alternate;*/
+/*}*/
 
 .index_three h3:before {
     bottom: -22px;

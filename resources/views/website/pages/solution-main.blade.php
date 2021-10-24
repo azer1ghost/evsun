@@ -75,7 +75,7 @@
         <h1 class="text-center mb-2">{{$service->getTranslatedAttribute('heading')}}</h1>
         <h3 class="ss_h3_center text-center">{{$service->getTranslatedAttribute('meta_title')}}</h3>
         <div class="heler-alt-content">
-            <div class="row">
+            <div class="row justify-content-center">
                 <div data-aos-delay="300" data-aos-duration="800" data-aos="fade-right" class="col-lg-3 col-12 col-md-6 mt-3">
                     <div class="heller-list-left">
                         <ul>
@@ -118,6 +118,11 @@
                             @endforeach
                         </ul>
                     </div>
+                </div>
+                <div class="col-md-6 mt-5">
+                    <p class="text-left">
+                        {{$service->getTranslatedAttribute('detail')}}
+                    </p>
                 </div>
             </div>
         </div>
