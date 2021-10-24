@@ -30,8 +30,8 @@
         <div class="col-12 col-lg-3">
             <ul id="imageGallery" >
                 @foreach(json_decode($product->getAttribute('images')) ?? [] as $image)
-                    <li data-thumb="{{ asset(Voyager::image($image)) }}" data-src=" {{ asset(Voyager::image($image)) }}">
-                        <img src=" {{ asset(Voyager::image($image)) }}" />
+                    <li data-thumb="{{ asset(Voyager::image($image)) }}" data-src="{{ asset(Voyager::image($image)) }}">
+                        <img src="{{ asset(Voyager::image($image)) }}" />
                     </li>
                 @endforeach
             </ul>
