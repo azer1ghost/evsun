@@ -12,7 +12,7 @@
 {{--            <img src="{!!asset(Voyager::image($service->banner))!!}" />--}}
 {{--        </div>--}}
         <div class="row">
-            <div class="col-lg-4 order-last order-md-first">
+            <div class="col-lg-4 order-last order-md-first ">
                 <h3 class="ss_h3_center text-center">@lang('static.solutions')</h3>
                 <div class="services-list">
                     @foreach($services as $single_service)
