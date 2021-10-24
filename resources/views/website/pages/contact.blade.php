@@ -37,8 +37,8 @@
                                 </svg>
                                 <div class="d-block">
                                 <h2>@lang('static.address'):</h2>
-                                <p>{{setting('site.address')}}</p>
-                                <p>{{setting('site.address_additional')}}</p>
+                                <p>@lang('static.address_1')</p>
+                                <p>@lang('static.address_2')</p>
                                 </div>
                             </div>
                             <div class="ss_contact_two d-flex align-items-center">

@@ -6,71 +6,15 @@
 
 @section('scripts')
 <script>
-    $('.slider-single').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: true,
-        fade: false,
-        adaptiveHeight: true,
-        infinite: false,
-        useTransform: true,
-        nextArrow: '<button type="button" class="slick-next"><i class="far fa-arrow-circle-right"></i></button>',
-        prevArrow: '<button type="button" class="slick-prev"><i class="far fa-arrow-circle-left"></i></button>',
-        speed: 400,
-        cssEase: 'cubic-bezier(0.77, 0, 0.18, 1)',
-    });
-
-    $('.slider-nav')
-        .on('init', function(event, slick) {
-            $('.slider-nav .slick-slide.slick-current').addClass('is-active');
-        })
-        .slick({
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            dots: false,
-            focusOnSelect: false,
-            infinite: false,
-            responsive: [{
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 5,
-                    slidesToScroll: 5,
-                }
-            }, {
-                breakpoint: 640,
-                settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 4,
-                }
-            }, {
-                breakpoint: 420,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                }
-            }]
+    $(document).ready(function() {
+        $('#imageGallery').lightSlider({
+            gallery:true,
+            item:1,
+            loop:true,
+            thumbItem:9,
+            slideMargin:0,
+            enableDrag: true,
         });
-
-    $('.slider-single').on('afterChange', function(event, slick, currentSlide) {
-        $('.slider-nav').slick('slickGoTo', currentSlide);
-        var currrentNavSlideElem = '.slider-nav .slick-slide[data-slick-index="' + currentSlide + '"]';
-        $('.slider-nav .slick-slide.is-active').removeClass('is-active');
-        $(currrentNavSlideElem).addClass('is-active');
-    });
-
-    $('.slider-nav').on('click', '.slick-slide', function(event) {
-        event.preventDefault();
-        var goToSingleSlide = $(this).data('slick-index');
-
-        $('.slider-single').slick('slickGoTo', goToSingleSlide);
-    });
-
-    $('#lightSlider').lightSlider({
-        gallery: true,
-        item: 1,
-        loop: true,
-        slideMargin: 0,
-        thumbItem: 9
     });
 </script>
 @endsection
@@ -82,58 +26,22 @@
 @endif
 
 <div class="p-2 p-lg-4">
-    <div class="row">
-        <div class="col-lg-5">
-            <div class="prod-slideri">
-                <ul id="lightSlider">
-                    @foreach(json_decode($product->getAttribute('images')) ?? [] as $image)
-                        <li data-thumb="{{ asset(Voyager::image($image)) }}">
-                            <img data-toggle="modal" data-target="#image_{{$loop->iteration}}" src="{{ asset(Voyager::image($image)) }}" />
-                        </li>
-                    @endforeach
-                </ul>
-            </div>
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-3">
+            <ul id="imageGallery" >
+                <li  data-thumb="http://sachinchoolur.github.io/lightslider/img/cS-1.jpg" data-src="http://sachinchoolur.github.io/lightslider/img/cS-1.jpg">
+                    <img src="http://sachinchoolur.github.io/lightslider/img/cS-1.jpg" />
+                </li>
+                <li data-thumb="http://sachinchoolur.github.io/lightslider/img/cS-4.jpg" data-src="http://sachinchoolur.github.io/lightslider/img/cS-4.jpg">
+                    <img src="http://sachinchoolur.github.io/lightslider/img/cS-4.jpg" />
+                </li>
+            </ul>
         </div>
 
-        @foreach(json_decode($product->getAttribute('images')) ?? [] as $image_modal)
-        <div class="modal fade bd-example-modal-lg" id="image_{{$loop->iteration}}" tabindex="-1">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="prod-modal-image">
-                                <img src="{{ asset(Voyager::image($image_modal)) }}" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        @endforeach
+{{--        @foreach(json_decode($product->getAttribute('images')) ?? [] as $image)--}}
+{{--             {{ asset(Voyager::image($image)) }}--}}
+{{--        @endforeach--}}
 
-        <!-- <div class="col-lg-5 col-12">
-            <div class="slider slider-single">
-                <div data-toggle="modal" data-target=".bd-example-modal-lg" class="slider-for-img">
-                    <img src="https://tesla-cdn.thron.com/delivery/public/image/tesla/088d64b2-afcc-43c6-9fa1-8f37e567a3d0/bvlatuR/std/2880x2400/desktop_model_3_v2" />
-                </div>
-                <div data-toggle="modal" data-target=".bd-example-modal-lg" class="slider-for-img">
-                    <img src="https://tesla-cdn.thron.com/delivery/public/image/tesla/088d64b2-afcc-43c6-9fa1-8f37e567a3d0/bvlatuR/std/2880x2400/desktop_model_3_v2" />
-                </div>
-            </div>
-            <div class="slider slider-nav">
-                <div class="slider-nav-img">
-                    <img src="https://tesla-cdn.thron.com/delivery/public/image/tesla/088d64b2-afcc-43c6-9fa1-8f37e567a3d0/bvlatuR/std/2880x2400/desktop_model_3_v2" />
-                </div>
-                <div class="slider-nav-img">
-                    <img src="https://tesla-cdn.thron.com/delivery/public/image/tesla/088d64b2-afcc-43c6-9fa1-8f37e567a3d0/bvlatuR/std/2880x2400/desktop_model_3_v2" />
-                </div>
-            </div>
-        </div> -->
         <div class="col-lg-7  col-12">
             <div class="prod-page-main">
                 <div class="prod-page-name">

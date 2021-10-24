@@ -121,7 +121,7 @@
                 </div>
                 <div class="col-md-6 mt-5">
                     <p class="text-left">
-                        {{$service->getTranslatedAttribute('detail')}}
+                        {!! $service->getTranslatedAttribute('detail') !!}
                     </p>
                 </div>
             </div>

@@ -22,9 +22,9 @@
                             </div>
                         </div>
                         <div class="post-content">
-                            <h3 class="post-title"><a href="{{route('post', $post)}}">{{$post->getTranslatedAttribute('title')}}</a></h3>
-                            <p class="post-description">
-                                {{str_limit($post->getTranslatedAttribute('excerpt'), 200)}}
+                            <h3 class="post-title line-wrap line-wrap-1"><a href="{{route('post', $post)}}">{{$post->getTranslatedAttribute('title')}}</a></h3>
+                            <p class="post-description line-wrap line-wrap-3">
+                                {{str_limit($post->getTranslatedAttribute('excerpt'))}}
                             </p>
                             <a href="{{route('post', $post)}}" class="read-more">@lang('static.read_more')</a>
                         </div>

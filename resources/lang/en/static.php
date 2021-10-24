@@ -24,7 +24,7 @@ return [
     'address' => 'Address',
     'phone' => 'Phone',
     'email' => 'E-mail',
-    'name' => 'name',
+    'name' => 'Name',
     'enter_name' => 'Enter your name',
     'enter_email' => 'Enter your e-mail',
     'subject' => 'Subject',

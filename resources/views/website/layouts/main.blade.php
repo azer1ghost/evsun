@@ -32,7 +32,7 @@
     <!-- OwlCarousel CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}" />
     <!-- Main CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css?version=1.01') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css?version=1.13') }}">
     <!-- Stellar Nav CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/stellarnav.min.css') }}">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
@@ -40,6 +40,9 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" crossorigin="anonymous" />
 
+    <link rel="stylesheet" href="{{ asset('assets/css/lightslider.min.css') }}">
+
+    <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/lightgallery-bundle.min.css') }}" />
 
     @yield('styles')
 </head>
@@ -98,9 +101,11 @@
     <script src="{{ asset('assets/js/wow.min.js') }}"></script>
     <!-- stellarnav JS -->
     <script src="{{ asset('assets/js/stellarnav.min.js') }}"></script>
+    <!-- lightslider -->
+    <script src="{{ asset('assets/js/lightslider.min.js') }}"></script>
+    <script src="{{ asset('assets/js/lightgallery.min.js') }}"></script>
     <!-- aos JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://sachinchoolur.github.io/lightslider/dist/js/lightslider.js"></script>
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
