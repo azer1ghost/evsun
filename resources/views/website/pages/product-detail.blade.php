@@ -29,18 +29,13 @@
     <div class="row justify-content-center">
         <div class="col-12 col-lg-3">
             <ul id="imageGallery" >
-                <li  data-thumb="http://sachinchoolur.github.io/lightslider/img/cS-1.jpg" data-src="http://sachinchoolur.github.io/lightslider/img/cS-1.jpg">
-                    <img src="http://sachinchoolur.github.io/lightslider/img/cS-1.jpg" />
-                </li>
-                <li data-thumb="http://sachinchoolur.github.io/lightslider/img/cS-4.jpg" data-src="http://sachinchoolur.github.io/lightslider/img/cS-4.jpg">
-                    <img src="http://sachinchoolur.github.io/lightslider/img/cS-4.jpg" />
-                </li>
+                @foreach(json_decode($product->getAttribute('images')) ?? [] as $image)
+                    <li data-thumb="{{ asset(Voyager::image($image)) }}" data-src=" {{ asset(Voyager::image($image)) }}">
+                        <img src=" {{ asset(Voyager::image($image)) }}" />
+                    </li>
+                @endforeach
             </ul>
         </div>
-
-{{--        @foreach(json_decode($product->getAttribute('images')) ?? [] as $image)--}}
-{{--             {{ asset(Voyager::image($image)) }}--}}
-{{--        @endforeach--}}
 
         <div class="col-lg-7  col-12">
             <div class="prod-page-main">
