@@ -9,12 +9,23 @@
     $(document).ready(function() {
         $('#imageGallery').lightSlider({
             gallery:true,
+            useCSS: true,
+            cssEasing: 'ease', //'cubic-bezier(0.25, 0, 0.25, 1)',
+            easing: 'linear', //'for jquery animation',//
+            speed: 400, //ms'
+            auto: true,
+            enableTouch: true,
+            enableDrag: true,
+            freeMove: true,
             item:1,
             loop:true,
             thumbItem:9,
             slideMargin:0,
-            enableDrag: true,
+            controls: true,
+            prevHtml: '<i class="fal fa-2x fa-chevron-left"></i>',
+            nextHtml: '<i class="fal fa-2x fa-chevron-right"></i>',
         });
+        $(".lSGallery li a img").css("width", 100 + "px").css("height", 100 + "px")
     });
 </script>
 @endsection
@@ -31,7 +42,7 @@
             <ul id="imageGallery" >
                 @foreach(json_decode($product->getAttribute('images')) ?? [] as $image)
                     <li data-thumb="{{ asset(Voyager::image($image)) }}" data-src="{{ asset(Voyager::image($image)) }}">
-                        <img src="{{ asset(Voyager::image($image)) }}" />
+                        <img style="height: 380px; width: 100%" src="{{ asset(Voyager::image($image)) }}" />
                     </li>
                 @endforeach
             </ul>
