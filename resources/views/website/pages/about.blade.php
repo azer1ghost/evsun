@@ -9,27 +9,26 @@
 
     <div class="solar_aboutus_page">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-5 col-md-12 mt-5">
-                    <div class="swiper-container">
-                        <div class="swiper-wrapper">
-                            @foreach(json_decode($page->images) ?? [$page->image] as $image)
-                                <div class="swiper-slide">
-                                    <div class="solar_about_img">
-                                        <img src="{{ asset(Voyager::image($image)) }}" />
+
+
+                <div class="solar_our_vison_detail row">
+                    <div class="col-lg-5 col-md-12 mt-5">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                @foreach(json_decode($page->images) ?? [$page->image] as $image)
+                                    <div class="swiper-slide">
+                                        <div class="solar_about_img">
+                                            <img src="{{ asset(Voyager::image($image)) }}" />
+                                        </div>
                                     </div>
-                                </div>
-                            @endforeach
+                                @endforeach
+                            </div>
                         </div>
                     </div>
+                    <h1 class="text_span mb-3">{{$page->getTranslatedAttribute('title')}}</h1>
+                    <p class="float-left">{!!$page->getTranslatedAttribute('body') !!}</p>
                 </div>
-                <div class="col-lg-7 col-md-12 mt-5">
-                    <div class="solar_our_vison_detail">
-                        <h1 class="text_span mb-3">{{$page->getTranslatedAttribute('title')}}</h1>
-                        <p>{!!$page->getTranslatedAttribute('body') !!}</p>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
 

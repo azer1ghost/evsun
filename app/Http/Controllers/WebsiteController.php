@@ -29,7 +29,7 @@ class WebsiteController extends Controller
     // Solution (Because there are changed it )
     public function serviceDetail(Service $service)
     {
-        $next_service = Service::find(Service::where('id', '>', $service->getAttribute('id'))->min('id'));
+        $next_service = null;//Service::find(Service::where('id', '>', $service->getAttribute('id'))->min('id'));
 
         if ($service->getAttribute('service_id')){
             $page = "solution-detail";

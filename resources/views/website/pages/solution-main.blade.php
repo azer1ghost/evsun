@@ -41,34 +41,12 @@
 
 @section('content')
 
-@if(false)
-    @include('website.components.breadcrumb', ['image' => $service->image, 'links' => [route('services') => meta('services')->get('title'), $service->getTranslatedAttribute('title') ]])
-@endif
 
-<div class="heller-img-left">
-    <img src="{!!asset(Voyager::image($service->dynamic_image))!!}" />
-</div>
+@includeWhen(true, 'website.components.breadcrumb', ['image' => $service->image, 'links' => [route('services') => meta('services')->get('title'), $service->getTranslatedAttribute('title') ]])
 
-<div class="container-heller m-2 p-2 m-lg-5 p-lg-5">
-    <div class="row">
-        <div class="col-lg-6 col-12">
-            <div class="heller-left text-center">
-                <div class="d-block">
-                    <h1>{{$service->getTranslatedAttribute('title')}} </h1>
-                    <p>{!! $service->getTranslatedAttribute('detail') !!}</p>
-{{--                    <button class="heller-btn">--}}
-{{--                        <p>Get Charging</p>--}}
-{{--                    </button>--}}
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6 col-12">
-            <div class="heller-img">
-                <img src="{!!asset(Voyager::image($service->image))!!}" />
-            </div>
-        </div>
-    </div>
-</div>
+
+{{--{{$service->getTranslatedAttribute('title')}}--}}
+{{--<img src="{!!asset(Voyager::image($service->image))!!}" />--}}
 
 <div class="heller-alt-container">
     <div class="container-fluid">
@@ -119,7 +97,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-6 mt-5">
+                <div class="col-md-11 mt-5">
                     <p class="text-left">
                         {!! $service->getTranslatedAttribute('detail') !!}
                     </p>

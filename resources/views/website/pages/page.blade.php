@@ -7,7 +7,7 @@
 @section('content')
     @include('website.components.breadcrumb', ['image' => $page->image, 'links' =>  [$page->getTranslatedAttribute('heading') ]])
     <div class="solar_aboutus_page">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-lg-5 col-md-12 mt-5 mb-5 order-last">
                     <div class="swiper-container">
