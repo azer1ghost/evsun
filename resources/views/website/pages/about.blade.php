@@ -11,13 +11,13 @@
         <div class="container">
             <div class="row my-5">
                 <div class="col-12">
-                    <div class="col-lg-4 bg-danger float-left mr-3 mb-2" style="height: 100px">
+                    <div class="col-lg-4 float-left mr-3 mb-2">
                         <div class="swiper-container">
                             <div class="swiper-wrapper">
                                 @foreach(json_decode($page->images) ?? [$page->image] as $image)
                                     <div class="swiper-slide" >
                                         <div class="solar_about_img">
-                                            <img src="{{ asset(Voyager::image($image)) }}" />
+                                            <img src="{{ asset(Voyager::image($image)) }}" style="height: 300px; width: 500px" />
                                         </div>
                                     </div>
                                 @endforeach
