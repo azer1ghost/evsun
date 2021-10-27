@@ -10,20 +10,20 @@
     <div class="solar_aboutus_page">
         <div class="container">
             <div class="row my-5">
-                <div class="col-12">
-                    <div class="col-lg-4 float-left mr-3 mb-2">
-                        <div class="swiper-container">
-                            <div class="swiper-wrapper">
-                                @foreach(json_decode($page->images) ?? [$page->image] as $image)
-                                    <div class="swiper-slide" >
-                                        <div class="solar_about_img">
-                                            <img src="{{ asset(Voyager::image($image)) }}" style="height: 300px; width: 500px" />
-                                        </div>
+                <div class="col-12 col-md-4">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            @foreach(json_decode($page->images) ?? [$page->image] as $image)
+                                <div class="swiper-slide" >
+                                    <div class="solar_about_img">
+                                        <img src="{{ asset(Voyager::image($image)) }}" style="height: 300px; width: 500px" />
                                     </div>
-                                @endforeach
-                            </div>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
+                </div>
+                <div class="col-12 col-md-7">
                     <h1 class="text_span mb-3">{{$page->getTranslatedAttribute('title')}}</h1>
                     <p >{!!$page->getTranslatedAttribute('body') !!}</p>
                 </div>
