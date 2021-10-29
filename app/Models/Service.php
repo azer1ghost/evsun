@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Cache;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -44,5 +45,13 @@ class Service extends Model
     public function parentService(): BelongsTo
     {
         return $this->belongsTo( __CLASS__ , 'service_id');
+    }
+
+    public static function boot()
+    {
+        parent::boot();
+        static::saved(function () {
+            Cache::forget('homepage_services');
+        });
     }
 }
