@@ -9,19 +9,7 @@
     <div class="solar_aboutus_page">
         <div class="container-fluid">
             <div class="row justify-content-center">
-                <div class="col-lg-5 col-md-12 mt-5 mb-5 order-last">
-                    <div class="swiper-container">
-                        <div class="swiper-wrapper">
-                            @foreach(json_decode($page->images) ?? [$page->image] as $image)
-                                <div class="swiper-slide">
-                                    <div class="solar_about_img">
-                                        <img loading="lazy"  src="{{ asset(Voyager::image($image)) }}" />
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
+
                 <div class="col-lg-12 col-md-12 mt-0 mt-md-5 ">
                     <div class="solar_our_vison_detail mb-5">
                         <h1 class="text_span mb-3">{{$page->getTranslatedAttribute('title')}}</h1>
@@ -30,6 +18,23 @@
                         </p>
                     </div>
                 </div>
+
+                @if($page->images)
+                <div class="col-lg-5 col-md-12 mt-5 mb-5">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            @foreach(json_decode($page->images) ?? [$page->image] as $image)
+                                <div class="swiper-slide">
+                                    <div class="solar_about_img">
+                                        <img loading="lazy" src="{{ asset(Voyager::image($image)) }}" />
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+                @endif
+
             </div>
         </div>
     </div>

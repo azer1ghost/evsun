@@ -13,7 +13,7 @@
                 <a href="{{route('service', $service)}}" class="tile col-lg-4 col-md-5 col-10 m-5 d-flex">
                     <img src='{{asset(Voyager::image($service->banner))}}'/>
                     <div class="text row justify-content-center align-self-center">
-                        <h1>{{str_limit($service->getTranslatedAttribute('title'), 50)}}</h1>
+                        <h1 style="color: {{$service->banner_color}}">{{str_limit($service->getTranslatedAttribute('title'), 50)}}</h1>
                         <h2 class="animate-text">{{str_limit($service->getTranslatedAttribute('meta_title'))}}</h2>
                         <p class="animate-text">{{str_limit($service->getTranslatedAttribute('meta_description'))}}</p>
                     </div>
