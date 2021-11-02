@@ -10,7 +10,11 @@
                 <div class="row">
                     <div class="col-lg-6 col-12">
                         <div class="prod-modal-image">
-                            <img src="{!!asset(Voyager::image(json_decode(optional($product)->images)[0] ?? ''))!!}" />
+                            @if($product->images)
+                                <img src="{!!asset(Voyager::image(json_decode(optional($product)->images)[0] ?? ''))!!}" />
+                            @else
+                                <img src="{{asset('assets/images/noimage.jpg')}}" />
+                            @endif
                         </div>
                     </div>
                     <div class="col-lg-6 col-12">

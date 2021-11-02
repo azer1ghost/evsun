@@ -40,11 +40,17 @@
     <div class="row justify-content-center">
         <div class="col-12 col-lg-3">
             <ul id="imageGallery" >
-                @foreach(json_decode($product->getAttribute('images')) ?? [] as $image)
-                    <li data-thumb="{{ asset(Voyager::image($image)) }}" data-src="{{ asset(Voyager::image($image)) }}">
-                        <img style="height: 380px; width: 100%" src="{{ asset(Voyager::image($image)) }}" />
+                @if($product->images)
+                    @foreach(json_decode($product->getAttribute('images')) ?? [] as $image)
+                        <li data-thumb="{{ asset(Voyager::image($image)) }}" data-src="{{ asset(Voyager::image($image)) }}">
+                            <img style="height: 380px; width: 100%" src="{{ asset(Voyager::image($image)) }}" />
+                        </li>
+                    @endforeach
+                @else
+                    <li data-thumb="{{asset('assets/images/noimage.jpg')}}">
+                        <img style="height: 380px; width: 100%" src="{{asset('assets/images/noimage.jpg')}}" />
                     </li>
-                @endforeach
+                @endif
             </ul>
         </div>
 
@@ -98,7 +104,11 @@
                     <div class="swiper-slide">
                         <div class="product-itm">
                             <a href="{{route('product', $sm_product)}}">
-                                <img src="{!! asset( Voyager::image(json_decode($sm_product->images)[0]) ) !!}" />
+                                @if($sm_product->images)
+                                    <img src="{!! asset( Voyager::image(json_decode($sm_product->images)[0]) ) !!}" />
+                                @else
+                                    <img src="{{asset('assets/images/noimage.jpg')}}" />
+                                @endif
                                 <p>{{$sm_product->getTranslatedAttribute('name')}}
                                     <span>{{$sm_product->getRelationValue('category')->getTranslatedAttribute('name')}}</span>
                                 </p>
